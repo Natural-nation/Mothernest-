@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotherNest</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf7;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 24px 20px 16px;
+      background: white;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      margin-top: 5px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    main {
+      padding: 20px;
+      padding-bottom: 100px;
+    }
+
+    .welcome {
+      background: #fff0e9;
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .welcome h1 {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    .welcome p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .nest {
+      font-size: 70px;
+      text-align: center;
+      margin: 12px 0;
+    }
+
+    .assistant {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .assistant input {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin: 22px 0 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 120px;
+      cursor: pointer;
+    }
+
+    .card:active {
+      transform: scale(.98);
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .card p {
+      color: #777;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    .back {
+      border: none;
+      background: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      cursor: pointer;
+    }
+
+    .screen h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .screen > p {
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .list-item {
+      background: white;
+      border: 1px solid #eee;
+      padding: 17px;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 4px;
+      z-index: 20;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      font-size: 11px;
+      color: #666;
+      cursor: pointer;
+    }
+
+    nav span {
+      display: block;
+      font-size: 23px;
+      margin-bottom: 3px;
+    }
+
+    .primary {
+      display: inline-block;
+      border: none;
+      background: #e9a58f;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 12px;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">🪺 MotherNest</div>
+  <div class="tagline">A supportive digital ecosystem for motherhood</div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="screen active">
+
+    <div class="welcome">
+      <div class="nest">🪺</div>
+      <h1>Welcome to MotherNest</h1>
+      <p>
+        A place to organize, learn, prepare, connect and care —
+        all in one supportive ecosystem.
+      </p>
+    </div>
+
+    <div class="assistant">
+      <strong>✨ MotherNest Assistant</strong>
+      <p style="margin-top:6px;color:#777;">
+        Ask about preparing for baby, budgeting, milestones, resources and more.
+      </p>
+      <input
+        id="assistantInput"
+        type="text"
+        placeholder="What can I help you with?"
+        onkeydown="askAssistant(event)"
+      >
+    </div>
+
+    <h2 class="section-title">Your MotherNest</h2>
+
+    <div class="grid">
+
+      <div class="card" onclick="showScreen('baby')">
+        <div class="icon">👶</div>
+        <h3>Baby Care</h3>
+        <p>Track everyday baby-care information.</p>
+      </div>
+
+      <div class="card" onclick="showScreen('registry')">
+        <div class="icon">🎁</div>
+        <h3>Registry</h3>
+        <p>Keep track of what your family needs.</p>
+      </div>
+
+      <div class="card" onclick="showScreen('marketplace')">
+        <div class="icon">🛍️</div>
+        <h3>Marketplace</h3>
+        <p>Explore baby items and resources.</p>
+      </div>
+
+      <div class="card" onclick="showScreen('health')">
+        <div class="icon">🩺</div>
+        <h3>Health</h3>
+        <p>Keep important health resources organized.</p>
+      </div>
+
+      <div class="card" onclick="showScreen('vault')">
+        <div class="icon">🔐</div>
+        <h3>Memory Vault</h3>
+        <p>A place for important records and memories.</p>
+      </div>
+
+      <div class="card" onclick="showScreen('emergency')">
+        <div class="icon">🆘</div>
+        <h3>Emergency Card</h3>
+        <p>Important information in one place.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- BABY -->
+  <section id="baby" class="screen">
+    <button class="back" onclick="showScreen('home')">← Back</button>
+    <h2>👶 Baby Care</h2>
+    <p>Organize everyday care and milestones.</p>
+
+    <div class="list-item">🍼 Feeding Tracker</div>
+    <div class="list-item">🧷 Diaper Tracker</div>
+    <div class="list-item">💊 Medicine Log</div>
+    <div class="list-item">🌱 Milestones</div>
+    <div class="list-item">💉 Vaccine
