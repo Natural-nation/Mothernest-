@@ -1,0 +1,8 @@
+{
+  "name": "mothernest",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo MotherNest build ready"
+  },
+  "dependencies": {}
+}
