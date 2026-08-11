@@ -17,17 +17,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: #ffd6e2;
       padding: 25px 20px;
-      background: linear-gradient(135deg, #fff0f5, #ffe0eb);
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      box-sizing: border-box;
     }
 
     .banner h1 {
       margin: 0;
-      color: #c2185b;
-      font-size: 38px;
+      color: #c94f76;
+      font-size: 36px;
     }
 
     .banner p {
@@ -39,6 +37,44 @@
     .banner-side {
       font-size: 28px;
       min-width: 70px;
+    }
+
+    .welcome {
+      text-align: center;
+      padding: 45px 20px;
+      background: #fff5f8;
+      border-radius: 25px;
+      margin: 25px auto;
+      max-width: 800px;
+    }
+
+    .welcome h2 {
+      color: #c94f76;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .welcome p {
+      color: #7a3b55;
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+    .welcome-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .welcome-buttons button {
+      background: #d95b83;
+      color: white;
+      border: none;
+      padding: 13px 24px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -56,14 +92,15 @@
     <div class="banner-side">🌱</div>
   </div>
 
-</body>
-  </div>  <section class="welcome">
+  <section class="welcome">
     <h2>Welcome to MotherNest 💗</h2>
-    <p>A safe, supportive place for mothers, babies, and growing families.</p><div class="welcome-buttons">
-  <button>Get Started</button>
-  <button>Explore MotherNest</button>
-</div>
+    <p>A safe, supportive place for mothers, babies, and growing families.</p>
 
+    <div class="welcome-buttons">
+      <button>Get Started</button>
+      <button>Explore MotherNest</button>
+    </div>
   </section>
-  
-</body></html>
+
+</body>
+</html>
