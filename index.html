@@ -657,6 +657,22 @@
       document.getElementById("milestone-message").textContent =
         type + " milestone saved! 🌱💗";
     }
+    function saveAppointment() {
+  const date = document.getElementById("appointment-date").value;
+  const time = document.getElementById("appointment-time").value;
+  const notes = document.getElementById("appointment-notes").value;
+
+  if (date === "" || time === "") {
+    document.getElementById("appointment-message").textContent =
+      "Please enter an appointment date and time. 📅";
+    return;
+  }
+
+  document.getElementById("appointment-message").textContent =
+    "Appointment saved! 📅💗 " +
+    date + " at " + time +
+    (notes ? " — " + notes : "");
+    }
 
   </script>
 
