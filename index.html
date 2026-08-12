@@ -455,6 +455,56 @@
     <p id="milestone-message" class="message"></p>
 
   </section>
+  <!-- Appointments Tracker -->
+<section id="appointments-tracker" class="feature-section">
+
+  <h2>📅 Baby Appointments</h2>
+
+  <p>
+    Keep your baby's appointments organized in one place.
+  </p>
+
+  <div class="tracker-box">
+
+    <h3>New Appointment</h3>
+
+    <label for="appointment-date">
+      Date:
+    </label>
+
+    <input type="date" id="appointment-date">
+
+    <br><br>
+
+    <label for="appointment-time">
+      Time:
+    </label>
+
+    <input type="time" id="appointment-time">
+
+    <br><br>
+
+    <label for="appointment-notes">
+      Appointment Notes:
+    </label>
+
+    <textarea
+      id="appointment-notes"
+      rows="4"
+      placeholder="Doctor, reason for visit, notes..."
+    ></textarea>
+
+    <br><br>
+
+    <button onclick="saveAppointment()">
+      Save Appointment
+    </button>
+
+    <p id="appointment-message" class="message"></p>
+
+  </div>
+
+</section>
   <!-- Feeding Tracker -->
   <section id="feeding-tracker" class="feature-section">
 
