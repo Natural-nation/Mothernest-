@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>MotherNest</title>
 
   <style>
@@ -17,31 +18,37 @@
       color: #3d3d3d;
     }
 
+    /* NAVIGATION */
+
     .main-nav {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
       padding: 15px;
       background: #fff5f8;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
-    .main-nav a {
-      text-decoration: none;
-      color: #c94f76;
-      font-weight: bold;
-      padding: 11px 18px;
-      border-radius: 25px;
+    .main-nav button {
       background: white;
+      color: #c94f76;
+      border: none;
+      padding: 11px 16px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
       box-shadow: 0 2px 7px rgba(0,0,0,0.08);
     }
 
-    .main-nav a:hover {
+    .main-nav button:hover {
       background: #ffe0ea;
     }
+
+    /* BANNER */
 
     .banner {
       display: flex;
@@ -67,6 +74,8 @@
       font-size: 28px;
       min-width: 65px;
     }
+
+    /* WELCOME */
 
     .welcome {
       text-align: center;
@@ -95,6 +104,8 @@
       margin-top: 25px;
     }
 
+    /* BUTTONS */
+
     button {
       background: #d95b83;
       color: white;
@@ -109,6 +120,8 @@
       background: #c94f76;
     }
 
+    /* SECTIONS */
+
     .feature-section {
       max-width: 900px;
       margin: 25px auto;
@@ -116,7 +129,7 @@
       background: #fff5f8;
       border-radius: 25px;
       text-align: center;
-      scroll-margin-top: 90px;
+      scroll-margin-top: 100px;
     }
 
     .feature-section h2 {
@@ -127,6 +140,8 @@
       color: #7a3b55;
       line-height: 1.6;
     }
+
+    /* CARDS */
 
     .feature-grid {
       display: grid;
@@ -151,6 +166,8 @@
       line-height: 1.5;
     }
 
+    /* FORMS */
+
     .tracker-box {
       max-width: 600px;
       margin: 25px auto;
@@ -167,8 +184,7 @@
     }
 
     input,
-    textarea,
-    select {
+    textarea {
       width: 100%;
       box-sizing: border-box;
       padding: 12px;
@@ -192,7 +208,7 @@
     .market-item {
       background: white;
       margin: 12px auto;
-      padding: 18px;
+      padding: 20px;
       max-width: 600px;
       border-radius: 15px;
       color: #7a3b55;
@@ -201,10 +217,12 @@
 
     .market-item h3 {
       color: #c94f76;
-      margin-top: 0;
     }
 
+    /* MOBILE */
+
     @media (max-width: 600px) {
+
       .feature-grid {
         grid-template-columns: 1fr;
       }
@@ -217,66 +235,111 @@
         font-size: 21px;
         min-width: 40px;
       }
+
+      .main-nav button {
+        font-size: 14px;
+        padding: 10px 12px;
+      }
     }
   </style>
 </head>
 
-<body id="home">
+<body>
 
-  <!-- MAIN NAVIGATION -->
+  <!-- NAVIGATION -->
+
   <nav class="main-nav">
-    <a href="#home">🏠 Home</a>
-    <a href="#baby-tracker">👶 Baby</a>
-    <a href="#registry-section">🛍️ Registry</a>
-    <a href="#marketplace-section">🏪 Marketplace</a>
-    <a href="#explore">🌱 Explore</a>
+
+    <button onclick="goTo('home')">
+      🏠 Home
+    </button>
+
+    <button onclick="goTo('baby-tracker')">
+      👶 Baby
+    </button>
+
+    <button onclick="goTo('registry')">
+      🛍️ Registry
+    </button>
+
+    <button onclick="goTo('marketplace')">
+      🏪 Marketplace
+    </button>
+
+    <button onclick="goTo('explore')">
+      🌱 Explore
+    </button>
+
   </nav>
 
-  <!-- BANNER -->
-  <div class="banner">
 
-    <div class="banner-side">♡ ♥ ♡</div>
+  <!-- HOME -->
 
-    <div>
-      <h1>MotherNest</h1>
-      <p>A place where mothers, babies, and communities grow together.</p>
+  <div id="home">
+
+    <div class="banner">
+
+      <div class="banner-side">
+        ♡ ♥ ♡
+      </div>
+
+      <div>
+
+        <h1>
+          MotherNest
+        </h1>
+
+        <p>
+          A place where mothers, babies, and communities grow together.
+        </p>
+
+      </div>
+
+      <div class="banner-side">
+        🌱
+      </div>
+
     </div>
 
-    <div class="banner-side">🌱</div>
+
+    <section class="welcome">
+
+      <h2>
+        Welcome to MotherNest 💗
+      </h2>
+
+      <p>
+        A safe, supportive place for mothers, babies, and growing families.
+      </p>
+
+      <div class="welcome-buttons">
+
+        <button onclick="goTo('baby-tracker')">
+          👶 Get Started
+        </button>
+
+        <button onclick="goTo('registry')">
+          🛍️ Open Registry
+        </button>
+
+        <button onclick="goTo('marketplace')">
+          🏪 Open Marketplace
+        </button>
+
+      </div>
+
+    </section>
 
   </div>
 
-  <!-- WELCOME -->
-  <section class="welcome">
-
-    <h2>Welcome to MotherNest 💗</h2>
-
-    <p>
-      A safe, supportive place for mothers, babies, and growing families.
-    </p>
-
-    <div class="welcome-buttons">
-
-      <button onclick="goTo('baby-tracker')">
-        👶 Get Started
-      </button>
-
-      <button onclick="goTo('registry-section')">
-        🛍️ Open Registry
-      </button>
-
-      <button onclick="goTo('marketplace-section')">
-        🏪 Open Marketplace
-      </button>
-
-    </div>
-
-  </section>
 
   <!-- GET STARTED -->
+
   <section id="get-started" class="feature-section">
 
-    <h2>🌷 Get Started with MotherNest</h2>
+    <h2>
+      🌷 Get Started with MotherNest
+    </h2>
 
     <p>
       Everything you need to support your journey through motherhood,
@@ -285,9 +348,14 @@
 
     <div class="feature-grid">
 
+
+      <!-- BABY -->
+
       <div class="feature-card">
 
-        <h3>👶 Baby Tracker</h3>
+        <h3>
+          👶 Baby Tracker
+        </h3>
 
         <p>
           Keep track of feeding, diapers, milestones, and appointments.
@@ -299,37 +367,52 @@
 
       </div>
 
+
+      <!-- REGISTRY -->
+
       <div class="feature-card">
 
-        <h3>🛍️ Registry</h3>
+        <h3>
+          🛍️ Registry
+        </h3>
 
         <p>
           Create a list of things you and your baby need.
         </p>
 
-        <button onclick="goTo('registry-section')">
+        <button onclick="goTo('registry')">
           Open Registry
         </button>
 
       </div>
 
+
+      <!-- MARKETPLACE -->
+
       <div class="feature-card">
 
-        <h3>🏪 Marketplace</h3>
+        <h3>
+          🏪 Marketplace
+        </h3>
 
         <p>
           Discover baby items and connect with other families.
         </p>
 
-        <button onclick="goTo('marketplace-section')">
+        <button onclick="goTo('marketplace')">
           Open Marketplace
         </button>
 
       </div>
 
+
+      <!-- HEALTH -->
+
       <div class="feature-card">
 
-        <h3>🏥 Health & Care</h3>
+        <h3>
+          🏥 Health & Care
+        </h3>
 
         <p>
           Keep important healthcare information organized.
@@ -341,10 +424,14 @@
 
   </section>
 
+
   <!-- BABY TRACKER -->
+
   <section id="baby-tracker" class="feature-section">
 
-    <h2>👶 Baby Tracker</h2>
+    <h2>
+      👶 Baby Tracker
+    </h2>
 
     <p>
       Keep your baby's important daily information organized in one place.
@@ -352,57 +439,77 @@
 
     <div class="feature-grid">
 
+
+      <!-- FEEDING -->
+
       <div class="feature-card">
 
-        <h3>🍼 Feeding</h3>
+        <h3>
+          🍼 Feeding
+        </h3>
 
         <p>
           Keep track of feeding times and notes.
         </p>
 
-        <button onclick="goTo('feeding-tracker')">
+        <button onclick="goTo('feeding')">
           Open Feeding Tracker
         </button>
 
       </div>
 
+
+      <!-- DIAPERS -->
+
       <div class="feature-card">
 
-        <h3>🧷 Diapers</h3>
+        <h3>
+          🧷 Diapers
+        </h3>
 
         <p>
           Keep track of diaper changes throughout the day.
         </p>
 
-        <button onclick="goTo('diaper-tracker')">
+        <button onclick="goTo('diapers')">
           Open Diaper Tracker
         </button>
 
       </div>
 
+
+      <!-- MILESTONES -->
+
       <div class="feature-card">
 
-        <h3>🌱 Milestones</h3>
+        <h3>
+          🌱 Milestones
+        </h3>
 
         <p>
           Keep track of important developmental milestones.
         </p>
 
-        <button onclick="goTo('milestones-tracker')">
+        <button onclick="goTo('milestones')">
           Open Milestones
         </button>
 
       </div>
 
+
+      <!-- APPOINTMENTS -->
+
       <div class="feature-card">
 
-        <h3>📅 Appointments</h3>
+        <h3>
+          📅 Appointments
+        </h3>
 
         <p>
           Keep important baby appointments organized.
         </p>
 
-        <button onclick="goTo('appointments-tracker')">
+        <button onclick="goTo('appointments')">
           Open Appointments
         </button>
 
@@ -412,10 +519,14 @@
 
   </section>
 
-  <!-- REGISTRY -->
-  <section id="registry-section" class="feature-section">
 
-    <h2>🛍️ Baby Registry</h2>
+  <!-- REGISTRY -->
+
+  <section id="registry" class="feature-section">
+
+    <h2>
+      🛍️ Baby Registry
+    </h2>
 
     <p>
       Create a list of things you and your baby need.
@@ -423,7 +534,9 @@
 
     <div class="tracker-box">
 
-      <h3>Add Something to Your Registry</h3>
+      <h3>
+        Add Something to Your Registry
+      </h3>
 
       <label for="registry-item">
         Item:
@@ -454,78 +567,100 @@
         Add to Registry
       </button>
 
-      <p id="registry-message" class="message"></p>
+      <p
+        id="registry-message"
+        class="message">
+      </p>
 
     </div>
 
-    <h3>💗 My Registry</h3>
+    <h3>
+      💗 My Registry
+    </h3>
 
-    <div id="registry-list"></div>
+    <div id="registry-list">
+    </div>
 
   </section>
 
-  <!-- MARKETPLACE -->
-  <section id="marketplace-section" class="feature-section">
 
-    <h2>🏪 MotherNest Marketplace</h2>
+  <!-- MARKETPLACE -->
+
+  <section id="marketplace" class="feature-section">
+
+    <h2>
+      🏪 MotherNest Marketplace
+    </h2>
 
     <p>
-      Discover baby items from other families.
+      Discover baby items and connect with other families.
     </p>
 
     <div class="feature-grid">
 
+
       <div class="market-item">
 
-        <h3>🍼 Baby Feeding Supplies</h3>
+        <h3>
+          🍼 Feeding Supplies
+        </h3>
 
         <p>
-          Find bottles, feeding supplies, and baby essentials.
+          Find bottles and other feeding supplies.
         </p>
 
-        <button onclick="showMarketplaceMessage('Baby Feeding Supplies')">
+        <button onclick="marketMessage('Feeding Supplies')">
           View Item
         </button>
 
       </div>
 
+
       <div class="market-item">
 
-        <h3>👕 Baby Clothes</h3>
+        <h3>
+          👕 Baby Clothes
+        </h3>
 
         <p>
           Browse baby clothing and everyday essentials.
         </p>
 
-        <button onclick="showMarketplaceMessage('Baby Clothes')">
+        <button onclick="marketMessage('Baby Clothes')">
           View Item
         </button>
 
       </div>
 
+
       <div class="market-item">
 
-        <h3>🛏️ Nursery Items</h3>
+        <h3>
+          🛏️ Nursery Items
+        </h3>
 
         <p>
           Discover nursery items and baby furniture.
         </p>
 
-        <button onclick="showMarketplaceMessage('Nursery Items')">
+        <button onclick="marketMessage('Nursery Items')">
           View Item
         </button>
 
       </div>
 
+
       <div class="market-item">
 
-        <h3>🧸 Baby Toys</h3>
+        <h3>
+          🧸 Baby Toys
+        </h3>
 
         <p>
           Discover toys and items for your growing baby.
         </p>
 
-        <button onclick="showMarketplaceMessage('Baby Toys')">
+        <button onclick="marketMessage('Baby Toys')">
           View Item
         </button>
 
@@ -533,14 +668,21 @@
 
     </div>
 
-    <p id="marketplace-message" class="message"></p>
+    <p
+      id="market-message"
+      class="message">
+    </p>
 
   </section>
 
-  <!-- MILESTONES -->
-  <section id="milestones-tracker" class="feature-section">
 
-    <h2>🌱 Baby Milestones</h2>
+  <!-- MILESTONES -->
+
+  <section id="milestones" class="feature-section">
+
+    <h2>
+      🌱 Baby Milestones
+    </h2>
 
     <p>
       Keep track of special moments as your baby grows.
@@ -548,48 +690,91 @@
 
     <div class="feature-grid">
 
+
       <div class="feature-card">
-        <h3>😊 Social</h3>
-        <p>Record smiles, sounds, and interactions.</p>
+
+        <h3>
+          😊 Social
+        </h3>
+
+        <p>
+          Record smiles, sounds, and interactions.
+        </p>
+
         <button onclick="saveMilestone('Social')">
           Mark Complete
         </button>
+
       </div>
 
+
       <div class="feature-card">
-        <h3>🧸 Movement</h3>
-        <p>Record new movements and progress.</p>
+
+        <h3>
+          🧸 Movement
+        </h3>
+
+        <p>
+          Record new movements and progress.
+        </p>
+
         <button onclick="saveMilestone('Movement')">
           Mark Complete
         </button>
+
       </div>
 
+
       <div class="feature-card">
-        <h3>👀 Learning</h3>
-        <p>Record new sounds and discoveries.</p>
+
+        <h3>
+          👀 Learning
+        </h3>
+
+        <p>
+          Record new sounds and discoveries.
+        </p>
+
         <button onclick="saveMilestone('Learning')">
           Mark Complete
         </button>
+
       </div>
 
+
       <div class="feature-card">
-        <h3>💗 Special Moment</h3>
-        <p>Save a special milestone to remember.</p>
+
+        <h3>
+          💗 Special Moment
+        </h3>
+
+        <p>
+          Save a special milestone to remember.
+        </p>
+
         <button onclick="saveMilestone('Special Moment')">
           Mark Complete
         </button>
+
       </div>
 
     </div>
 
-    <p id="milestone-message" class="message"></p>
+    <p
+      id="milestone-message"
+      class="message">
+    </p>
 
   </section>
 
-  <!-- APPOINTMENTS -->
-  <section id="appointments-tracker" class="feature-section">
 
-    <h2>📅 Baby Appointments</h2>
+  <!-- APPOINTMENTS -->
+
+  <section id="appointments" class="feature-section">
+
+    <h2>
+      📅 Baby Appointments
+    </h2>
 
     <p>
       Keep your baby's appointments organized.
@@ -597,13 +782,18 @@
 
     <div class="tracker-box">
 
-      <h3>New Appointment</h3>
+      <h3>
+        New Appointment
+      </h3>
 
       <label for="appointment-date">
         Date:
       </label>
 
-      <input type="date" id="appointment-date">
+      <input
+        type="date"
+        id="appointment-date"
+      >
 
       <br><br>
 
@@ -611,7 +801,10 @@
         Time:
       </label>
 
-      <input type="time" id="appointment-time">
+      <input
+        type="time"
+        id="appointment-time"
+      >
 
       <br><br>
 
@@ -631,16 +824,23 @@
         Save Appointment
       </button>
 
-      <p id="appointment-message" class="message"></p>
+      <p
+        id="appointment-message"
+        class="message">
+      </p>
 
     </div>
 
   </section>
 
-  <!-- FEEDING -->
-  <section id="feeding-tracker" class="feature-section">
 
-    <h2>🍼 Feeding Tracker</h2>
+  <!-- FEEDING -->
+
+  <section id="feeding" class="feature-section">
+
+    <h2>
+      🍼 Feeding Tracker
+    </h2>
 
     <p>
       Keep a simple record of your baby's feeding.
@@ -648,13 +848,18 @@
 
     <div class="tracker-box">
 
-      <h3>Today's Feeding</h3>
+      <h3>
+        Today's Feeding
+      </h3>
 
       <label for="feeding-time">
         Time:
       </label>
 
-      <input type="time" id="feeding-time">
+      <input
+        type="time"
+        id="feeding-time"
+      >
 
       <br><br>
 
@@ -674,16 +879,23 @@
         Save Feeding
       </button>
 
-      <p id="feeding-message" class="message"></p>
+      <p
+        id="feeding-message"
+        class="message">
+      </p>
 
     </div>
 
   </section>
 
-  <!-- DIAPERS -->
-  <section id="diaper-tracker" class="feature-section">
 
-    <h2>🧷 Diaper Tracker</h2>
+  <!-- DIAPERS -->
+
+  <section id="diapers" class="feature-section">
+
+    <h2>
+      🧷 Diaper Tracker
+    </h2>
 
     <p>
       Keep a simple record of your baby's diaper changes.
@@ -691,13 +903,18 @@
 
     <div class="tracker-box">
 
-      <h3>Today's Diaper Change</h3>
+      <h3>
+        Today's Diaper Change
+      </h3>
 
       <label for="diaper-time">
         Time:
       </label>
 
-      <input type="time" id="diaper-time">
+      <input
+        type="time"
+        id="diaper-time"
+      >
 
       <br><br>
 
@@ -717,25 +934,67 @@
         Save Diaper Change
       </button>
 
-      <p id="diaper-message" class="message"></p>
+      <p
+        id="diaper-message"
+        class="message">
+      </p>
 
     </div>
 
   </section>
 
+
   <!-- EXPLORE -->
+
   <section id="explore" class="feature-section">
 
-    <h2>🌱 Explore MotherNest</h2>
+    <h2>
+      🌱 Explore MotherNest
+    </h2>
 
     <p>
       MotherNest is designed to grow with families through every stage
       of parenting.
     </p>
 
+    <div class="feature-grid">
+
+      <div class="feature-card">
+
+        <h3>
+          💗 Family Support
+        </h3>
+
+        <p>
+          Helpful tools and resources for growing families.
+        </p>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <h3>
+          🏪 Marketplace
+        </h3>
+
+        <p>
+          Discover baby items and connect with other families.
+        </p>
+
+        <button onclick="goTo('marketplace')">
+          Open Marketplace
+        </button>
+
+      </div>
+
+    </div>
+
   </section>
 
+
   <!-- JAVASCRIPT -->
+
   <script>
 
     function goTo(sectionId) {
@@ -751,23 +1010,32 @@
         });
 
       }
+
     }
 
 
     function addRegistryItem() {
 
       const item =
-        document.getElementById("registry-item").value.trim();
+        document
+        .getElementById("registry-item")
+        .value
+        .trim();
 
       const quantity =
-        document.getElementById("registry-quantity").value;
+        document
+        .getElementById("registry-quantity")
+        .value;
 
       if (item === "") {
 
-        document.getElementById("registry-message").textContent =
+        document
+        .getElementById("registry-message")
+        .textContent =
           "Please enter an item first. 🛍️";
 
         return;
+
       }
 
       const newItem =
@@ -786,107 +1054,150 @@
         .getElementById("registry-list")
         .appendChild(newItem);
 
-      document.getElementById("registry-message").textContent =
-        "Item added to your registry! 💗";
+      document
+        .getElementById("registry-message")
+        .textContent =
+          "Item added to your registry! 💗";
 
-      document.getElementById("registry-item").value =
-        "";
+      document
+        .getElementById("registry-item")
+        .value = "";
 
-      document.getElementById("registry-quantity").value =
-        "1";
+      document
+        .getElementById("registry-quantity")
+        .value = "1";
+
     }
 
 
-    function showMarketplaceMessage(item) {
+    function marketMessage(item) {
 
-      document.getElementById("marketplace-message").textContent =
-        item +
-        " selected! 🏪💗 Marketplace item pages are coming next.";
+      document
+        .getElementById("market-message")
+        .textContent =
+          item +
+          " selected! 🏪💗";
+
     }
 
 
     function saveFeeding() {
 
       const time =
-        document.getElementById("feeding-time").value;
+        document
+        .getElementById("feeding-time")
+        .value;
 
       const notes =
-        document.getElementById("feeding-notes").value;
+        document
+        .getElementById("feeding-notes")
+        .value;
 
       if (time === "") {
 
-        document.getElementById("feeding-message").textContent =
+        document
+        .getElementById("feeding-message")
+        .textContent =
           "Please enter a feeding time. 🍼";
 
         return;
+
       }
 
-      document.getElementById("feeding-message").textContent =
+      document
+      .getElementById("feeding-message")
+      .textContent =
         "Feeding saved! 🍼💗 Time: " +
         time +
         (notes ? " — " + notes : "");
+
     }
 
 
     function saveDiaper() {
 
       const time =
-        document.getElementById("diaper-time").value;
+        document
+        .getElementById("diaper-time")
+        .value;
 
       const notes =
-        document.getElementById("diaper-notes").value;
+        document
+        .getElementById("diaper-notes")
+        .value;
 
       if (time === "") {
 
-        document.getElementById("diaper-message").textContent =
+        document
+        .getElementById("diaper-message")
+        .textContent =
           "Please enter a diaper change time. 🧷";
 
         return;
+
       }
 
-      document.getElementById("diaper-message").textContent =
+      document
+      .getElementById("diaper-message")
+      .textContent =
         "Diaper change saved! 🧷💗 Time: " +
         time +
         (notes ? " — " + notes : "");
+
     }
 
 
     function saveMilestone(type) {
 
-      document.getElementById("milestone-message").textContent =
+      document
+      .getElementById("milestone-message")
+      .textContent =
         type +
         " milestone saved! 🌱💗";
+
     }
 
 
     function saveAppointment() {
 
       const date =
-        document.getElementById("appointment-date").value;
+        document
+        .getElementById("appointment-date")
+        .value;
 
       const time =
-        document.getElementById("appointment-time").value;
+        document
+        .getElementById("appointment-time")
+        .value;
 
       const notes =
-        document.getElementById("appointment-notes").value;
+        document
+        .getElementById("appointment-notes")
+        .value;
 
       if (date === "" || time === "") {
 
-        document.getElementById("appointment-message").textContent =
+        document
+        .getElementById("appointment-message")
+        .textContent =
           "Please enter an appointment date and time. 📅";
 
         return;
+
       }
 
-      document.getElementById("appointment-message").textContent =
+      document
+      .getElementById("appointment-message")
+      .textContent =
         "Appointment saved! 📅💗 " +
         date +
         " at " +
         time +
         (notes ? " — " + notes : "");
+
     }
 
   </script>
 
 </body>
-            </html>
+  </html>
