@@ -71,7 +71,6 @@
     }
 
     .welcome {
-      text-align: center;
       padding: 45px 20px;
       background: #fff5f8;
       border-radius: 25px;
@@ -114,7 +113,6 @@
     }
 
     .feature-section {
-      text-align: center;
       padding: 45px 20px;
       margin: 25px auto;
       max-width: 900px;
@@ -201,6 +199,19 @@
       margin-top: 15px;
     }
 
+    .registry-list {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .registry-item {
+      background: #fff5f8;
+      padding: 15px;
+      border-radius: 15px;
+      margin-bottom: 12px;
+      color: #7a3b55;
+    }
+
     @media (max-width: 600px) {
       .feature-grid {
         grid-template-columns: 1fr;
@@ -220,14 +231,12 @@
 
 <body id="top">
 
-  <!-- Navigation -->
   <nav class="main-nav">
     <a href="#top">🏠 Home</a>
     <a href="#get-started">👶 Baby</a>
     <a href="#explore">🌱 Explore</a>
   </nav>
 
-  <!-- Banner -->
   <div class="banner">
     <div class="banner-side">♡ ♥ ♡</div>
 
@@ -239,7 +248,6 @@
     <div class="banner-side">🌱</div>
   </div>
 
-  <!-- Welcome -->
   <section class="welcome">
     <h2>Welcome to MotherNest 💗</h2>
 
@@ -288,6 +296,10 @@
         <p>
           Create a list of things you and your baby need.
         </p>
+
+        <button onclick="document.getElementById('registry').scrollIntoView()">
+          Open Registry
+        </button>
       </div>
 
       <div class="feature-card">
@@ -320,52 +332,40 @@
 
     <div class="feature-grid">
 
-      <!-- Feeding -->
       <div class="feature-card">
         <h3>🍼 Feeding</h3>
 
-        <p>
-          Keep track of feeding times and notes.
-        </p>
+        <p>Keep track of feeding times and notes.</p>
 
         <button onclick="document.getElementById('feeding-tracker').scrollIntoView()">
           Open Feeding Tracker
         </button>
       </div>
 
-      <!-- Diapers -->
       <div class="feature-card">
         <h3>🧷 Diapers</h3>
 
-        <p>
-          Keep track of diaper changes throughout the day.
-        </p>
+        <p>Keep track of diaper changes throughout the day.</p>
 
         <button onclick="document.getElementById('diaper-tracker').scrollIntoView()">
           Open Diaper Tracker
         </button>
       </div>
 
-      <!-- Milestones -->
       <div class="feature-card">
         <h3>🌱 Milestones</h3>
 
-        <p>
-          Keep track of important developmental milestones.
-        </p>
+        <p>Keep track of important developmental milestones.</p>
 
         <button onclick="document.getElementById('milestones-tracker').scrollIntoView()">
           Open Milestones
         </button>
       </div>
 
-      <!-- Appointments -->
       <div class="feature-card">
         <h3>📅 Appointments</h3>
 
-        <p>
-          Keep important baby appointments organized.
-        </p>
+        <p>Keep important baby appointments organized.</p>
 
         <button onclick="document.getElementById('appointments-tracker').scrollIntoView()">
           Open Appointments
@@ -373,6 +373,57 @@
       </div>
 
     </div>
+  </section>
+
+  <!-- Registry -->
+  <section id="registry" class="feature-section">
+
+    <h2>🛍️ Baby Registry</h2>
+
+    <p>
+      Create a simple list of things you and your baby need.
+    </p>
+
+    <div class="tracker-box">
+
+      <h3>Add a Registry Item</h3>
+
+      <label for="registry-item">
+        Item:
+      </label>
+
+      <input
+        type="text"
+        id="registry-item"
+        placeholder="Example: Bassinet"
+      >
+
+      <br><br>
+
+      <label for="registry-quantity">
+        Quantity:
+      </label>
+
+      <input
+        type="number"
+        id="registry-quantity"
+        min="1"
+        value="1"
+      >
+
+      <br><br>
+
+      <button onclick="addRegistryItem()">
+        Add to Registry
+      </button>
+
+      <p id="registry-message" class="message"></p>
+
+    </div>
+
+    <div id="registry-list" class="registry-list">
+    </div>
+
   </section>
 
   <!-- Milestones -->
@@ -465,4 +516,21 @@
         Save Appointment
       </button>
 
-      <p id="appointment-message"
+      <p id="appointment-message" class="message"></p>
+
+    </div>
+
+  </section>
+
+  <!-- Feeding -->
+  <section id="feeding-tracker" class="feature-section">
+
+    <h2>🍼 Feeding Tracker</h2>
+
+    <p>Keep a simple record of your baby's feeding.</p>
+
+    <div class="tracker-box">
+
+      <h3>Today's Feeding</h3>
+
+      <label for="feeding-time
