@@ -347,12 +347,22 @@
     </div>
 
   </section>
+<script>
+  function saveFeeding() {
+    const time = document.getElementById("feeding-time").value;
+    const notes = document.getElementById("feeding-notes").value;
 
-  <script>
-    function saveFeeding() {
+    if (time === "") {
       document.getElementById("feeding-message").textContent =
-        "Feeding entry saved! 🍼💗";
+        "Please enter a feeding time. 🍼";
+      return;
     }
-  </script>
+
+    document.getElementById("feeding-message").textContent =
+      "Feeding saved! 🍼💗 Time: " + time +
+      (notes ? " — " + notes : "");
+  }
+</script>
+  
 </body>
 </html>
