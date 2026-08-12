@@ -368,6 +368,59 @@
       (notes ? " — " + notes : "");
   }
 </script>
+  <!-- Diaper Tracker -->
+<section id="diaper-tracker" class="feature-section">
+
+  <h2>🧷 Diaper Tracker</h2>
+
+  <p>Keep a simple record of your baby's diaper changes.</p>
+
+  <div class="feature-card">
+
+    <h3>Today's Diaper Change</h3>
+
+    <label for="diaper-time">Time:</label>
+    <input type="time" id="diaper-time">
+
+    <br><br>
+
+    <label for="diaper-notes">Notes:</label>
+    <br>
+
+    <textarea
+      id="diaper-notes"
+      rows="4"
+      placeholder="Add a note..."
+    ></textarea>
+
+    <br><br>
+
+    <button onclick="saveDiaper()">
+      Save Diaper Change
+    </button>
+
+    <p id="diaper-message"></p>
+
+  </div>
+
+</section>
+
+<script>
+  function saveDiaper() {
+    const time = document.getElementById("diaper-time").value;
+    const notes = document.getElementById("diaper-notes").value;
+
+    if (time === "") {
+      document.getElementById("diaper-message").textContent =
+        "Please enter a diaper change time. 🧷";
+      return;
+    }
+
+    document.getElementById("diaper-message").textContent =
+      "Diaper change saved! 🧷💗 Time: " + time +
+      (notes ? " — " + notes : "");
+  }
+</script>
   
 </body>
 </html>
