@@ -404,7 +404,54 @@
     </div>
 
   </section>
+  <!-- Milestones Tracker -->
+  <section id="milestones-tracker" class="feature-section">
 
+    <h2>🌱 Baby Milestones</h2>
+
+    <p>
+      Keep track of special moments and milestones as your baby grows.
+    </p>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <h3>😊 Social</h3>
+        <p>Record smiles, sounds, and new ways your baby interacts.</p>
+        <button onclick="saveMilestone('Social')">
+          Mark Complete
+        </button>
+      </div>
+
+      <div class="feature-card">
+        <h3>🧸 Movement</h3>
+        <p>Record new movements, sitting, crawling, or other progress.</p>
+        <button onclick="saveMilestone('Movement')">
+          Mark Complete
+        </button>
+      </div>
+
+      <div class="feature-card">
+        <h3>👀 Learning</h3>
+        <p>Record new sounds, reactions, and things your baby discovers.</p>
+        <button onclick="saveMilestone('Learning')">
+          Mark Complete
+        </button>
+      </div>
+
+      <div class="feature-card">
+        <h3>💗 Special Moment</h3>
+        <p>Save a special milestone you want to remember.</p>
+        <button onclick="saveMilestone('Special Moment')">
+          Mark Complete
+        </button>
+      </div>
+
+    </div>
+
+    <p id="milestone-message" class="message"></p>
+
+  </section>
   <!-- Feeding Tracker -->
   <section id="feeding-tracker" class="feature-section">
 
@@ -551,6 +598,11 @@
         time +
         (notes ? " — " + notes : "");
 
+      }
+
+    function saveMilestone(type) {
+      document.getElementById("milestone-message").textContent =
+        type + " milestone saved! 🌱💗";
     }
 
   </script>
