@@ -310,5 +310,48 @@
     </div>
 
   </section>
+    <!-- Feeding Tracker -->
+  <section id="feeding-tracker" class="feature-section">
+
+    <h2>🍼 Feeding Tracker</h2>
+
+    <p>Keep a simple record of your baby's feeding.</p>
+
+    <div class="feature-card">
+
+      <h3>Today's Feeding</h3>
+
+      <label for="feeding-time">Time:</label>
+      <input type="time" id="feeding-time">
+
+      <br><br>
+
+      <label for="feeding-notes">Notes:</label>
+      <br>
+
+      <textarea
+        id="feeding-notes"
+        rows="4"
+        placeholder="Add a note..."
+      ></textarea>
+
+      <br><br>
+
+      <button onclick="saveFeeding()">
+        Save Feeding
+      </button>
+
+      <p id="feeding-message"></p>
+
+    </div>
+
+  </section>
+
+  <script>
+    function saveFeeding() {
+      document.getElementById("feeding-message").textContent =
+        "Feeding entry saved! 🍼💗";
+    }
+  </script>
 </body>
 </html>
