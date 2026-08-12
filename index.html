@@ -167,7 +167,8 @@
     }
 
     input,
-    textarea {
+    textarea,
+    select {
       width: 100%;
       box-sizing: border-box;
       padding: 12px;
@@ -187,14 +188,20 @@
       margin-top: 15px;
     }
 
-    .registry-item {
+    .registry-item,
+    .market-item {
       background: white;
       margin: 12px auto;
-      padding: 15px;
+      padding: 18px;
       max-width: 600px;
       border-radius: 15px;
       color: #7a3b55;
       box-shadow: 0 3px 8px rgba(201,79,118,0.1);
+    }
+
+    .market-item h3 {
+      color: #c94f76;
+      margin-top: 0;
     }
 
     @media (max-width: 600px) {
@@ -216,11 +223,12 @@
 
 <body id="home">
 
-  <!-- TOP NAVIGATION -->
+  <!-- MAIN NAVIGATION -->
   <nav class="main-nav">
     <a href="#home">🏠 Home</a>
     <a href="#baby-tracker">👶 Baby</a>
-    <a href="#registry">🛍️ Registry</a>
+    <a href="#registry-section">🛍️ Registry</a>
+    <a href="#marketplace-section">🏪 Marketplace</a>
     <a href="#explore">🌱 Explore</a>
   </nav>
 
@@ -253,9 +261,81 @@
         👶 Get Started
       </button>
 
-      <button onclick="goTo('registry')">
+      <button onclick="goTo('registry-section')">
         🛍️ Open Registry
       </button>
+
+      <button onclick="goTo('marketplace-section')">
+        🏪 Open Marketplace
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- GET STARTED -->
+  <section id="get-started" class="feature-section">
+
+    <h2>🌷 Get Started with MotherNest</h2>
+
+    <p>
+      Everything you need to support your journey through motherhood,
+      all in one place.
+    </p>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+
+        <h3>👶 Baby Tracker</h3>
+
+        <p>
+          Keep track of feeding, diapers, milestones, and appointments.
+        </p>
+
+        <button onclick="goTo('baby-tracker')">
+          Open Baby Tracker
+        </button>
+
+      </div>
+
+      <div class="feature-card">
+
+        <h3>🛍️ Registry</h3>
+
+        <p>
+          Create a list of things you and your baby need.
+        </p>
+
+        <button onclick="goTo('registry-section')">
+          Open Registry
+        </button>
+
+      </div>
+
+      <div class="feature-card">
+
+        <h3>🏪 Marketplace</h3>
+
+        <p>
+          Discover baby items and connect with other families.
+        </p>
+
+        <button onclick="goTo('marketplace-section')">
+          Open Marketplace
+        </button>
+
+      </div>
+
+      <div class="feature-card">
+
+        <h3>🏥 Health & Care</h3>
+
+        <p>
+          Keep important healthcare information organized.
+        </p>
+
+      </div>
 
     </div>
 
@@ -335,7 +415,7 @@
   <!-- REGISTRY -->
   <section id="registry-section" class="feature-section">
 
-    <a href="#registry-section">🛍️ Registry</a>
+    <h2>🛍️ Baby Registry</h2>
 
     <p>
       Create a list of things you and your baby need.
@@ -380,8 +460,80 @@
 
     <h3>💗 My Registry</h3>
 
-    <div id="registry-list">
+    <div id="registry-list"></div>
+
+  </section>
+
+  <!-- MARKETPLACE -->
+  <section id="marketplace-section" class="feature-section">
+
+    <h2>🏪 MotherNest Marketplace</h2>
+
+    <p>
+      Discover baby items from other families.
+    </p>
+
+    <div class="feature-grid">
+
+      <div class="market-item">
+
+        <h3>🍼 Baby Feeding Supplies</h3>
+
+        <p>
+          Find bottles, feeding supplies, and baby essentials.
+        </p>
+
+        <button onclick="showMarketplaceMessage('Baby Feeding Supplies')">
+          View Item
+        </button>
+
+      </div>
+
+      <div class="market-item">
+
+        <h3>👕 Baby Clothes</h3>
+
+        <p>
+          Browse baby clothing and everyday essentials.
+        </p>
+
+        <button onclick="showMarketplaceMessage('Baby Clothes')">
+          View Item
+        </button>
+
+      </div>
+
+      <div class="market-item">
+
+        <h3>🛏️ Nursery Items</h3>
+
+        <p>
+          Discover nursery items and baby furniture.
+        </p>
+
+        <button onclick="showMarketplaceMessage('Nursery Items')">
+          View Item
+        </button>
+
+      </div>
+
+      <div class="market-item">
+
+        <h3>🧸 Baby Toys</h3>
+
+        <p>
+          Discover toys and items for your growing baby.
+        </p>
+
+        <button onclick="showMarketplaceMessage('Baby Toys')">
+          View Item
+        </button>
+
+      </div>
+
     </div>
+
+    <p id="marketplace-message" class="message"></p>
 
   </section>
 
@@ -581,37 +733,23 @@
       of parenting.
     </p>
 
-    <div class="feature-grid">
-
-      <div class="feature-card">
-        <h3>💗 Family Support</h3>
-        <p>
-          Helpful tools and resources for growing families.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <h3>🏪 Marketplace</h3>
-        <p>
-          Discover baby items and connect with other families.
-        </p>
-      </div>
-
-    </div>
-
   </section>
 
   <!-- JAVASCRIPT -->
   <script>
 
     function goTo(sectionId) {
-      const section = document.getElementById(sectionId);
+
+      const section =
+        document.getElementById(sectionId);
 
       if (section) {
+
         section.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
+
       }
     }
 
@@ -635,10 +773,14 @@
       const newItem =
         document.createElement("div");
 
-      newItem.className = "registry-item";
+      newItem.className =
+        "registry-item";
 
       newItem.textContent =
-        "🛍️ " + item + " — Quantity: " + quantity;
+        "🛍️ " +
+        item +
+        " — Quantity: " +
+        quantity;
 
       document
         .getElementById("registry-list")
@@ -647,9 +789,19 @@
       document.getElementById("registry-message").textContent =
         "Item added to your registry! 💗";
 
-      document.getElementById("registry-item").value = "";
+      document.getElementById("registry-item").value =
+        "";
 
-      document.getElementById("registry-quantity").value = "1";
+      document.getElementById("registry-quantity").value =
+        "1";
+    }
+
+
+    function showMarketplaceMessage(item) {
+
+      document.getElementById("marketplace-message").textContent =
+        item +
+        " selected! 🏪💗 Marketplace item pages are coming next.";
     }
 
 
@@ -702,7 +854,8 @@
     function saveMilestone(type) {
 
       document.getElementById("milestone-message").textContent =
-        type + " milestone saved! 🌱💗";
+        type +
+        " milestone saved! 🌱💗";
     }
 
 
@@ -736,4 +889,4 @@
   </script>
 
 </body>
-  </html>
+            </html>
