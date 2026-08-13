@@ -178,11 +178,12 @@
 
     .registry-item {
       background: white;
-      padding: 16px;
+      padding: 18px;
       margin: 10px auto;
       max-width: 600px;
       border-radius: 15px;
       color: #7a3b55;
+      box-shadow: 0 3px 8px rgba(201,79,118,0.1);
     }
 
     .result-box {
@@ -461,7 +462,7 @@
   <h2>🛍️ Baby Registry</h2>
 
   <p>
-    Create a list of things you and your baby need.
+    Add the things you and your baby need.
   </p>
 
   <div class="tracker-box">
@@ -508,92 +509,16 @@
 </section>
 
 
-<!-- ================= MARKETPLACE ================= -->
+<!-- ================= REGISTRY OPTIONS ================= -->
 
-<section id="marketplace" class="feature-section">
+<section id="registry-options" class="feature-section">
 
-  <h2>🏪 MotherNest Marketplace</h2>
-
-  <p>
-    Find baby items and choose the type of item you want.
-  </p>
-
-  <div class="feature-grid">
-
-    <div class="market-item">
-
-      <h3>🍼 Feeding Supplies</h3>
-
-      <p>
-        Bottles, feeding supplies, and baby essentials.
-      </p>
-
-      <button onclick="openMarketCategory('Feeding Supplies')">
-        View Options
-      </button>
-
-    </div>
-
-
-    <div class="market-item">
-
-      <h3>👕 Baby Clothes</h3>
-
-      <p>
-        Baby clothing for everyday adventures.
-      </p>
-
-      <button onclick="openMarketCategory('Baby Clothes')">
-        View Options
-      </button>
-
-    </div>
-
-
-    <div class="market-item">
-
-      <h3>🛏️ Nursery Items</h3>
-
-      <p>
-        Cribs, bassinets, and nursery items.
-      </p>
-
-      <button onclick="openMarketCategory('Nursery Items')">
-        View Options
-      </button>
-
-    </div>
-
-
-    <div class="market-item">
-
-      <h3>🧸 Baby Toys</h3>
-
-      <p>
-        Toys and items for your growing baby.
-      </p>
-
-      <button onclick="openMarketCategory('Baby Toys')">
-        View Options
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= MARKETPLACE OPTIONS ================= -->
-
-<section id="market-options" class="feature-section">
-
-  <h2 id="market-title">
-    🏪 Marketplace Options
+  <h2 id="registry-options-title">
+    🛍️ Registry Options
   </h2>
 
   <p>
-    Choose how you would like to find this item.
+    Choose how you would like to find this registry item.
   </p>
 
   <div class="feature-grid">
@@ -603,10 +528,10 @@
       <h3>✨ New</h3>
 
       <p>
-        Browse brand-new baby items.
+        Find brand-new items from stores and online retailers.
       </p>
 
-      <button onclick="openMarketResults('New')">
+      <button onclick="openRegistryResults('New')">
         Browse New
       </button>
 
@@ -618,10 +543,10 @@
       <h3>♻️ Used</h3>
 
       <p>
-        Find gently used baby items.
+        Find gently used items from other families.
       </p>
 
-      <button onclick="openMarketResults('Used')">
+      <button onclick="openRegistryResults('Used')">
         Browse Used
       </button>
 
@@ -636,7 +561,7 @@
         Explore organic and natural options.
       </p>
 
-      <button onclick="openMarketResults('Organic')">
+      <button onclick="openRegistryResults('Organic')">
         Browse Organic
       </button>
 
@@ -646,520 +571,4 @@
 
   <br>
 
-  <button onclick="goTo('marketplace')">
-    ← Back to Marketplace
-  </button>
-
-</section>
-
-
-<!-- ================= MARKETPLACE RESULTS ================= -->
-
-<section id="market-results" class="feature-section">
-
-  <h2 id="results-title">
-    🛍️ Marketplace Results
-  </h2>
-
-  <p id="results-description">
-    Browse available options.
-  </p>
-
-
-  <div class="result-box">
-
-    <h3>
-      👶 MotherNest Marketplace
-    </h3>
-
-    <p id="result-message">
-      Your selected marketplace options will appear here.
-    </p>
-
-    <button onclick="saveMarketItem()">
-      💗 Save Item
-    </button>
-
-    <p id="saved-market-message" class="message"></p>
-
-  </div>
-
-
-  <button onclick="goTo('market-options')">
-    ← Back to Options
-  </button>
-
-  <button onclick="goTo('marketplace')">
-    🏪 Marketplace
-  </button>
-
-</section>
-
-
-<!-- ================= MILESTONES ================= -->
-
-<section id="milestones" class="feature-section">
-
-  <h2>🌱 Baby Milestones</h2>
-
-  <p>
-    Keep track of special moments as your baby grows.
-  </p>
-
-  <div class="feature-grid">
-
-    <div class="feature-card">
-
-      <h3>😊 Social</h3>
-
-      <p>
-        Record smiles, sounds, and interactions.
-      </p>
-
-      <button onclick="saveMilestone('Social')">
-        Mark Complete
-      </button>
-
-    </div>
-
-
-    <div class="feature-card">
-
-      <h3>🧸 Movement</h3>
-
-      <p>
-        Record new movements and progress.
-      </p>
-
-      <button onclick="saveMilestone('Movement')">
-        Mark Complete
-      </button>
-
-    </div>
-
-
-    <div class="feature-card">
-
-      <h3>👀 Learning</h3>
-
-      <p>
-        Record new sounds and discoveries.
-      </p>
-
-      <button onclick="saveMilestone('Learning')">
-        Mark Complete
-      </button>
-
-    </div>
-
-
-    <div class="feature-card">
-
-      <h3>💗 Special Moment</h3>
-
-      <p>
-        Save a special milestone.
-      </p>
-
-      <button onclick="saveMilestone('Special Moment')">
-        Mark Complete
-      </button>
-
-    </div>
-
-  </div>
-
-  <p id="milestone-message" class="message"></p>
-
-</section>
-
-
-<!-- ================= APPOINTMENTS ================= -->
-
-<section id="appointments" class="feature-section">
-
-  <h2>📅 Baby Appointments</h2>
-
-  <p>
-    Keep your baby's appointments organized.
-  </p>
-
-  <div class="tracker-box">
-
-    <h3>New Appointment</h3>
-
-    <label for="appointment-date">
-      Date:
-    </label>
-
-    <input
-      type="date"
-      id="appointment-date"
-    >
-
-    <br><br>
-
-    <label for="appointment-time">
-      Time:
-    </label>
-
-    <input
-      type="time"
-      id="appointment-time"
-    >
-
-    <br><br>
-
-    <label for="appointment-notes">
-      Notes:
-    </label>
-
-    <textarea
-      id="appointment-notes"
-      rows="4"
-      placeholder="Doctor, reason for visit, notes..."
-    ></textarea>
-
-    <br><br>
-
-    <button onclick="saveAppointment()">
-      Save Appointment
-    </button>
-
-    <p id="appointment-message" class="message"></p>
-
-  </div>
-
-</section>
-
-
-<!-- ================= FEEDING ================= -->
-
-<section id="feeding" class="feature-section">
-
-  <h2>🍼 Feeding Tracker</h2>
-
-  <p>
-    Keep a simple record of your baby's feeding.
-  </p>
-
-  <div class="tracker-box">
-
-    <h3>Today's Feeding</h3>
-
-    <label for="feeding-time">
-      Time:
-    </label>
-
-    <input
-      type="time"
-      id="feeding-time"
-    >
-
-    <br><br>
-
-    <label for="feeding-notes">
-      Notes:
-    </label>
-
-    <textarea
-      id="feeding-notes"
-      rows="4"
-      placeholder="Add a note..."
-    ></textarea>
-
-    <br><br>
-
-    <button onclick="saveFeeding()">
-      Save Feeding
-    </button>
-
-    <p id="feeding-message" class="message"></p>
-
-  </div>
-
-</section>
-
-
-<!-- ================= DIAPERS ================= -->
-
-<section id="diapers" class="feature-section">
-
-  <h2>🧷 Diaper Tracker</h2>
-
-  <p>
-    Keep a simple record of your baby's diaper changes.
-  </p>
-
-  <div class="tracker-box">
-
-    <h3>Today's Diaper Change</h3>
-
-    <label for="diaper-time">
-      Time:
-    </label>
-
-    <input
-      type="time"
-      id="diaper-time"
-    >
-
-    <br><br>
-
-    <label for="diaper-notes">
-      Notes:
-    </label>
-
-    <textarea
-      id="diaper-notes"
-      rows="4"
-      placeholder="Add a note..."
-    ></textarea>
-
-    <br><br>
-
-    <button onclick="saveDiaper()">
-      Save Diaper Change
-    </button>
-
-    <p id="diaper-message" class="message"></p>
-
-  </div>
-
-</section>
-
-
-<!-- ================= EXPLORE ================= -->
-
-<section id="explore" class="feature-section">
-
-  <h2>🌱 Explore MotherNest</h2>
-
-  <p>
-    MotherNest is designed to grow with families through every stage
-    of parenting.
-  </p>
-
-</section>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-  function goTo(sectionId) {
-
-    const section = document.getElementById(sectionId);
-
-    if (section) {
-
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-    }
-
-  }
-
-
-  /* REGISTRY */
-
-  function addRegistryItem() {
-
-    const item =
-      document.getElementById("registry-item").value.trim();
-
-    const quantity =
-      document.getElementById("registry-quantity").value;
-
-    if (item === "") {
-
-      document.getElementById("registry-message").textContent =
-        "Please enter an item first. 🛍️";
-
-      return;
-
-    }
-
-    const newItem =
-      document.createElement("div");
-
-    newItem.className =
-      "registry-item";
-
-    newItem.textContent =
-      "🛍️ " +
-      item +
-      " — Quantity: " +
-      quantity;
-
-    document
-      .getElementById("registry-list")
-      .appendChild(newItem);
-
-    document.getElementById("registry-message").textContent =
-      "Item added to your registry! 💗";
-
-    document.getElementById("registry-item").value = "";
-
-    document.getElementById("registry-quantity").value = "1";
-
-  }
-
-
-  /* MARKETPLACE */
-
-  let selectedMarketCategory = "";
-
-
-  function openMarketCategory(category) {
-
-    selectedMarketCategory = category;
-
-    document.getElementById("market-title").textContent =
-      "🏪 " + category;
-
-    goTo("market-options");
-
-  }
-
-
-  function openMarketResults(type) {
-
-    document.getElementById("results-title").textContent =
-      "🛍️ " +
-      selectedMarketCategory +
-      " — " +
-      type;
-
-    document.getElementById("results-description").textContent =
-      "Here are your " +
-      type.toLowerCase() +
-      " options for " +
-      selectedMarketCategory +
-      ".";
-
-    document.getElementById("result-message").textContent =
-      "Browse " +
-      type.toLowerCase() +
-      " " +
-      selectedMarketCategory +
-      " items here. More marketplace listings can be connected to this page later.";
-
-    document.getElementById("saved-market-message").textContent =
-      "";
-
-    goTo("market-results");
-
-  }
-
-
-  function saveMarketItem() {
-
-    document.getElementById("saved-market-message").textContent =
-      "Item saved to your MotherNest favorites! 💗";
-
-  }
-
-
-  /* FEEDING */
-
-  function saveFeeding() {
-
-    const time =
-      document.getElementById("feeding-time").value;
-
-    const notes =
-      document.getElementById("feeding-notes").value;
-
-    if (time === "") {
-
-      document.getElementById("feeding-message").textContent =
-        "Please enter a feeding time. 🍼";
-
-      return;
-
-    }
-
-    document.getElementById("feeding-message").textContent =
-      "Feeding saved! 🍼💗 Time: " +
-      time +
-      (notes ? " — " + notes : "");
-
-  }
-
-
-  /* DIAPERS */
-
-  function saveDiaper() {
-
-    const time =
-      document.getElementById("diaper-time").value;
-
-    const notes =
-      document.getElementById("diaper-notes").value;
-
-    if (time === "") {
-
-      document.getElementById("diaper-message").textContent =
-        "Please enter a diaper change time. 🧷";
-
-      return;
-
-    }
-
-    document.getElementById("diaper-message").textContent =
-      "Diaper change saved! 🧷💗 Time: " +
-      time +
-      (notes ? " — " + notes : "");
-
-  }
-
-
-  /* MILESTONES */
-
-  function saveMilestone(type) {
-
-    document.getElementById("milestone-message").textContent =
-      type +
-      " milestone saved! 🌱💗";
-
-  }
-
-
-  /* APPOINTMENTS */
-
-  function saveAppointment() {
-
-    const date =
-      document.getElementById("appointment-date").value;
-
-    const time =
-      document.getElementById("appointment-time").value;
-
-    const notes =
-      document.getElementById("appointment-notes").value;
-
-    if (date === "" || time === "") {
-
-      document.getElementById("appointment-message").textContent =
-        "Please enter an appointment date and time. 📅";
-
-      return;
-
-    }
-
-    document.getElementById("appointment-message").textContent =
-      "Appointment saved! 📅💗 " +
-      date +
-      " at " +
-      time +
-      (notes ? " — " + notes : "");
-
-  }
-
-</script>
-
-</body>
-  </html>
+ 
