@@ -156,7 +156,8 @@
     }
 
     input,
-    textarea {
+    textarea,
+    select {
       width: 100%;
       box-sizing: border-box;
       padding: 12px;
@@ -199,6 +200,28 @@
       color: #c94f76;
     }
 
+    .health-card {
+      background: white;
+      padding: 22px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(201,79,118,0.12);
+    }
+
+    .emergency-card {
+      background: #fff;
+      border: 2px solid #f0b8c9;
+      padding: 25px;
+      border-radius: 20px;
+      max-width: 650px;
+      margin: 25px auto;
+      text-align: left;
+    }
+
+    .emergency-card h3 {
+      color: #c94f76;
+      text-align: center;
+    }
+
     @media (max-width: 600px) {
       .feature-grid {
         grid-template-columns: 1fr;
@@ -227,25 +250,17 @@
 
 <nav class="main-nav">
 
-  <button onclick="goTo('home')">
-    🏠 Home
-  </button>
+  <button onclick="goTo('home')">🏠 Home</button>
 
-  <button onclick="goTo('baby-tracker')">
-    👶 Baby
-  </button>
+  <button onclick="goTo('baby-tracker')">👶 Baby</button>
 
-  <button onclick="goTo('registry')">
-    🛍️ Registry
-  </button>
+  <button onclick="goTo('registry')">🛍️ Registry</button>
 
-  <button onclick="goTo('marketplace')">
-    🏪 Marketplace
-  </button>
+  <button onclick="goTo('marketplace')">🏪 Marketplace</button>
 
-  <button onclick="goTo('explore')">
-    🌱 Explore
-  </button>
+  <button onclick="goTo('health')">🏥 Health</button>
+
+  <button onclick="goTo('explore')">🌱 Explore</button>
 
 </nav>
 
@@ -256,9 +271,7 @@
 
   <div class="banner">
 
-    <div class="banner-side">
-      ♡ ♥ ♡
-    </div>
+    <div class="banner-side">♡ ♥ ♡</div>
 
     <div>
       <h1>MotherNest</h1>
@@ -268,18 +281,14 @@
       </p>
     </div>
 
-    <div class="banner-side">
-      🌱
-    </div>
+    <div class="banner-side">🌱</div>
 
   </div>
 
 
   <div class="welcome">
 
-    <h2>
-      Welcome to MotherNest 💗
-    </h2>
+    <h2>Welcome to MotherNest 💗</h2>
 
     <p>
       A safe, supportive place for mothers, babies, and growing families.
@@ -299,78 +308,9 @@
         🏪 Marketplace
       </button>
 
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= GET STARTED ================= -->
-
-<section id="get-started" class="feature-section">
-
-  <h2>🌷 Get Started with MotherNest</h2>
-
-  <p>
-    Everything you need to support your journey through motherhood,
-    all in one place.
-  </p>
-
-  <div class="feature-grid">
-
-    <div class="feature-card">
-
-      <h3>👶 Baby Tracker</h3>
-
-      <p>
-        Keep track of feeding, diapers, milestones, and appointments.
-      </p>
-
-      <button onclick="goTo('baby-tracker')">
-        Open Baby Tracker
+      <button onclick="goTo('health')">
+        🏥 Health
       </button>
-
-    </div>
-
-
-    <div class="feature-card">
-
-      <h3>🛍️ Registry</h3>
-
-      <p>
-        Create a list of things you and your baby need.
-      </p>
-
-      <button onclick="goTo('registry')">
-        Open Registry
-      </button>
-
-    </div>
-
-
-    <div class="feature-card">
-
-      <h3>🏪 Marketplace</h3>
-
-      <p>
-        Discover baby items and connect with other families.
-      </p>
-
-      <button onclick="goTo('marketplace')">
-        Open Marketplace
-      </button>
-
-    </div>
-
-
-    <div class="feature-card">
-
-      <h3>🏥 Health & Care</h3>
-
-      <p>
-        Keep important healthcare information organized.
-      </p>
 
     </div>
 
@@ -392,7 +332,6 @@
   <div class="feature-grid">
 
     <div class="feature-card">
-
       <h3>🍼 Feeding</h3>
 
       <p>
@@ -402,12 +341,10 @@
       <button onclick="goTo('feeding')">
         Open Feeding Tracker
       </button>
-
     </div>
 
 
     <div class="feature-card">
-
       <h3>🧷 Diapers</h3>
 
       <p>
@@ -417,12 +354,10 @@
       <button onclick="goTo('diapers')">
         Open Diaper Tracker
       </button>
-
     </div>
 
 
     <div class="feature-card">
-
       <h3>🌱 Milestones</h3>
 
       <p>
@@ -432,12 +367,10 @@
       <button onclick="goTo('milestones')">
         Open Milestones
       </button>
-
     </div>
 
 
     <div class="feature-card">
-
       <h3>📅 Appointments</h3>
 
       <p>
@@ -447,7 +380,6 @@
       <button onclick="goTo('appointments')">
         Open Appointments
       </button>
-
     </div>
 
   </div>
@@ -469,9 +401,7 @@
 
     <h3>Add Something to Your Registry</h3>
 
-    <label for="registry-item">
-      Item:
-    </label>
+    <label for="registry-item">Item:</label>
 
     <input
       type="text"
@@ -481,9 +411,7 @@
 
     <br><br>
 
-    <label for="registry-quantity">
-      Quantity:
-    </label>
+    <label for="registry-quantity">Quantity:</label>
 
     <input
       type="number"
@@ -518,7 +446,7 @@
   </h2>
 
   <p>
-    Choose how you would like to find this registry item.
+    Choose how you would like to find this item.
   </p>
 
   <div class="feature-grid">
@@ -528,7 +456,7 @@
       <h3>✨ New</h3>
 
       <p>
-        Find brand-new items from stores and online retailers.
+        Find brand-new items.
       </p>
 
       <button onclick="openRegistryResults('New')">
@@ -543,7 +471,7 @@
       <h3>♻️ Used</h3>
 
       <p>
-        Find gently used items from other families.
+        Find gently used items.
       </p>
 
       <button onclick="openRegistryResults('Used')">
@@ -571,4 +499,678 @@
 
   <br>
 
- 
+  <button onclick="goTo('registry')">
+    ← Back to Registry
+  </button>
+
+</section>
+
+
+<!-- ================= REGISTRY RESULTS ================= -->
+
+<section id="registry-results" class="feature-section">
+
+  <h2 id="registry-results-title">
+    🛍️ Registry Results
+  </h2>
+
+  <p id="registry-results-description">
+    Browse your selected options.
+  </p>
+
+  <div class="result-box">
+
+    <h3>💗 MotherNest Registry</h3>
+
+    <p id="registry-result-message">
+      Your selected options will appear here.
+    </p>
+
+    <button onclick="saveRegistryChoice()">
+      💗 Save Choice
+    </button>
+
+    <p id="registry-saved-message" class="message"></p>
+
+  </div>
+
+  <button onclick="goTo('registry-options')">
+    ← Back to Options
+  </button>
+
+  <button onclick="goTo('registry')">
+    🛍️ Back to Registry
+  </button>
+
+</section>
+
+
+<!-- ================= MARKETPLACE ================= -->
+
+<section id="marketplace" class="feature-section">
+
+  <h2>🏪 MotherNest Marketplace</h2>
+
+  <p>
+    Find baby items and choose the type of item you want.
+  </p>
+
+  <div class="feature-grid">
+
+    <div class="market-item">
+
+      <h3>🍼 Feeding Supplies</h3>
+
+      <p>
+        Bottles, feeding supplies, and baby essentials.
+      </p>
+
+      <button onclick="openMarketCategory('Feeding Supplies')">
+        View Options
+      </button>
+
+    </div>
+
+
+    <div class="market-item">
+
+      <h3>👕 Baby Clothes</h3>
+
+      <p>
+        Baby clothing for everyday adventures.
+      </p>
+
+      <button onclick="openMarketCategory('Baby Clothes')">
+        View Options
+      </button>
+
+    </div>
+
+
+    <div class="market-item">
+
+      <h3>🛏️ Nursery Items</h3>
+
+      <p>
+        Cribs, bassinets, and nursery items.
+      </p>
+
+      <button onclick="openMarketCategory('Nursery Items')">
+        View Options
+      </button>
+
+    </div>
+
+
+    <div class="market-item">
+
+      <h3>🧸 Baby Toys</h3>
+
+      <p>
+        Toys and items for your growing baby.
+      </p>
+
+      <button onclick="openMarketCategory('Baby Toys')">
+        View Options
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= MARKETPLACE OPTIONS ================= -->
+
+<section id="market-options" class="feature-section">
+
+  <h2 id="market-title">
+    🏪 Marketplace Options
+  </h2>
+
+  <p>
+    Choose how you would like to find this item.
+  </p>
+
+  <div class="feature-grid">
+
+    <div class="feature-card">
+      <h3>✨ New</h3>
+
+      <p>
+        Browse brand-new baby items.
+      </p>
+
+      <button onclick="openMarketResults('New')">
+        Browse New
+      </button>
+    </div>
+
+
+    <div class="feature-card">
+      <h3>♻️ Used</h3>
+
+      <p>
+        Find gently used baby items.
+      </p>
+
+      <button onclick="openMarketResults('Used')">
+        Browse Used
+      </button>
+    </div>
+
+
+    <div class="feature-card">
+      <h3>🌱 Organic</h3>
+
+      <p>
+        Explore organic and natural options.
+      </p>
+
+      <button onclick="openMarketResults('Organic')">
+        Browse Organic
+      </button>
+    </div>
+
+  </div>
+
+  <br>
+
+  <button onclick="goTo('marketplace')">
+    ← Back to Marketplace
+  </button>
+
+</section>
+
+
+<!-- ================= MARKETPLACE RESULTS ================= -->
+
+<section id="market-results" class="feature-section">
+
+  <h2 id="results-title">
+    🛍️ Marketplace Results
+  </h2>
+
+  <p id="results-description">
+    Browse available options.
+  </p>
+
+  <div class="result-box">
+
+    <h3>👶 MotherNest Marketplace</h3>
+
+    <p id="result-message">
+      Your selected marketplace options will appear here.
+    </p>
+
+    <button onclick="saveMarketItem()">
+      💗 Save Item
+    </button>
+
+    <p id="saved-market-message" class="message"></p>
+
+  </div>
+
+  <button onclick="goTo('market-options')">
+    ← Back to Options
+  </button>
+
+  <button onclick="goTo('marketplace')">
+    🏪 Marketplace
+  </button>
+
+</section>
+
+
+<!-- ================= HEALTH ================= -->
+
+<section id="health" class="feature-section">
+
+  <h2>🏥 Health & Care</h2>
+
+  <p>
+    Keep important healthcare information and resources organized.
+  </p>
+
+  <div class="feature-grid">
+
+    <div class="health-card">
+
+      <h3>🩺 Pediatrician</h3>
+
+      <p>
+        Save information about your baby's pediatrician.
+      </p>
+
+      <button onclick="goTo('pediatrician')">
+        Open Pediatrician
+      </button>
+
+    </div>
+
+
+    <div class="health-card">
+
+      <h3>🏥 Children's Hospital</h3>
+
+      <p>
+        Keep children's hospital information available.
+      </p>
+
+      <button onclick="goTo('hospital')">
+        Open Hospitals
+      </button>
+
+    </div>
+
+
+    <div class="health-card">
+
+      <h3>🚑 Urgent Care</h3>
+
+      <p>
+        Keep nearby urgent-care information organized.
+      </p>
+
+      <button onclick="goTo('urgent-care')">
+        Open Urgent Care
+      </button>
+
+    </div>
+
+
+    <div class="health-card">
+
+      <h3>💊 Pharmacy</h3>
+
+      <p>
+        Save your preferred pharmacy information.
+      </p>
+
+      <button onclick="goTo('pharmacy')">
+        Open Pharmacy
+      </button>
+
+    </div>
+
+
+    <div class="health-card">
+
+      <h3>🆘 Baby Emergency Card</h3>
+
+      <p>
+        Store important emergency information.
+      </p>
+
+      <button onclick="goTo('emergency-card')">
+        Open Emergency Card
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PEDIATRICIAN ================= -->
+
+<section id="pediatrician" class="feature-section">
+
+  <h2>🩺 Primary Pediatrician</h2>
+
+  <div class="tracker-box">
+
+    <label for="doctor-name">
+      Pediatrician Name:
+    </label>
+
+    <input
+      type="text"
+      id="doctor-name"
+      placeholder="Doctor's name"
+    >
+
+    <br><br>
+
+    <label for="doctor-office">
+      Office Name:
+    </label>
+
+    <input
+      type="text"
+      id="doctor-office"
+      placeholder="Pediatric office"
+    >
+
+    <br><br>
+
+    <label for="doctor-phone">
+      Phone:
+    </label>
+
+    <input
+      type="tel"
+      id="doctor-phone"
+      placeholder="Phone number"
+    >
+
+    <br><br>
+
+    <button onclick="savePediatrician()">
+      Save Pediatrician
+    </button>
+
+    <p id="doctor-message" class="message"></p>
+
+  </div>
+
+  <button onclick="goTo('health')">
+    ← Back to Health
+  </button>
+
+</section>
+
+
+<!-- ================= HOSPITAL ================= -->
+
+<section id="hospital" class="feature-section">
+
+  <h2>🏥 Children's Hospital</h2>
+
+  <div class="tracker-box">
+
+    <label for="hospital-name">
+      Hospital Name:
+    </label>
+
+    <input
+      type="text"
+      id="hospital-name"
+      placeholder="Hospital name"
+    >
+
+    <br><br>
+
+    <label for="hospital-phone">
+      Phone:
+    </label>
+
+    <input
+      type="tel"
+      id="hospital-phone"
+      placeholder="Hospital phone"
+    >
+
+    <br><br>
+
+    <label for="hospital-notes">
+      Notes:
+    </label>
+
+    <textarea
+      id="hospital-notes"
+      rows="4"
+      placeholder="Address or other important information..."
+    ></textarea>
+
+    <br><br>
+
+    <button onclick="saveHospital()">
+      Save Hospital
+    </button>
+
+    <p id="hospital-message" class="message"></p>
+
+  </div>
+
+  <button onclick="goTo('health')">
+    ← Back to Health
+  </button>
+
+</section>
+
+
+<!-- ================= URGENT CARE ================= -->
+
+<section id="urgent-care" class="feature-section">
+
+  <h2>🚑 Urgent Care</h2>
+
+  <div class="tracker-box">
+
+    <label for="urgent-name">
+      Urgent Care Name:
+    </label>
+
+    <input
+      type="text"
+      id="urgent-name"
+      placeholder="Urgent care name"
+    >
+
+    <br><br>
+
+    <label for="urgent-phone">
+      Phone:
+    </label>
+
+    <input
+      type="tel"
+      id="urgent-phone"
+      placeholder="Phone number"
+    >
+
+    <br><br>
+
+    <button onclick="saveUrgentCare()">
+      Save Urgent Care
+    </button>
+
+    <p id="urgent-message" class="message"></p>
+
+  </div>
+
+  <button onclick="goTo('health')">
+    ← Back to Health
+  </button>
+
+</section>
+
+
+<!-- ================= PHARMACY ================= -->
+
+<section id="pharmacy" class="feature-section">
+
+  <h2>💊 Pharmacy</h2>
+
+  <div class="tracker-box">
+
+    <label for="pharmacy-name">
+      Pharmacy Name:
+    </label>
+
+    <input
+      type="text"
+      id="pharmacy-name"
+      placeholder="Pharmacy name"
+    >
+
+    <br><br>
+
+    <label for="pharmacy-phone">
+      Phone:
+    </label>
+
+    <input
+      type="tel"
+      id="pharmacy-phone"
+      placeholder="Phone number"
+    >
+
+    <br><br>
+
+    <button onclick="savePharmacy()">
+      Save Pharmacy
+    </button>
+
+    <p id="pharmacy-message" class="message"></p>
+
+  </div>
+
+  <button onclick="goTo('health')">
+    ← Back to Health
+  </button>
+
+</section>
+
+
+<!-- ================= EMERGENCY CARD ================= -->
+
+<section id="emergency-card" class="feature-section">
+
+  <h2>🆘 Baby Emergency Card</h2>
+
+  <p>
+    Keep important information together for situations when it may be needed.
+  </p>
+
+  <div class="emergency-card">
+
+    <h3>Baby Information</h3>
+
+    <label for="baby-name">
+      Baby's Name:
+    </label>
+
+    <input
+      type="text"
+      id="baby-name"
+      placeholder="Baby's name"
+    >
+
+    <br><br>
+
+    <label for="blood-type">
+      Blood Type:
+    </label>
+
+    <select id="blood-type">
+      <option value="">Select if known</option>
+      <option>A+</option>
+      <option>A-</option>
+      <option>B+</option>
+      <option>B-</option>
+      <option>AB+</option>
+      <option>AB-</option>
+      <option>O+</option>
+      <option>O-</option>
+    </select>
+
+    <br><br>
+
+    <label for="allergies">
+      Allergies:
+    </label>
+
+    <textarea
+      id="allergies"
+      rows="3"
+      placeholder="List allergies if known..."
+    ></textarea>
+
+    <br><br>
+
+    <label for="emergency-contact">
+      Emergency Contact:
+    </label>
+
+    <input
+      type="text"
+      id="emergency-contact"
+      placeholder="Name and phone number"
+    >
+
+    <br><br>
+
+    <label for="emergency-doctor">
+      Doctor Information:
+    </label>
+
+    <textarea
+      id="emergency-doctor"
+      rows="3"
+      placeholder="Pediatrician and office information..."
+    ></textarea>
+
+    <br><br>
+
+    <button onclick="saveEmergencyCard()">
+      Save Emergency Card
+    </button>
+
+    <p id="emergency-message" class="message"></p>
+
+  </div>
+
+  <button onclick="goTo('health')">
+    ← Back to Health
+  </button>
+
+</section>
+
+
+<!-- ================= MILESTONES ================= -->
+
+<section id="milestones" class="feature-section">
+
+  <h2>🌱 Baby Milestones</h2>
+
+  <p>
+    Keep track of special moments as your baby grows.
+  </p>
+
+  <div class="feature-grid">
+
+    <div class="feature-card">
+      <h3>😊 Social</h3>
+
+      <p>
+        Record smiles, sounds, and interactions.
+      </p>
+
+      <button onclick="saveMilestone('Social')">
+        Mark Complete
+      </button>
+    </div>
+
+
+    <div class="feature-card">
+      <h3>🧸 Movement</h3>
+
+      <p>
+        Record new movements and progress.
+      </p>
+
+      <button onclick="saveMilestone('Movement')">
+        Mark Complete
+      </button>
+    </div>
+
+
+    <div class="feature-card">
+      <h3>👀 Learning</h3>
+
+      <p>
+        Record new sounds and discoveries.
+      </p>
+
+      <button onclick="saveMilestone('Learning')">
+        Mark Complete
+      </button>
+    </div>
+
+
+    <div class="feature-card">
+     
