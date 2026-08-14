@@ -1,809 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MotherNest 💗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>MotherNest</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff8fb;
-      color: #593747;
-    }
+<style>
 
-    .banner {
-      background: linear-gradient(135deg, #ffd6e5, #fff0f6);
-      padding: 25px 15px;
-      text-align: center;
-      border-bottom: 4px solid #f3b5cb;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .banner h1 {
-      margin: 0;
-      color: #c94f76;
-      font-size: 38px;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff8fb;
+  color: #543746;
+}
 
-    .banner p {
-      margin: 8px 0 0;
-      color: #7a3b55;
-      font-size: 16px;
-    }
+/* HEADER */
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      padding: 15px;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+header {
+  background: linear-gradient(135deg, #ffd9e5, #e9d8ff);
+  padding: 22px 15px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
 
-    .nav button,
-    .action-button,
-    .back-button {
-      border: none;
-      border-radius: 20px;
-      padding: 11px 16px;
-      background: #f5a9c2;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #b83f68;
+}
 
-    .nav button:hover,
-    .action-button:hover,
-    .back-button:hover {
-      background: #d96d91;
-    }
+header p {
+  margin: 7px 0 0;
+  font-size: 15px;
+}
 
-    .page {
-      display: none;
-      max-width: 1000px;
-      margin: auto;
-      padding: 25px 18px 50px;
-    }
+/* NAVIGATION */
 
-    .page.active {
-      display: block;
-    }
+nav {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
 
-    .welcome {
-      text-align: center;
-      padding: 40px 20px;
-      background: #fff0f6;
-      border-radius: 25px;
-      margin: 20px auto;
-    }
+nav button {
+  border: none;
+  background: #fff0f5;
+  color: #8c3c5b;
+  padding: 11px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+}
 
-    .welcome h2 {
-      color: #c94f76;
-      font-size: 30px;
-    }
+nav button:hover {
+  background: #ffd5e2;
+}
 
-    .welcome-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 25px;
-    }
+/* PAGES */
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 25px;
-    }
+.page {
+  display: none;
+  padding: 25px 16px;
+  max-width: 950px;
+  margin: auto;
+}
 
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+.page.active {
+  display: block;
+}
 
-    .card h3 {
-      color: #c94f76;
-      margin-top: 0;
-    }
+/* WELCOME */
 
-    .card button {
-      margin-top: 10px;
-      border: none;
-      border-radius: 15px;
-      padding: 9px 14px;
-      background: #f8c1d4;
-      color: #663347;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.welcome {
+  background: linear-gradient(135deg, #fff0f6, #f3edff);
+  padding: 35px 20px;
+  border-radius: 25px;
+  text-align: center;
+  margin-bottom: 25px;
+}
 
-    .card button:hover {
-      background: #ee9fbb;
-    }
+.welcome h2 {
+  font-size: 28px;
+  color: #b83f68;
+}
 
-    .search-box,
-    .registry-input {
-      width: 100%;
-      padding: 14px;
-      border: 2px solid #f2bdd0;
-      border-radius: 20px;
-      margin: 15px 0;
-      font-size: 16px;
-    }
+.welcome p {
+  font-size: 17px;
+  line-height: 1.6;
+}
 
-    .category-header {
-      text-align: center;
-      background: #fff0f6;
-      padding: 25px;
-      border-radius: 22px;
-      margin-bottom: 20px;
-    }
+/* BUTTONS */
 
-    .category-header h2 {
-      margin-top: 0;
-    }
+.primary-btn {
+  border: none;
+  background: #c94f76;
+  color: white;
+  padding: 13px 22px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+}
 
-    .notice {
-      background: #fff7d6;
-      padding: 15px;
-      border-radius: 15px;
-      margin-top: 20px;
-    }
+.secondary-btn {
+  border: none;
+  background: #eadcff;
+  color: #633f7a;
+  padding: 13px 22px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+}
 
-    .registry-item {
-      border: 2px solid #f4c4d5;
-      border-radius: 18px;
-      padding: 18px;
-      margin-top: 15px;
-      background: white;
-    }
+/* CARDS */
 
-    .registry-item h3 {
-      color: #c94f76;
-      margin-top: 0;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
 
-    .remove-button {
-      background: #e89ab4 !important;
-      color: white !important;
-    }
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.07);
+  border: 1px solid #f4dce5;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #ffe1ec;
-      color: #7a3b55;
-    }
+.card h3 {
+  margin-top: 0;
+  color: #b83f68;
+}
 
-    h2 {
-      color: #c94f76;
-    }
-  </style>
+.card p {
+  line-height: 1.5;
+}
+
+/* SECTION HEADER */
+
+.category-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.category-header h2 {
+  color: #b83f68;
+  font-size: 27px;
+}
+
+/* SEARCH */
+
+.search {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #e7cbd6;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* REGISTRY */
+
+.registry-input {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #edc9d7;
+  border-radius: 15px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.registry-list {
+  margin-top: 20px;
+}
+
+.registry-item {
+  background: white;
+  padding: 16px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,.06);
+}
+
+.delete-btn {
+  border: none;
+  background: #ffe1e8;
+  color: #a52e50;
+  padding: 7px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ASSISTANT */
+
+.assistant-box {
+  background: linear-gradient(135deg,#f4eaff,#fff1f6);
+  padding: 25px;
+  border-radius: 22px;
+  margin-bottom: 20px;
+}
+
+.assistant-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #dac9e8;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+.answer {
+  margin-top: 15px;
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  line-height: 1.6;
+}
+
+/* HEALTH */
+
+.health-card {
+  border-left: 5px solid #c94f76;
+}
+
+/* PROFILE */
+
+.profile {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  background: #ffdce7;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #876875;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  header h1 {
+    font-size: 27px;
+  }
+
+  .page {
+    padding: 20px 12px;
+  }
+
+  .welcome {
+    padding: 25px 15px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- BANNER -->
-  <div class="banner">
+<header>
+  <h1>🌸 MotherNest 🪺</h1>
+  <p>A place where mothers, babies, and families grow together.</p>
+</header>
 
-    <div style="font-size:28px;">
-      ♡ ♥ ♡
-    </div>
+<nav>
 
-    <h1>MotherNest 💗</h1>
+  <button onclick="goTo('home')">🏠 Home</button>
+
+  <button onclick="goTo('assistant')">
+    🤖 Baby Assistant
+  </button>
+
+  <button onclick="goTo('marketplace')">
+    🛍️ Marketplace
+  </button>
+
+  <button onclick="goTo('health')">
+    🏥 Health
+  </button>
+
+  <button onclick="goTo('registry')">
+    🎁 Registry
+  </button>
+
+  <button onclick="goTo('vault')">
+    🔐 Memory Vault
+  </button>
+
+  <button onclick="goTo('profile')">
+    👤 Profile
+  </button>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+  <div class="welcome">
+
+    <h2>Welcome to MotherNest 💗</h2>
 
     <p>
-      A place where mothers, babies, and communities grow together.
+      Your family deserves one simple place to organize,
+      prepare, learn, shop, and keep important memories.
     </p>
 
-    <div style="font-size:28px; margin-top:8px;">
-      🌱
+    <button
+      class="primary-btn"
+      onclick="goTo('assistant')">
+      Ask Baby Assistant
+    </button>
+
+    <button
+      class="secondary-btn"
+      onclick="goTo('registry')">
+      Build My Registry
+    </button>
+
+  </div>
+
+
+  <h2>🌷 Your MotherNest</h2>
+
+  <div class="grid">
+
+    <div class="card" onclick="goTo('assistant')">
+      <h3>🤖 Baby Assistant</h3>
+      <p>
+        Ask questions about preparing for baby,
+        milestones, routines, and more.
+      </p>
+    </div>
+
+    <div class="card" onclick="goTo('marketplace')">
+      <h3>🛍️ Marketplace</h3>
+      <p>
+        Browse baby items and discover new or
+        pre-loved products.
+      </p>
+    </div>
+
+    <div class="card" onclick="goTo('health')">
+      <h3>🏥 Health</h3>
+      <p>
+        Keep pediatrician information,
+        appointments, hospitals, and urgent care
+        information organized.
+      </p>
+    </div>
+
+    <div class="card" onclick="goTo('vault')">
+      <h3>🔐 Memory Vault</h3>
+      <p>
+        Keep important baby records and memories
+        organized in one place.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BABY ASSISTANT -->
+
+<section id="assistant" class="page">
+
+  <div class="category-header">
+
+    <h2>🤖 MotherNest Baby Assistant</h2>
+
+    <p>
+      Ask a question and MotherNest will give you
+      a helpful starting point.
+    </p>
+
+  </div>
+
+
+  <div class="assistant-box">
+
+    <input
+      id="assistantInput"
+      class="assistant-input"
+      placeholder="Example: What do I need before baby arrives?"
+    >
+
+    <br><br>
+
+    <button
+      class="primary-btn"
+      onclick="askAssistant()">
+      Ask MotherNest
+    </button>
+
+    <div
+      id="assistantAnswer"
+      class="answer"
+      style="display:none;">
     </div>
 
   </div>
 
 
-  <!-- NAVIGATION -->
-  <div class="nav">
+  <div class="grid">
 
-    <button onclick="goTo('home')">
-      🏠 Home
-    </button>
+    <div class="card"
+      onclick="assistantQuestion('What do I need before baby arrives?')">
 
-    <button onclick="goTo('assistant')">
-      🤖 Baby Assistant
-    </button>
+      <h3>🍼 Before Baby</h3>
 
-    <button onclick="goTo('marketplace')">
-      🛍️ Marketplace
-    </button>
+      <p>
+        Things families commonly prepare before
+        welcoming a baby.
+      </p>
 
-    <button onclick="goTo('health')">
-      🏥 Health
-    </button>
+    </div>
 
-    <button onclick="goTo('registry')">
-      🎁 Registry
-    </button>
 
-    <button onclick="goTo('profile')">
-      👤 Profile
-    </button>
+    <div class="card"
+      onclick="assistantQuestion('What should I know about baby milestones?')">
+
+      <h3>🌱 Milestones</h3>
+
+      <p>
+        Learn about common developmental milestones.
+      </p>
+
+    </div>
+
+
+    <div class="card"
+      onclick="assistantQuestion('Help me make a newborn budget')">
+
+      <h3>💰 Budget</h3>
+
+      <p>
+        Start organizing your baby-related expenses.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MARKETPLACE -->
+
+<section id="marketplace" class="page">
+
+  <div class="category-header">
+
+    <h2>🛍️ MotherNest Marketplace</h2>
+
+    <p>
+      Discover baby and family items.
+    </p>
 
   </div>
 
 
-  <!-- HOME -->
-  <section id="home" class="page active">
+  <input
+    class="search"
+    id="marketSearch"
+    onkeyup="searchMarket()"
+    placeholder="Search baby products..."
+  >
 
-    <div class="welcome">
 
-      <h2>
-        Welcome to MotherNest 💗
-      </h2>
+  <div class="grid" id="marketGrid">
 
-      <p>
-        A safe, supportive place for mothers, babies,
-        and growing families.
-      </p>
-
-      <div class="welcome-buttons">
-
-        <button
-          class="action-button"
-          onclick="goTo('assistant')">
-          Get Started
-        </button>
-
-        <button
-          class="action-button"
-          onclick="goTo('marketplace')">
-          Explore MotherNest
-        </button>
-
-      </div>
-
+    <div class="card market-item">
+      <h3>🍼 Feeding</h3>
+      <p>Bottles, feeding supplies, high chairs and more.</p>
+      <button class="secondary-btn">
+        Browse
+      </button>
     </div>
 
 
-    <div class="card-grid">
-
-      <div class="card">
-        <h3>🤖 Baby Assistant</h3>
-        <p>
-          Get helpful information about babies,
-          milestones, and parenting.
-        </p>
-        <button onclick="goTo('assistant')">
-          Open Assistant
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>🛍️ Marketplace</h3>
-        <p>
-          Explore baby products and family items.
-        </p>
-        <button onclick="goTo('marketplace')">
-          Visit Marketplace
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>🏥 Health</h3>
-        <p>
-          Keep important healthcare information organized.
-        </p>
-        <button onclick="goTo('health')">
-          Open Health
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>🎁 Registry</h3>
-        <p>
-          Keep track of things your family needs.
-        </p>
-        <button onclick="goTo('registry')">
-          Open Registry
-        </button>
-      </div>
-
+    <div class="card market-item">
+      <h3>👕 Baby Clothes</h3>
+      <p>New and pre-loved baby clothing.</p>
+      <button class="secondary-btn">
+        Browse
+      </button>
     </div>
 
-  </section>
+
+    <div class="card market-item">
+      <h3>🛏️ Nursery</h3>
+      <p>Cribs, bassinets, nursery furniture and more.</p>
+      <button class="secondary-btn">
+        Browse
+      </button>
+    </div>
 
 
-  <!-- BABY ASSISTANT -->
-  <section id="assistant" class="page">
+    <div class="card market-item">
+      <h3>🧸 Toys</h3>
+      <p>Age-appropriate toys and activities.</p>
+      <button class="secondary-btn">
+        Browse
+      </button>
+    </div>
 
-    <h2>
-      🤖 Baby Assistant
-    </h2>
+
+    <div class="card market-item">
+      <h3>🧴 Baby Care</h3>
+      <p>Bath, diapering and everyday baby care items.</p>
+      <button class="secondary-btn">
+        Browse
+      </button>
+    </div>
+
+
+    <div class="card market-item">
+      <h3>🌿 Organic</h3>
+      <p>Explore organic-focused baby products.</p>
+      <button class="secondary-btn">
+        Browse
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- HEALTH -->
+
+<section id="health" class="page">
+
+  <div class="category-header">
+
+    <h2>🏥 MotherNest Health</h2>
 
     <p>
-      What would you like help with today?
+      Keep your family's important health information organized.
     </p>
 
-    <input
-      class="search-box"
-      type="text"
-      placeholder="Ask MotherNest anything..."
-    >
-
-    <div class="card-grid">
-
-      <div class="card">
-        <h3>👶 Baby Milestones</h3>
-        <p>
-          Learn about common milestones by age.
-        </p>
-        <button>Explore</button>
-      </div>
-
-      <div class="card">
-        <h3>🍼 New Baby</h3>
-        <p>
-          Helpful information for preparing for baby.
-        </p>
-        <button>Explore</button>
-      </div>
-
-      <div class="card">
-        <h3>💰 Baby Budget</h3>
-        <p>
-          Organize your baby-related expenses.
-        </p>
-        <button>Explore</button>
-      </div>
-
-    </div>
-
-  </section>
+  </div>
 
 
-  <!-- MARKETPLACE -->
-  <section id="marketplace" class="page">
+  <div class="grid">
 
-    <div class="category-header">
+    <div class="card health-card">
 
-      <h2>
-        🛍️ MotherNest Marketplace
-      </h2>
+      <h3>👩‍⚕️ Pediatrician</h3>
 
       <p>
-        Find baby and family products in one place.
+        Save your pediatrician's office information
+        and important contact details.
       </p>
 
-    </div>
-
-    <input
-      class="search-box"
-      type="text"
-      placeholder="Search baby products..."
-    >
-
-    <div class="card-grid">
-
-      <div class="card">
-        <h3>🛏️ Cribs & Bassinets</h3>
-        <p>
-          Find sleeping essentials for baby.
-        </p>
-        <button onclick="goTo('cribs')">
-          View Items
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>🍼 Feeding</h3>
-        <p>
-          Bottles, feeding supplies, and accessories.
-        </p>
-        <button onclick="goTo('feeding')">
-          View Items
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>👕 Baby Clothes</h3>
-        <p>
-          Clothing and accessories for growing babies.
-        </p>
-        <button onclick="goTo('clothes')">
-          View Items
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>🧸 Toys</h3>
-        <p>
-          Toys and activities for little ones.
-        </p>
-        <button onclick="goTo('toys')">
-          View Items
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>♻️ Used Items</h3>
-        <p>
-          Explore gently used baby products.
-        </p>
-        <button onclick="goTo('used')">
-          View Used Items
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>🌱 Organic</h3>
-        <p>
-          Explore organic and family-friendly options.
-        </p>
-        <button onclick="goTo('organic')">
-          View Organic
-        </button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CRIBS -->
-  <section id="cribs" class="page">
-
-    <div class="category-header">
-
-      <h2>
-        🛏️ Cribs & Bassinets
-      </h2>
-
-      <p>
-        Choose the type of item you're looking for.
-      </p>
-
-      <button
-        class="back-button"
-        onclick="goTo('marketplace')">
-        ← Back to Marketplace
+      <button class="secondary-btn">
+        Add Pediatrician
       </button>
 
     </div>
 
-    <div class="card-grid">
 
-      <div class="card">
-        <h3>✨ New</h3>
-        <p>
-          Browse new cribs and bassinets.
-        </p>
-        <button>
-          Browse New
-        </button>
-      </div>
+    <div class="card health-card">
 
-      <div class="card">
-        <h3>♻️ Used</h3>
-        <p>
-          Explore gently used sleeping products.
-        </p>
-        <button onclick="goTo('used')">
-          Browse Used
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>🌱 Organic</h3>
-        <p>
-          Explore family-friendly options.
-        </p>
-        <button onclick="goTo('organic')">
-          Browse Organic
-        </button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FEEDING -->
-  <section id="feeding" class="page">
-
-    <div class="category-header">
-
-      <h2>
-        🍼 Feeding
-      </h2>
+      <h3>📅 Appointments</h3>
 
       <p>
-        Explore feeding products and supplies.
+        Keep upcoming appointments organized.
       </p>
 
-      <button
-        class="back-button"
-        onclick="goTo('marketplace')">
-        ← Back to Marketplace
+      <button class="secondary-btn">
+        Add Appointment
       </button>
 
     </div>
 
-    <div class="card-grid">
 
-      <div class="card">
-        <h3>🍼 Bottles</h3>
-        <p>
-          Explore bottles and bottle accessories.
-        </p>
-        <button>Browse</button>
-      </div>
+    <div class="card health-card">
 
-      <div class="card">
-        <h3>🥣 Feeding Supplies</h3>
-        <p>
-          Explore bowls, spoons, and feeding items.
-        </p>
-        <button>Browse</button>
-      </div>
-
-      <div class="card">
-        <h3>♻️ Used Feeding Items</h3>
-        <p>
-          Explore available used products.
-        </p>
-        <button onclick="goTo('used')">
-          Browse Used
-        </button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CLOTHES -->
-  <section id="clothes" class="page">
-
-    <div class="category-header">
-
-      <h2>
-        👕 Baby Clothes
-      </h2>
+      <h3>🏥 Children's Hospitals</h3>
 
       <p>
-        Explore clothing and accessories.
+        Keep important children's hospital information
+        easy to find.
       </p>
 
-      <button
-        class="back-button"
-        onclick="goTo('marketplace')">
-        ← Back to Marketplace
+      <button class="secondary-btn">
+        View Hospitals
       </button>
 
     </div>
 
-    <div class="card-grid">
 
-      <div class="card">
-        <h3>👶 Newborn</h3>
-        <p>
-          Clothing for newborn babies.
-        </p>
-        <button>Browse</button>
-      </div>
+    <div class="card health-card">
 
-      <div class="card">
-        <h3>🌸 Baby Clothes</h3>
-        <p>
-          Clothing and accessories.
-        </p>
-        <button>Browse</button>
-      </div>
-
-      <div class="card">
-        <h3>♻️ Used Clothes</h3>
-        <p>
-          Explore gently used clothing.
-        </p>
-        <button onclick="goTo('used')">
-          Browse Used
-        </button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- TOYS -->
-  <section id="toys" class="page">
-
-    <div class="category-header">
-
-      <h2>
-        🧸 Toys
-      </h2>
+      <h3>🚑 Urgent Care</h3>
 
       <p>
-        Explore toys and activities for little ones.
+        Keep urgent-care information available
+        when your family needs it.
       </p>
 
-      <button
-        class="back-button"
-        onclick="goTo('marketplace')">
-        ← Back to Marketplace
+      <button class="secondary-btn">
+        Find Care
       </button>
 
     </div>
 
-    <div class="card-grid">
 
-      <div class="card">
-        <h3>🧸 Soft Toys</h3>
-        <p>
-          Soft and cuddly toys.
-        </p>
-        <button>Browse</button>
-      </div>
+    <div class="card health-card">
 
-      <div class="card">
-        <h3>🧩 Learning Toys</h3>
-        <p>
-          Toys designed for learning and play.
-        </p>
-        <button>Browse</button>
-      </div>
-
-      <div class="card">
-        <h3>♻️ Used Toys</h3>
-        <p>
-          Explore gently used toys.
-        </p>
-        <button onclick="goTo('used')">
-          Browse Used
-        </button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- USED -->
-  <section id="used" class="page">
-
-    <div class="category-header">
-
-      <h2>
-        ♻️ Used Marketplace
-      </h2>
+      <h3>💊 Pharmacy</h3>
 
       <p>
-        Explore baby items listed as gently used.
+        Save your family's preferred pharmacy information.
       </p>
 
-      <button
-        class="back-button"
-        onclick="goTo('marketplace')">
-        ← Back to Marketplace
+      <button class="secondary-btn">
+        Add Pharmacy
       </button>
 
     </div>
 
-    <div class="card-grid">
 
-      <div class="card">
-        <h3>🛏️ Used Bassinet</h3>
-        <p>
-          Example marketplace listing.
-        </p>
-        <button>
-          View Item
-        </button>
-      </div>
+    <div class="card health-card">
 
-      <div class="card">
-        <h3>👕 Baby Clothes Bundle</h3>
-        <p>
-          Example marketplace listing.
-        </p>
-        <button>
-          View Item
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>🧸 Toy Bundle</h3>
-        <p>
-          Example marketplace listing.
-        </p>
-        <button>
-          View Item
-        </button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ORGANIC -->
-  <section id="organic" class="page">
-
-    <div class="category-header">
-
-      <h2>
-        🌱 Organic & Family-Friendly
-      </h2>
+      <h3>🧾 Health Records</h3>
 
       <p>
-        Explore organic and family-friendly options.
+        Organize important records and information.
       </p>
 
       <button
-        class="back-button"
-        onclick="goTo('marketplace')">
-        ← Back to Marketplace
+        class="secondary-btn"
+        onclick="goTo('vault')">
+        Open Vault
       </button>
 
     </div>
 
-    <div class="card-grid">
+  </div>
 
-      <div class="card">
-        <h3>🌱 Organic Baby Food</h3>
-        <p>
-          Explore organic food options.
-        </p>
-        <button>Browse</button>
-      </div>
-
-      <div class="card">
-        <h3>🌱 Organic Clothes</h3>
-        <p>
-          Explore organic fabric clothing options.
-        </p>
-        <button>Browse</button>
-      </div>
-
-      <div class="card">
-        <h3>🌱 Organic Baby Products</h3>
-        <p>
-          Explore family-friendly products.
-        </p>
-        <button>Browse</button>
-      </div>
-
-      <div class="card">
-        <h3>♻️ Used + Organic</h3>
-        <p>
-          Explore used products.
-        </p>
-        <button onclick="goTo('used')">
-          Browse Used
-        </button>
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <!-- REGISTRY -->
+<!-- REGISTRY -->
 
 <section id="registry" class="page">
 
@@ -822,317 +699,375 @@
     id="registryInput"
     class="registry-input"
     type="text"
-    placeholder="Example: Bassinet"
+    placeholder="Example: I need a bassinet"
   >
 
 
   <button
-    class="action-button"
-    onclick="showRegistryOptions()">
-    ➕ Add to My Registry
+    class="primary-btn"
+    onclick="addRegistryItem()">
+
+    Add To Registry
+
   </button>
 
 
-  <div id="registryOptions" style="display:none;">
-
-    <div class="category-header">
-
-      <h2 id="registryItemName">
-        💗 Choose an option
-      </h2>
-
-      <p>
-        How would you like to find this item?
-      </p>
-
-    </div>
+  <div
+    id="registryList"
+    class="registry-list">
+  </div>
 
 
-    <div class="card-grid">
+  <div class="card">
 
-      <div class="card">
+    <h3>💡 How the Registry Works</h3>
 
-        <h3>🆕 New</h3>
+    <p>
+      Add something your family needs. Later,
+      MotherNest can connect registry items with
+      marketplace listings and shopping options.
+    </p>
 
-        <p>
-          Browse new items from online stores.
-        </p>
+  </div>
 
-        <button>
-          Browse New
-        </button>
-
-      </div>
+</section>
 
 
-      <div class="card">
+<!-- MEMORY VAULT -->
 
-        <h3>♻️ Used</h3>
+<section id="vault" class="page">
 
-        <p>
-          Browse gently used items from the MotherNest
-          Marketplace.
-        </p>
+  <div class="category-header">
 
-        <button onclick="goTo('used')">
-          Browse Used
-        </button>
+    <h2>🔐 MotherNest Memory Vault</h2>
 
-      </div>
-
-
-      <div class="card">
-
-        <h3>🌱 Organic</h3>
-
-        <p>
-          Explore organic and family-friendly options.
-        </p>
-
-        <button onclick="goTo('organic')">
-          Browse Organic
-        </button>
-
-      </div>
-
-    </div>
+    <p>
+      A private place to organize important family information.
+    </p>
 
   </div>
 
 
-  <h2>
-    💗 My Registry
-  </h2>
+  <div class="grid">
 
-
-  <div id="registryList">
-
-    <div class="registry-item">
-
-      <h3>
-        🛏️ Bassinet
-      </h3>
-
+    <div class="card">
+      <h3>🍼 Feeding Log</h3>
       <p>
-        Example registry item.
+        Keep feeding information organized.
       </p>
-
-      <button onclick="showSavedItemOptions('Bassinet')">
-        View Options
+      <button class="secondary-btn">
+        Open
       </button>
+    </div>
 
+
+    <div class="card">
+      <h3>👶 Diaper Tracker</h3>
+      <p>
+        Keep track of diaper changes.
+      </p>
+      <button class="secondary-btn">
+        Open
+      </button>
+    </div>
+
+
+    <div class="card">
+      <h3>💊 Medicine Log</h3>
+      <p>
+        Organize medication information.
+      </p>
+      <button class="secondary-btn">
+        Open
+      </button>
+    </div>
+
+
+    <div class="card">
+      <h3>💉 Vaccine Records</h3>
+      <p>
+        Keep vaccine records organized.
+      </p>
+      <button class="secondary-btn">
+        Open
+      </button>
+    </div>
+
+
+    <div class="card">
+      <h3>📝 Baby Notes</h3>
+      <p>
+        Save special notes and memories.
+      </p>
+      <button class="secondary-btn">
+        Open
+      </button>
+    </div>
+
+
+    <div class="card">
+      <h3>🚨 Emergency Card</h3>
+      <p>
+        Organize emergency contacts,
+        allergies, doctor information and other
+        important details.
+      </p>
+      <button class="secondary-btn">
+        Open
+      </button>
     </div>
 
   </div>
 
 </section>
-  
-  <!-- HEALTH -->
-  <section id="health" class="page">
 
-    <h2>
-      🏥 MotherNest Health
-    </h2>
 
-    <p>
-      Keep important health and appointment
-      information organized.
-    </p>
+<!-- PROFILE -->
 
-    <div class="card-grid">
+<section id="profile" class="page">
 
-      <div class="card">
-        <h3>👩‍⚕️ Pediatrician</h3>
-        <p>
-          Keep your pediatrician information organized.
-        </p>
-        <button>Open</button>
-      </div>
+  <div class="profile">
 
-      <div class="card">
-        <h3>📅 Appointments</h3>
-        <p>
-          Keep track of upcoming appointments.
-        </p>
-        <button>Open</button>
-      </div>
-
-      <div class="card">
-        <h3>💊 Medicine Log</h3>
-        <p>
-          Keep important medicine information organized.
-        </p>
-        <button>Open</button>
-      </div>
-
-      <div class="card">
-        <h3>🚑 Emergency Card</h3>
-        <p>
-          Store important emergency information.
-        </p>
-        <button>Open</button>
-      </div>
-
-      <div class="card">
-        <h3>🏥 Children's Hospitals</h3>
-        <p>
-          Find children's healthcare resources.
-        </p>
-        <button>Explore</button>
-      </div>
-
-      <div class="card">
-        <h3>💉 Vaccine Log</h3>
-        <p>
-          Keep vaccination records organized.
-        </p>
-        <button>Open</button>
-      </div>
-
+    <div class="avatar">
+      👩‍🍼
     </div>
 
-  </section>
+    <h2>My MotherNest Profile</h2>
+
+    <p>
+      Welcome to your family space.
+    </p>
+
+    <button class="primary-btn">
+      Create Profile
+    </button>
+
+    <button class="secondary-btn">
+      Settings
+    </button>
+
+  </div>
 
 
-  <!-- PROFILE -->
-  <section id="profile" class="page">
+  <br>
 
-    <h2>
-      👤 My MotherNest Profile
-    </h2>
 
-    <div class="card-grid">
+  <div class="grid">
 
-      <div class="card">
-        <h3>🌸 My Profile</h3>
-        <p>
-          Set up your MotherNest profile.
-        </p>
-        <button>Open Profile</button>
-      </div>
-
-      <div class="card">
-        <h3>👶 Baby Information</h3>
-        <p>
-          Organize your baby's basic information.
-        </p>
-        <button>Open</button>
-      </div>
-
-      <div class="card">
-        <h3>🔔 Notifications</h3>
-        <p>
-          View your MotherNest notifications.
-        </p>
-        <button>View</button>
-      </div>
-
-      <div class="card">
-        <h3>⚙️ Settings</h3>
-        <p>
-          Manage your MotherNest settings.
-        </p>
-        <button>Open Settings</button>
-      </div>
-
+    <div class="card">
+      <h3>🌴 Jungle Theme</h3>
+      <p>Choose a fun jungle-inspired MotherNest theme.</p>
     </div>
 
-  </section>
+    <div class="card">
+      <h3>🌊 Ocean Theme</h3>
+      <p>Choose a calming ocean-inspired theme.</p>
+    </div>
+
+    <div class="card">
+      <h3>🦁 Safari Theme</h3>
+      <p>Choose a playful safari-inspired theme.</p>
+    </div>
+
+    <div class="card">
+      <h3>🚀 Space Theme</h3>
+      <p>Choose a space-inspired family theme.</p>
+    </div>
+
+  </div>
+
+</section>
 
 
-  <!-- FOOTER -->
-  <footer>
+<footer>
 
-    <p>
-      💗 MotherNest
-    </p>
+  <p>
+    🌸 MotherNest — Growing together, one moment at a time. 🌸
+  </p>
 
-    <p>
-      Growing families together. 🌱
-    </p>
-
-  </footer>
+</footer>
 
 
-  <!-- JAVASCRIPT -->
-  <script>
+<script>
 
-    function goTo(pageId) {
+/* NAVIGATION */
 
-      const pages = document.querySelectorAll(".page");
+function goTo(pageId) {
 
-      pages.forEach(function(page) {
-        page.classList.remove("active");
-      });
+  const pages = document.querySelectorAll(".page");
 
-      const selectedPage =
-        document.getElementById(pageId);
+  pages.forEach(function(page) {
+    page.classList.remove("active");
+  });
 
-      if (selectedPage) {
+  const selectedPage = document.getElementById(pageId);
 
-        selectedPage.classList.add("active");
+  if (selectedPage) {
+    selectedPage.classList.add("active");
+    window.scrollTo(0, 0);
+  }
 
-        window.scrollTo(0, 0);
+}
 
-      }
+
+/* REGISTRY */
+
+function addRegistryItem() {
+
+  const input = document.getElementById("registryInput");
+
+  const text = input.value.trim();
+
+  if (text === "") {
+    alert("Please type something you need first.");
+    return;
+  }
+
+  const list = document.getElementById("registryList");
+
+  const item = document.createElement("div");
+
+  item.className = "registry-item";
+
+  item.innerHTML = `
+    <span>🎁 ${escapeHtml(text)}</span>
+
+    <button
+      class="delete-btn"
+      onclick="this.parentElement.remove()">
+      Remove
+    </button>
+  `;
+
+  list.appendChild(item);
+
+  input.value = "";
+
+}
+
+
+/* SECURITY */
+
+function escapeHtml(text) {
+
+  const div = document.createElement("div");
+
+  div.textContent = text;
+
+  return div.innerHTML;
+
+}
+
+
+/* BABY ASSISTANT */
+
+function assistantQuestion(question) {
+
+  document.getElementById("assistantInput").value = question;
+
+  askAssistant();
+
+}
+
+
+function askAssistant() {
+
+  const input = document.getElementById("assistantInput");
+
+  const answer = document.getElementById("assistantAnswer");
+
+  const question = input.value.toLowerCase();
+
+  if (question.trim() === "") {
+
+    answer.style.display = "block";
+
+    answer.innerHTML =
+      "💗 Try asking me something about preparing for baby, milestones, budgeting, or organizing your MotherNest.";
+
+    return;
+
+  }
+
+
+  let response =
+    "💗 Here's a helpful starting point: break the question into small steps and focus on what your family needs right now.";
+
+
+  if (
+    question.includes("before") ||
+    question.includes("arrive") ||
+    question.includes("need")
+  ) {
+
+    response =
+      "🍼 Before baby arrives, families often think about a safe sleeping space, feeding supplies, diapers, clothing, basic hygiene supplies, transportation needs, important contacts, and a plan for medical care.";
+
+  }
+
+
+  else if (
+    question.includes("milestone") ||
+    question.includes("development")
+  ) {
+
+    response =
+      "🌱 Babies develop at different rates. Common areas to watch include movement, communication, social interaction, and learning. Your pediatrician can help you understand what is appropriate for your baby's age.";
+
+  }
+
+
+  else if (
+    question.includes("budget") ||
+    question.includes("money")
+  ) {
+
+    response =
+      "💰 Start by separating needs from wants. Consider diapers, feeding, clothing, healthcare, transportation, childcare, and emergency savings. MotherNest can eventually help organize these categories.";
+
+  }
+
+
+  answer.style.display = "block";
+
+  answer.innerHTML = response;
+
+}
+
+
+/* MARKET SEARCH */
+
+function searchMarket() {
+
+  const search =
+    document.getElementById("marketSearch")
+    .value
+    .toLowerCase();
+
+  const items =
+    document.querySelectorAll(".market-item");
+
+
+  items.forEach(function(item) {
+
+    const text =
+      item.innerText.toLowerCase();
+
+    if (text.includes(search)) {
+
+      item.style.display = "block";
+
+    } else {
+
+      item.style.display = "none";
 
     }
 
+  });
 
-    function addRegistryItem() {
+}
 
-      const input =
-        document.getElementById("registryInput");
-
-      const itemText =
-        input.value.trim();
-
-      if (itemText === "") {
-
-        alert("Please type something you need first.");
-
-        return;
-
-      }
-
-
-      const list =
-        document.getElementById("registryList");
-
-
-      const item =
-        document.createElement("div");
-
-      item.className = "registry-item";
-
-
-      item.innerHTML = `
-        <h3>💗 ${itemText}</h3>
-
-        <p>
-          Added to your MotherNest Registry.
-        </p>
-
-        <button onclick="goTo('marketplace')">
-          Browse Marketplace
-        </button>
-
-        <button
-          class="remove-button"
-          onclick="this.parentElement.remove()">
-          Remove
-        </button>
-      `;
-
-
-      list.appendChild(item);
-
-
-      input.value = "";
-
-    }
-
-  </script>
+</script>
 
 </body>
-        </html>
+  </html>
