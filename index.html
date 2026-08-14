@@ -51,7 +51,8 @@
     }
 
     .nav button,
-    .action-button {
+    .action-button,
+    .back-button {
       border: none;
       border-radius: 20px;
       padding: 11px 16px;
@@ -62,7 +63,8 @@
     }
 
     .nav button:hover,
-    .action-button:hover {
+    .action-button:hover,
+    .back-button:hover {
       background: #d96d91;
     }
 
@@ -129,6 +131,10 @@
       cursor: pointer;
     }
 
+    .card button:hover {
+      background: #ee9fbb;
+    }
+
     .search-box {
       width: 100%;
       padding: 14px;
@@ -143,6 +149,24 @@
       padding: 15px;
       border-radius: 15px;
       margin-top: 20px;
+    }
+
+    .category-header {
+      text-align: center;
+      background: #fff0f6;
+      padding: 25px;
+      border-radius: 22px;
+      margin-bottom: 20px;
+    }
+
+    .category-header h2 {
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #c94f76;
     }
 
     footer {
@@ -162,7 +186,10 @@
 
   <!-- BANNER -->
   <div class="banner">
-    <div style="font-size:28px;">♡ ♥ ♡</div>
+
+    <div style="font-size:28px;">
+      ♡ ♥ ♡
+    </div>
 
     <h1>MotherNest 💗</h1>
 
@@ -170,18 +197,40 @@
       A place where mothers, babies, and communities grow together.
     </p>
 
-    <div style="font-size:28px; margin-top:8px;">🌱</div>
+    <div style="font-size:28px; margin-top:8px;">
+      🌱
+    </div>
+
   </div>
 
 
   <!-- NAVIGATION -->
   <div class="nav">
-    <button onclick="goTo('home')">🏠 Home</button>
-    <button onclick="goTo('assistant')">🤖 Baby Assistant</button>
-    <button onclick="goTo('marketplace')">🛍️ Marketplace</button>
-    <button onclick="goTo('health')">🏥 Health</button>
-    <button onclick="goTo('registry')">🎁 Registry</button>
-    <button onclick="goTo('profile')">👤 Profile</button>
+
+    <button onclick="goTo('home')">
+      🏠 Home
+    </button>
+
+    <button onclick="goTo('assistant')">
+      🤖 Baby Assistant
+    </button>
+
+    <button onclick="goTo('marketplace')">
+      🛍️ Marketplace
+    </button>
+
+    <button onclick="goTo('health')">
+      🏥 Health
+    </button>
+
+    <button onclick="goTo('registry')">
+      🎁 Registry
+    </button>
+
+    <button onclick="goTo('profile')">
+      👤 Profile
+    </button>
+
   </div>
 
 
@@ -190,7 +239,9 @@
 
     <div class="welcome">
 
-      <h2>Welcome to MotherNest 💗</h2>
+      <h2>
+        Welcome to MotherNest 💗
+      </h2>
 
       <p>
         A safe, supportive place for mothers, babies,
@@ -199,11 +250,15 @@
 
       <div class="welcome-buttons">
 
-        <button class="action-button" onclick="goTo('assistant')">
+        <button
+          class="action-button"
+          onclick="goTo('assistant')">
           Get Started
         </button>
 
-        <button class="action-button" onclick="goTo('marketplace')">
+        <button
+          class="action-button"
+          onclick="goTo('marketplace')">
           Explore MotherNest
         </button>
 
@@ -215,7 +270,11 @@
     <div class="card-grid">
 
       <div class="card">
-        <h3>🤖 Baby Assistant</h3>
+
+        <h3>
+          🤖 Baby Assistant
+        </h3>
+
         <p>
           Get helpful information about pregnancy,
           babies, milestones, and parenting.
@@ -224,11 +283,16 @@
         <button onclick="goTo('assistant')">
           Open Assistant
         </button>
+
       </div>
 
 
       <div class="card">
-        <h3>🛍️ Marketplace</h3>
+
+        <h3>
+          🛍️ Marketplace
+        </h3>
+
         <p>
           Explore baby products and family items.
         </p>
@@ -236,11 +300,16 @@
         <button onclick="goTo('marketplace')">
           Visit Marketplace
         </button>
+
       </div>
 
 
       <div class="card">
-        <h3>🏥 Health</h3>
+
+        <h3>
+          🏥 Health
+        </h3>
+
         <p>
           Keep important healthcare information
           organized in one place.
@@ -249,11 +318,16 @@
         <button onclick="goTo('health')">
           Open Health
         </button>
+
       </div>
 
 
       <div class="card">
-        <h3>🎁 Registry</h3>
+
+        <h3>
+          🎁 Registry
+        </h3>
+
         <p>
           Keep track of things your family needs.
         </p>
@@ -261,6 +335,7 @@
         <button onclick="goTo('registry')">
           Open Registry
         </button>
+
       </div>
 
     </div>
@@ -271,7 +346,9 @@
   <!-- BABY ASSISTANT -->
   <section id="assistant" class="page">
 
-    <h2>🤖 Baby Assistant</h2>
+    <h2>
+      🤖 Baby Assistant
+    </h2>
 
     <p>
       What would you like help with today?
@@ -317,11 +394,18 @@
   <!-- MARKETPLACE -->
   <section id="marketplace" class="page">
 
-    <h2>🛍️ MotherNest Marketplace</h2>
+    <div class="category-header">
 
-    <p>
-      Find baby and family products in one place.
-    </p>
+      <h2>
+        🛍️ MotherNest Marketplace
+      </h2>
+
+      <p>
+        Find baby and family products in one place.
+      </p>
+
+    </div>
+
 
     <input
       class="search-box"
@@ -329,201 +413,269 @@
       placeholder="Search baby products..."
     >
 
+
     <div class="card-grid">
 
       <div class="card">
-        <h3>🛏️ Cribs & Bassinets</h3>
+
+        <h3>
+          🛏️ Cribs & Bassinets
+        </h3>
+
         <p>
-          Browse sleeping essentials for baby.
+          Find sleeping essentials for baby.
         </p>
-        <button>View Items</button>
+
+        <button onclick="goTo('cribs')">
+          View Items
+        </button>
+
       </div>
 
 
       <div class="card">
-        <h3>🍼 Feeding</h3>
+
+        <h3>
+          🍼 Feeding
+        </h3>
+
         <p>
           Bottles, feeding supplies, and accessories.
         </p>
-        <button>View Items</button>
+
+        <button onclick="goTo('feeding')">
+          View Items
+        </button>
+
       </div>
 
 
       <div class="card">
-        <h3>👕 Baby Clothes</h3>
+
+        <h3>
+          👕 Baby Clothes
+        </h3>
+
         <p>
           Clothing and accessories for growing babies.
         </p>
-        <button>View Items</button>
+
+        <button onclick="goTo('clothes')">
+          View Items
+        </button>
+
       </div>
 
 
       <div class="card">
-        <h3>🧸 Toys</h3>
+
+        <h3>
+          🧸 Toys
+        </h3>
+
         <p>
           Toys and activities for little ones.
         </p>
-        <button>View Items</button>
+
+        <button onclick="goTo('toys')">
+          View Items
+        </button>
+
       </div>
 
 
       <div class="card">
-        <h3>♻️ Used Items</h3>
+
+        <h3>
+          ♻️ Used Items
+        </h3>
+
         <p>
           Explore gently used baby products.
         </p>
-        <button>View Used Items</button>
+
+        <button onclick="goTo('used')">
+          View Used Items
+        </button>
+
       </div>
 
 
       <div class="card">
-        <h3>🌱 Organic</h3>
+
+        <h3>
+          🌱 Organic
+        </h3>
+
         <p>
           Explore organic and family-friendly options.
         </p>
-        <button>View Organic</button>
+
+        <button onclick="goTo('organic')">
+          View Organic
+        </button>
+
       </div>
 
     </div>
 
 
     <div class="notice">
-      <strong>💡 MotherNest Marketplace</strong>
+
+      <strong>
+        💡 MotherNest Marketplace
+      </strong>
 
       <p>
-        Future versions can allow families to create
+        Families will eventually be able to create
         seller profiles, list items, and buy or sell
         baby products.
       </p>
-    </div>
-
-  </section>
-
-
-  <!-- HEALTH -->
-  <section id="health" class="page">
-
-    <h2>🏥 MotherNest Health</h2>
-
-    <p>
-      Keep important health and appointment information
-      organized.
-    </p>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <h3>👩‍⚕️ Pediatrician</h3>
-        <p>
-          Keep your pediatrician information organized.
-        </p>
-        <button>Open</button>
-      </div>
-
-
-      <div class="card">
-        <h3>📅 Appointments</h3>
-        <p>
-          Keep track of upcoming appointments.
-        </p>
-        <button>Open</button>
-      </div>
-
-
-      <div class="card">
-        <h3>💊 Medicine Log</h3>
-        <p>
-          Keep important medicine information organized.
-        </p>
-        <button>Open</button>
-      </div>
-
-
-      <div class="card">
-        <h3>🚑 Emergency Card</h3>
-        <p>
-          Store important emergency information.
-        </p>
-        <button>Open</button>
-      </div>
-
-
-      <div class="card">
-        <h3>🏥 Children's Hospitals</h3>
-        <p>
-          Find children's healthcare resources.
-        </p>
-        <button>Explore</button>
-      </div>
-
-
-      <div class="card">
-        <h3>💉 Vaccine Log</h3>
-        <p>
-          Keep vaccination records organized.
-        </p>
-        <button>Open</button>
-      </div>
 
     </div>
 
   </section>
 
 
-  <!-- REGISTRY -->
-  <section id="registry" class="page">
+  <!-- CRIBS -->
+  <section id="cribs" class="page">
 
-    <h2>🎁 MotherNest Registry</h2>
+    <div class="category-header">
 
-    <p>
-      Keep track of what your family needs.
-    </p>
+      <h2>
+        🛏️ Cribs & Bassinets
+      </h2>
 
-    <input
-      class="search-box"
-      type="text"
-      placeholder="What does your family need?"
-    >
+      <p>
+        Choose the type of item you're looking for.
+      </p>
+
+      <button
+        class="back-button"
+        onclick="goTo('marketplace')">
+        ← Back to Marketplace
+      </button>
+
+    </div>
+
 
     <div class="card-grid">
 
       <div class="card">
-        <h3>🛏️ Bassinet</h3>
+
+        <h3>
+          ✨ New
+        </h3>
+
         <p>
-          Need a safe place for baby to sleep?
+          Browse new cribs and bassinets.
         </p>
 
-        <button>View Options</button>
+        <p class="price">
+          New Items
+        </p>
+
+        <button>
+          Browse New
+        </button>
+
       </div>
 
+
+      <div class="card">
+
+        <h3>
+          ♻️ Used
+        </h3>
+
+        <p>
+          Explore gently used sleeping products.
+        </p>
+
+        <p class="price">
+          Used Items
+        </p>
+
+        <button onclick="goTo('used')">
+          Browse Used
+        </button>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          🌱 Organic
+        </h3>
+
+        <p>
+          Explore family-friendly and organic options.
+        </p>
+
+        <p class="price">
+          Organic Options
+        </p>
+
+        <button onclick="goTo('organic')">
+          Browse Organic
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEEDING -->
+  <section id="feeding" class="page">
+
+    <div class="category-header">
+
+      <h2>
+        🍼 Feeding
+      </h2>
+
+      <p>
+        Explore feeding products and supplies.
+      </p>
+
+      <button
+        class="back-button"
+        onclick="goTo('marketplace')">
+        ← Back to Marketplace
+      </button>
+
+    </div>
+
+
+    <div class="card-grid">
 
       <div class="card">
         <h3>🍼 Bottles</h3>
         <p>
-          Add feeding supplies to your registry.
+          Explore bottles and bottle accessories.
         </p>
-
-        <button>View Options</button>
+        <button>Browse</button>
       </div>
 
-
       <div class="card">
-        <h3>👕 Clothes</h3>
+        <h3>🥣 Feeding Supplies</h3>
         <p>
-          Add clothing needs to your registry.
+          Explore bowls, spoons, and feeding items.
         </p>
-
-        <button>View Options</button>
+        <button>Browse</button>
       </div>
 
-
       <div class="card">
-        <h3>🧸 Baby Essentials</h3>
+        <h3>♻️ Used Feeding Items</h3>
         <p>
-          Add other things your family needs.
+          Explore available used products.
         </p>
-
-        <button>View Options</button>
+        <button onclick="goTo('used')">
+          Browse Used
+        </button>
       </div>
 
     </div>
@@ -531,46 +683,62 @@
   </section>
 
 
-  <!-- PROFILE -->
-  <section id="profile" class="page">
+  <!-- CLOTHES -->
+  <section id="clothes" class="page">
 
-    <h2>👤 My MotherNest Profile</h2>
+    <div class="category-header">
+
+      <h2>
+        👕 Baby Clothes
+      </h2>
+
+      <p>
+        Explore clothing and accessories.
+      </p>
+
+      <button
+        class="back-button"
+        onclick="goTo('marketplace')">
+        ← Back to Marketplace
+      </button>
+
+    </div>
+
 
     <div class="card-grid">
 
       <div class="card">
-        <h3>🌸 My Profile</h3>
+        <h3>👶 Newborn</h3>
         <p>
-          Set up your MotherNest profile.
+          Clothing for newborn babies.
         </p>
-        <button>Open Profile</button>
+        <button>Browse</button>
       </div>
 
-
       <div class="card">
-        <h3>👶 Baby Information</h3>
+        <h3>🌸 Baby Girls</h3>
         <p>
-          Organize your baby's basic information.
+          Clothing and accessories.
         </p>
-        <button>Open</button>
+        <button>Browse</button>
       </div>
 
-
       <div class="card">
-        <h3>🔔 Notifications</h3>
+        <h3>💙 Baby Boys</h3>
         <p>
-          View your MotherNest notifications.
+          Clothing and accessories.
         </p>
-        <button>View</button>
+        <button>Browse</button>
       </div>
 
-
       <div class="card">
-        <h3>⚙️ Settings</h3>
+        <h3>♻️ Used Clothes</h3>
         <p>
-          Manage your MotherNest settings.
+          Explore gently used clothing.
         </p>
-        <button>Open Settings</button>
+        <button onclick="goTo('used')">
+          Browse Used
+        </button>
       </div>
 
     </div>
@@ -578,33 +746,45 @@
   </section>
 
 
-  <footer>
-    <p>💗 MotherNest</p>
-    <p>Growing families together. 🌱</p>
-  </footer>
+  <!-- TOYS -->
+  <section id="toys" class="page">
+
+    <div class="category-header">
+
+      <h2>
+        🧸 Toys
+      </h2>
+
+      <p>
+        Explore toys and activities for little ones.
+      </p>
+
+      <button
+        class="back-button"
+        onclick="goTo('marketplace')">
+        ← Back to Marketplace
+      </button>
+
+    </div>
 
 
-  <!-- NAVIGATION SCRIPT -->
-  <script>
+    <div class="card-grid">
 
-    function goTo(pageId) {
+      <div class="card">
+        <h3>🧸 Soft Toys</h3>
+        <p>
+          Soft and cuddly toys.
+        </p>
+        <button>Browse</button>
+      </div>
 
-      const pages = document.querySelectorAll(".page");
+      <div class="card">
+        <h3>🧩 Learning Toys</h3>
+        <p>
+          Toys designed for learning and play.
+        </p>
+        <button>Browse</button>
+      </div>
 
-      pages.forEach(function(page) {
-        page.classList.remove("active");
-      });
-
-      const selectedPage = document.getElementById(pageId);
-
-      if (selectedPage) {
-        selectedPage.classList.add("active");
-        window.scrollTo(0, 0);
-      }
-
-    }
-
-  </script>
-
-</body>
-          </html>
+      <div class="card">
+        <h3>♻
