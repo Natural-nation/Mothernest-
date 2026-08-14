@@ -17,6 +17,7 @@
       color: #4d3040;
     }
 
+    /* BANNER */
     .banner {
       display: flex;
       align-items: center;
@@ -43,6 +44,7 @@
       min-width: 65px;
     }
 
+    /* NAVIGATION */
     .navigation {
       display: flex;
       flex-wrap: wrap;
@@ -53,9 +55,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    .navigation button,
-    .card button,
-    .main-button {
+    button {
       border: none;
       border-radius: 20px;
       padding: 11px 16px;
@@ -65,12 +65,11 @@
       cursor: pointer;
     }
 
-    .navigation button:hover,
-    .card button:hover,
-    .main-button:hover {
+    button:hover {
       background: #df86a7;
     }
 
+    /* PAGES */
     .page {
       display: none;
       max-width: 900px;
@@ -82,6 +81,7 @@
       display: block;
     }
 
+    /* WELCOME */
     .welcome {
       text-align: center;
       padding: 45px 20px;
@@ -115,6 +115,7 @@
       color: white;
     }
 
+    /* CARDS */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -126,6 +127,7 @@
       background: white;
       border-radius: 20px;
       padding: 22px;
+      margin-bottom: 18px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
@@ -134,8 +136,46 @@
       margin-top: 0;
     }
 
-    .back-button {
-      margin-top: 20px;
+    /* FORM */
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #71334b;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e4b7c7;
+      border-radius: 12px;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      background: #fffafd;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .appointment {
+      background: #fff5f8;
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 12px;
+    }
+
+    .appointment h4 {
+      margin-top: 0;
+      color: #c94f76;
+    }
+
+    .delete-button {
+      background: #e8b2c3;
+      margin-top: 8px;
     }
 
     footer {
@@ -209,11 +249,15 @@
 
       <div class="welcome-buttons">
 
-        <button class="main-button" onclick="goTo('assistant')">
+        <button
+          class="main-button"
+          onclick="goTo('assistant')">
           Get Started
         </button>
 
-        <button class="main-button" onclick="goTo('marketplace')">
+        <button
+          class="main-button"
+          onclick="goTo('marketplace')">
           Explore MotherNest
         </button>
 
@@ -221,34 +265,43 @@
 
     </div>
 
+
     <div class="card-grid">
 
       <div class="card">
         <h3>🤖 Baby Assistant</h3>
+
         <p>
-          Helpful information for pregnancy, babies,
-          milestones, and parenting.
+          Helpful information for pregnancy,
+          babies, milestones, and parenting.
         </p>
+
         <button onclick="goTo('assistant')">
           Open Assistant
         </button>
       </div>
 
+
       <div class="card">
         <h3>🛍️ Marketplace</h3>
+
         <p>
           Explore baby items and family resources.
         </p>
+
         <button onclick="goTo('marketplace')">
           Visit Marketplace
         </button>
       </div>
 
+
       <div class="card">
         <h3>🏥 Health</h3>
+
         <p>
           Keep important health resources together.
         </p>
+
         <button onclick="goTo('health')">
           Open Health
         </button>
@@ -268,20 +321,25 @@
 
       <div class="card">
         <h3>👶 Baby Milestones</h3>
+
         <p>
           Learn about common baby milestones.
         </p>
       </div>
 
+
       <div class="card">
         <h3>🍼 Baby Needs</h3>
+
         <p>
           Explore helpful ideas for preparing for baby.
         </p>
       </div>
 
+
       <div class="card">
         <h3>💰 Baby Budget</h3>
+
         <p>
           Organize baby needs and family expenses.
         </p>
@@ -301,29 +359,37 @@
 
       <div class="card">
         <h3>🍼 Baby Supplies</h3>
+
         <p>
           Explore baby supplies and everyday essentials.
         </p>
+
         <button>
           Explore
         </button>
       </div>
+
 
       <div class="card">
         <h3>👕 Baby Clothes</h3>
+
         <p>
           Find clothing and other baby items.
         </p>
+
         <button>
           Explore
         </button>
       </div>
 
+
       <div class="card">
         <h3>🛏️ Nursery</h3>
+
         <p>
           Explore nursery items and baby essentials.
         </p>
+
         <button>
           Explore
         </button>
@@ -341,47 +407,67 @@
 
     <div class="card-grid">
 
+      <!-- APPOINTMENTS -->
       <div class="card">
+
         <h3>📅 Doctor Appointments</h3>
+
         <p>
           Keep track of important appointments and reminders.
         </p>
+
         <button onclick="goTo('appointments')">
           Open Appointments
         </button>
+
       </div>
 
 
+      <!-- PEDIATRICIAN -->
       <div class="card">
+
         <h3>👩‍⚕️ Pediatrician</h3>
+
         <p>
           Keep your pediatrician information organized.
         </p>
+
         <button onclick="goTo('pediatrician')">
           Open Pediatrician
         </button>
+
       </div>
 
 
+      <!-- HOSPITAL -->
       <div class="card">
+
         <h3>🏥 Children's Hospital</h3>
+
         <p>
           Keep important children's hospital information.
         </p>
+
         <button onclick="goTo('hospital')">
           Open Hospitals
         </button>
+
       </div>
 
 
+      <!-- PHARMACY -->
       <div class="card">
+
         <h3>💊 Pharmacy</h3>
+
         <p>
           Keep useful pharmacy information together.
         </p>
+
         <button onclick="goTo('pharmacy')">
           Open Pharmacy
         </button>
+
       </div>
 
     </div>
@@ -394,19 +480,79 @@
 
     <h2>📅 Doctor Appointments</h2>
 
+
     <div class="card">
 
-      <h3>Your Appointments</h3>
+      <h3>Add an Appointment</h3>
 
-      <p>
-        Your doctor appointments and reminders will appear here.
-      </p>
+      <label for="doctorName">
+        Doctor's Name
+      </label>
 
-      <button onclick="goTo('health')">
-        ← Back to Health
+      <input
+        type="text"
+        id="doctorName"
+        placeholder="Enter doctor's name"
+      >
+
+
+      <label for="appointmentDate">
+        Date
+      </label>
+
+      <input
+        type="date"
+        id="appointmentDate"
+      >
+
+
+      <label for="appointmentTime">
+        Time
+      </label>
+
+      <input
+        type="time"
+        id="appointmentTime"
+      >
+
+
+      <label for="appointmentNotes">
+        Notes
+      </label>
+
+      <textarea
+        id="appointmentNotes"
+        placeholder="Add notes about the appointment">
+      </textarea>
+
+
+      <br><br>
+
+      <button onclick="addAppointment()">
+        ➕ Add Appointment
       </button>
 
     </div>
+
+
+    <div class="card">
+
+      <h3>📋 Your Appointments</h3>
+
+      <div id="appointmentList">
+
+        <p>
+          No appointments added yet.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <button onclick="goTo('health')">
+      ← Back to Health
+    </button>
 
   </section>
 
@@ -469,69 +615,4 @@
         Save useful pharmacy information here.
       </p>
 
-      <button onclick="goTo('health')">
-        ← Back to Health
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- PROFILE -->
-  <section id="profile" class="page">
-
-    <h2>👤 Profile</h2>
-
-    <div class="card">
-
-      <h3>Welcome to your MotherNest profile 💗</h3>
-
-      <p>
-        Your profile will hold your MotherNest
-        information and preferences.
-      </p>
-
-      <button>
-        Create Profile
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <p>
-      MotherNest 💗 Growing together.
-    </p>
-
-  </footer>
-
-
-  <!-- PAGE NAVIGATION -->
-  <script>
-
-    function goTo(pageId) {
-
-      const pages = document.querySelectorAll(".page");
-
-      pages.forEach(function(page) {
-        page.classList.remove("active");
-      });
-
-      const selectedPage = document.getElementById(pageId);
-
-      if (selectedPage) {
-        selectedPage.classList.add("active");
-        window.scrollTo(0, 0);
-      }
-
-    }
-
-  </script>
-
-</body>
-</html>
+      <button onclick="goTo('health
