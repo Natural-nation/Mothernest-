@@ -804,79 +804,129 @@
 
 
   <!-- REGISTRY -->
-  <section id="registry" class="page">
+
+<section id="registry" class="page">
+
+  <div class="category-header">
+
+    <h2>🎁 MotherNest Registry</h2>
+
+    <p>
+      Tell MotherNest what your family needs.
+    </p>
+
+  </div>
+
+
+  <input
+    id="registryInput"
+    class="registry-input"
+    type="text"
+    placeholder="Example: Bassinet"
+  >
+
+
+  <button
+    class="action-button"
+    onclick="showRegistryOptions()">
+    ➕ Add to My Registry
+  </button>
+
+
+  <div id="registryOptions" style="display:none;">
 
     <div class="category-header">
 
-      <h2>
-        🎁 MotherNest Registry
+      <h2 id="registryItemName">
+        💗 Choose an option
       </h2>
 
       <p>
-        Tell MotherNest what your family needs.
+        How would you like to find this item?
       </p>
 
     </div>
 
 
-    <input
-      id="registryInput"
-      class="registry-input"
-      type="text"
-      placeholder="Example: I need a bassinet"
-    >
+    <div class="card-grid">
 
+      <div class="card">
 
-    <button
-      class="action-button"
-      onclick="addRegistryItem()">
-      ➕ Add to My Registry
-    </button>
-
-
-    <div class="notice">
-
-      <strong>
-        💡 Registry Tip
-      </strong>
-
-      <p>
-        Type something your family needs above,
-        then add it to your registry.
-      </p>
-
-    </div>
-
-
-    <h2>
-      💗 My Registry
-    </h2>
-
-
-    <div id="registryList">
-
-      <div class="registry-item">
-
-        <h3>
-          🛏️ Bassinet
-        </h3>
+        <h3>🆕 New</h3>
 
         <p>
-          Example registry item.
+          Browse new items from online stores.
         </p>
 
-        <button
-          onclick="goTo('cribs')">
-          View Options
+        <button>
+          Browse New
+        </button>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>♻️ Used</h3>
+
+        <p>
+          Browse gently used items from the MotherNest
+          Marketplace.
+        </p>
+
+        <button onclick="goTo('used')">
+          Browse Used
+        </button>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>🌱 Organic</h3>
+
+        <p>
+          Explore organic and family-friendly options.
+        </p>
+
+        <button onclick="goTo('organic')">
+          Browse Organic
         </button>
 
       </div>
 
     </div>
 
-  </section>
+  </div>
 
 
+  <h2>
+    💗 My Registry
+  </h2>
+
+
+  <div id="registryList">
+
+    <div class="registry-item">
+
+      <h3>
+        🛏️ Bassinet
+      </h3>
+
+      <p>
+        Example registry item.
+      </p>
+
+      <button onclick="showSavedItemOptions('Bassinet')">
+        View Options
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+  
   <!-- HEALTH -->
   <section id="health" class="page">
 
