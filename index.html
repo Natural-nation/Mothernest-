@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>MotherNest</title>
 
   <style>
@@ -18,7 +17,6 @@
       color: #4d3040;
     }
 
-    /* TOP BANNER */
     .banner {
       display: flex;
       align-items: center;
@@ -26,7 +24,6 @@
       background: linear-gradient(135deg, #f8a8c0, #f5c1d2);
       padding: 22px 18px;
       text-align: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
     }
 
     .banner h1 {
@@ -46,7 +43,6 @@
       min-width: 65px;
     }
 
-    /* NAVIGATION */
     .navigation {
       display: flex;
       flex-wrap: wrap;
@@ -57,21 +53,24 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    .navigation button {
+    .navigation button,
+    .card button,
+    .main-button {
       border: none;
       border-radius: 20px;
-      padding: 10px 15px;
-      background: #f7d3df;
-      color: #71334b;
+      padding: 11px 16px;
+      background: #f0aec5;
+      color: #603044;
       font-weight: bold;
       cursor: pointer;
     }
 
-    .navigation button:hover {
-      background: #eeaec5;
+    .navigation button:hover,
+    .card button:hover,
+    .main-button:hover {
+      background: #df86a7;
     }
 
-    /* PAGES */
     .page {
       display: none;
       max-width: 900px;
@@ -83,7 +82,6 @@
       display: block;
     }
 
-    /* WELCOME */
     .welcome {
       text-align: center;
       padding: 45px 20px;
@@ -94,9 +92,9 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 
-    .welcome h2 {
+    .welcome h2,
+    .page h2 {
       color: #c94f76;
-      font-size: 28px;
     }
 
     .welcome p {
@@ -113,16 +111,10 @@
     }
 
     .main-button {
-      border: none;
-      border-radius: 25px;
-      padding: 13px 22px;
       background: #d9658b;
       color: white;
-      font-weight: bold;
-      cursor: pointer;
     }
 
-    /* CARDS */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -142,24 +134,10 @@
       margin-top: 0;
     }
 
-    .card button {
-      border: none;
-      border-radius: 18px;
-      padding: 9px 15px;
-      background: #f3b4c9;
-      color: #603044;
-      font-weight: bold;
-      cursor: pointer;
+    .back-button {
+      margin-top: 20px;
     }
 
-    /* HEADINGS */
-    .page h2 {
-      text-align: center;
-      color: #c94f76;
-      font-size: 28px;
-    }
-
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 25px;
@@ -191,7 +169,7 @@
   </div>
 
 
-  <!-- NAVIGATION -->
+  <!-- MAIN NAVIGATION -->
   <nav class="navigation">
 
     <button onclick="goTo('home')">
@@ -217,7 +195,7 @@
   </nav>
 
 
-  <!-- HOME PAGE -->
+  <!-- HOME -->
   <section id="home" class="page active">
 
     <div class="welcome">
@@ -248,8 +226,8 @@
       <div class="card">
         <h3>🤖 Baby Assistant</h3>
         <p>
-          Get helpful information about pregnancy,
-          babies, milestones, and parenting.
+          Helpful information for pregnancy, babies,
+          milestones, and parenting.
         </p>
         <button onclick="goTo('assistant')">
           Open Assistant
@@ -259,7 +237,7 @@
       <div class="card">
         <h3>🛍️ Marketplace</h3>
         <p>
-          Explore baby items and resources for growing families.
+          Explore baby items and family resources.
         </p>
         <button onclick="goTo('marketplace')">
           Visit Marketplace
@@ -269,8 +247,7 @@
       <div class="card">
         <h3>🏥 Health</h3>
         <p>
-          Keep important health information and resources
-          together in one place.
+          Keep important health resources together.
         </p>
         <button onclick="goTo('health')">
           Open Health
@@ -282,7 +259,7 @@
   </section>
 
 
-  <!-- BABY ASSISTANT PAGE -->
+  <!-- BABY ASSISTANT -->
   <section id="assistant" class="page">
 
     <h2>🤖 Baby Assistant</h2>
@@ -292,24 +269,21 @@
       <div class="card">
         <h3>👶 Baby Milestones</h3>
         <p>
-          Learn about common milestones and questions
-          parents may have as babies grow.
+          Learn about common baby milestones.
         </p>
       </div>
 
       <div class="card">
         <h3>🍼 Baby Needs</h3>
         <p>
-          Explore helpful ideas for preparing for baby
-          and organizing everyday needs.
+          Explore helpful ideas for preparing for baby.
         </p>
       </div>
 
       <div class="card">
         <h3>💰 Baby Budget</h3>
         <p>
-          Organize your baby's needs and think through
-          a simple family budget.
+          Organize baby needs and family expenses.
         </p>
       </div>
 
@@ -318,7 +292,7 @@
   </section>
 
 
-  <!-- MARKETPLACE PAGE -->
+  <!-- MARKETPLACE -->
   <section id="marketplace" class="page">
 
     <h2>🛍️ MotherNest Marketplace</h2>
@@ -338,7 +312,7 @@
       <div class="card">
         <h3>👕 Baby Clothes</h3>
         <p>
-          Find clothing and other items for growing babies.
+          Find clothing and other baby items.
         </p>
         <button>
           Explore
@@ -348,7 +322,7 @@
       <div class="card">
         <h3>🛏️ Nursery</h3>
         <p>
-          Explore nursery items and helpful baby essentials.
+          Explore nursery items and baby essentials.
         </p>
         <button>
           Explore
@@ -360,7 +334,7 @@
   </section>
 
 
-  <!-- HEALTH PAGE -->
+  <!-- HEALTH -->
   <section id="health" class="page">
 
     <h2>🏥 Health</h2>
@@ -372,28 +346,42 @@
         <p>
           Keep track of important appointments and reminders.
         </p>
+        <button onclick="goTo('appointments')">
+          Open Appointments
+        </button>
       </div>
+
 
       <div class="card">
         <h3>👩‍⚕️ Pediatrician</h3>
         <p>
           Keep your pediatrician information organized.
         </p>
+        <button onclick="goTo('pediatrician')">
+          Open Pediatrician
+        </button>
       </div>
+
 
       <div class="card">
         <h3>🏥 Children's Hospital</h3>
         <p>
-          Keep important hospital information available
-          for your family.
+          Keep important children's hospital information.
         </p>
+        <button onclick="goTo('hospital')">
+          Open Hospitals
+        </button>
       </div>
+
 
       <div class="card">
         <h3>💊 Pharmacy</h3>
         <p>
-          Keep useful pharmacy information in one place.
+          Keep useful pharmacy information together.
         </p>
+        <button onclick="goTo('pharmacy')">
+          Open Pharmacy
+        </button>
       </div>
 
     </div>
@@ -401,7 +389,96 @@
   </section>
 
 
-  <!-- PROFILE PAGE -->
+  <!-- DOCTOR APPOINTMENTS -->
+  <section id="appointments" class="page">
+
+    <h2>📅 Doctor Appointments</h2>
+
+    <div class="card">
+
+      <h3>Your Appointments</h3>
+
+      <p>
+        Your doctor appointments and reminders will appear here.
+      </p>
+
+      <button onclick="goTo('health')">
+        ← Back to Health
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- PEDIATRICIAN -->
+  <section id="pediatrician" class="page">
+
+    <h2>👩‍⚕️ Pediatrician</h2>
+
+    <div class="card">
+
+      <h3>Your Pediatrician</h3>
+
+      <p>
+        Save your pediatrician's office information here.
+      </p>
+
+      <button onclick="goTo('health')">
+        ← Back to Health
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- CHILDREN'S HOSPITAL -->
+  <section id="hospital" class="page">
+
+    <h2>🏥 Children's Hospitals</h2>
+
+    <div class="card">
+
+      <h3>Hospital Information</h3>
+
+      <p>
+        Children's hospital information and resources
+        will be available here.
+      </p>
+
+      <button onclick="goTo('health')">
+        ← Back to Health
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- PHARMACY -->
+  <section id="pharmacy" class="page">
+
+    <h2>💊 Pharmacy</h2>
+
+    <div class="card">
+
+      <h3>Pharmacy Information</h3>
+
+      <p>
+        Save useful pharmacy information here.
+      </p>
+
+      <button onclick="goTo('health')">
+        ← Back to Health
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROFILE -->
   <section id="profile" class="page">
 
     <h2>👤 Profile</h2>
@@ -411,8 +488,8 @@
       <h3>Welcome to your MotherNest profile 💗</h3>
 
       <p>
-        Your profile will eventually hold your personal
-        MotherNest information, preferences, and family resources.
+        Your profile will hold your MotherNest
+        information and preferences.
       </p>
 
       <button>
@@ -426,7 +503,11 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>MotherNest 💗 Growing together.</p>
+
+    <p>
+      MotherNest 💗 Growing together.
+    </p>
+
   </footer>
 
 
@@ -435,16 +516,16 @@
 
     function goTo(pageId) {
 
-      const pages = document.querySelectorAll('.page');
+      const pages = document.querySelectorAll(".page");
 
       pages.forEach(function(page) {
-        page.classList.remove('active');
+        page.classList.remove("active");
       });
 
       const selectedPage = document.getElementById(pageId);
 
       if (selectedPage) {
-        selectedPage.classList.add('active');
+        selectedPage.classList.add("active");
         window.scrollTo(0, 0);
       }
 
