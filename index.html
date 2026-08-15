@@ -612,3 +612,873 @@ style="display:none;">
 </div>
 
 </section>
+  <!-- HEALTH -->
+
+<section id="health" class="page">
+
+<h2>🏥 MotherNest Health</h2>
+
+<p>
+Organize your family's healthcare information.
+</p>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>👩‍⚕️ Pediatrician</h3>
+
+<p>Keep pediatrician information organized.</p>
+
+<button
+class="action"
+onclick="healthMessage('Pediatrician')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>📅 Appointments</h3>
+
+<p>Keep appointments organized.</p>
+
+<button
+class="action"
+onclick="healthMessage('Appointments')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🏥 Children's Hospital</h3>
+
+<p>Keep important hospital information.</p>
+
+<button
+class="action"
+onclick="healthMessage('Children’s Hospital')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🚑 Urgent Care</h3>
+
+<p>Keep urgent-care information.</p>
+
+<button
+class="action"
+onclick="healthMessage('Urgent Care')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>💊 Pharmacy</h3>
+
+<p>Save pharmacy information.</p>
+
+<button
+class="action"
+onclick="healthMessage('Pharmacy')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🧾 Health Records</h3>
+
+<p>Keep health records organized.</p>
+
+<button
+class="action"
+onclick="showPage('vault')">
+
+Open Records
+
+</button>
+
+</div>
+
+</div>
+
+
+<div
+id="healthMessage"
+class="message"
+style="display:none;">
+
+</div>
+
+</section>
+
+
+<!-- REGISTRY -->
+
+<section id="registry" class="page">
+
+<h2>🎁 MotherNest Registry</h2>
+
+<p>
+Tell MotherNest what your family needs.
+</p>
+
+
+<input
+id="registryInput"
+type="text"
+placeholder="Example: I need a bassinet"
+>
+
+
+<br><br>
+
+
+<button
+class="action"
+onclick="addRegistryItem()">
+
+➕ Add To Registry
+
+</button>
+
+
+<div id="registryList"></div>
+
+
+<div
+id="registryOptions"
+class="registry-options"
+style="display:none;">
+
+<h3>🎁 Choose Your Option</h3>
+
+<p id="registryItemName"></p>
+
+
+<button
+class="option-button new-option"
+onclick="chooseRegistry('new')">
+
+🆕 New
+
+</button>
+
+
+<button
+class="option-button used-option"
+onclick="chooseRegistry('used')">
+
+♻️ Used
+
+</button>
+
+
+<button
+class="option-button organic-option"
+onclick="chooseRegistry('organic')">
+
+🌿 Organic
+
+</button>
+
+</div>
+
+
+<div
+id="registryResult"
+class="registry-result"
+style="display:none;">
+
+<h3 id="registryResultTitle"></h3>
+
+<p id="registryResultText"></p>
+
+
+<button
+class="action secondary"
+onclick="backToOptions()">
+
+← Back To Options
+
+</button>
+
+</div>
+
+
+<div
+id="registryMessage"
+class="message"
+style="display:none;">
+
+</div>
+
+</section>
+
+
+<!-- VAULT -->
+
+<section id="vault" class="page">
+
+<h2>🔐 MotherNest Memory Vault</h2>
+
+<p>
+Your organized family information space.
+</p>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🍼 Feeding Log</h3>
+
+<p>Organize feeding information.</p>
+
+<button
+class="action"
+onclick="vaultMessage('Feeding Log')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>👶 Diaper Tracker</h3>
+
+<p>Keep diaper changes organized.</p>
+
+<button
+class="action"
+onclick="vaultMessage('Diaper Tracker')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>💊 Medicine Log</h3>
+
+<p>Organize medicine information.</p>
+
+<button
+class="action"
+onclick="vaultMessage('Medicine Log')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>💉 Vaccine Records</h3>
+
+<p>Organize vaccine records.</p>
+
+<button
+class="action"
+onclick="vaultMessage('Vaccine Records')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>📝 Baby Notes</h3>
+
+<p>Save notes and memories.</p>
+
+<button
+class="action"
+onclick="vaultMessage('Baby Notes')">
+
+Open
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🚨 Emergency Card</h3>
+
+<p>Keep emergency information organized.</p>
+
+<button
+class="action"
+onclick="vaultMessage('Emergency Card')">
+
+Open
+
+</button>
+
+</div>
+
+</div>
+
+
+<div
+id="vaultMessage"
+class="message"
+style="display:none;">
+
+</div>
+
+</section>
+
+
+<!-- PROFILE -->
+
+<section id="profile" class="page">
+
+<div class="profile">
+
+<div class="avatar">
+👩‍🍼
+</div>
+
+<h2>My MotherNest Profile</h2>
+
+<p>
+Your family space is ready to customize.
+</p>
+
+
+<button
+class="action"
+onclick="profileMessage()">
+
+Create Profile
+
+</button>
+
+
+<button
+class="action secondary"
+onclick="profileMessage()">
+
+Settings
+
+</button>
+
+
+<div
+id="profileMessage"
+class="message"
+style="display:none;">
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+🌸 MotherNest — Growing together,
+one moment at a time. 🌸
+</p>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+NAVIGATION
+========================= */
+
+function showPage(pageName) {
+
+var pages =
+document.querySelectorAll(".page");
+
+for (var i = 0; i < pages.length; i++) {
+
+pages[i].classList.remove("active");
+
+}
+
+
+var page =
+document.getElementById(pageName);
+
+if (page) {
+
+page.classList.add("active");
+
+window.scrollTo(0,0);
+
+}
+
+}
+
+
+/* =========================
+BABY AI
+========================= */
+
+function answerAI() {
+
+var question =
+document.getElementById("aiQuestion")
+.value
+.trim()
+.toLowerCase();
+
+
+var answer =
+document.getElementById("aiAnswer");
+
+
+answer.style.display = "block";
+
+
+if (question === "") {
+
+answer.innerHTML =
+"💗 Please type a question first.";
+
+return;
+
+}
+
+
+if (
+question.indexOf("before") !== -1 ||
+question.indexOf("arrive") !== -1 ||
+question.indexOf("need") !== -1
+) {
+
+answer.innerHTML =
+"🍼 Families commonly prepare a safe sleeping space, feeding supplies, diapers, clothing, basic baby-care supplies, transportation needs, important contacts, and a plan for medical care.";
+
+return;
+
+}
+
+
+if (
+question.indexOf("milestone") !== -1 ||
+question.indexOf("development") !== -1
+) {
+
+answer.innerHTML =
+"🌱 Babies develop at different rates. Common areas include movement, communication, social interaction, and learning. A pediatrician can help you understand what is appropriate for your baby's age.";
+
+return;
+
+}
+
+
+if (
+question.indexOf("budget") !== -1 ||
+question.indexOf("money") !== -1
+) {
+
+answer.innerHTML =
+"💰 A simple baby budget can include diapers, feeding, clothing, healthcare, transportation, childcare, and household expenses.";
+
+return;
+
+}
+
+
+answer.innerHTML =
+"💗 That's a great question. MotherNest can help you break it into smaller steps and organize what you need.";
+
+}
+
+
+function useAIQuestion(question) {
+
+document.getElementById("aiQuestion").value =
+question;
+
+answerAI();
+
+}
+
+
+/* =========================
+REGISTRY
+========================= */
+
+var currentRegistryItem = "";
+
+
+function addRegistryItem() {
+
+var input =
+document.getElementById("registryInput");
+
+var text =
+input.value.trim();
+
+
+if (text === "") {
+
+showRegistryMessage(
+"💗 Type something your family needs first."
+);
+
+return;
+
+}
+
+
+currentRegistryItem = text;
+
+
+var list =
+document.getElementById("registryList");
+
+
+var item =
+document.createElement("div");
+
+item.className =
+"registry-item";
+
+
+var itemText =
+document.createElement("span");
+
+itemText.innerHTML =
+"🎁 " + text;
+
+
+var remove =
+document.createElement("button");
+
+remove.className =
+"remove";
+
+remove.innerHTML =
+"Remove";
+
+
+remove.onclick = function() {
+
+item.remove();
+
+document.getElementById(
+"registryOptions"
+).style.display = "none";
+
+document.getElementById(
+"registryResult"
+).style.display = "none";
+
+};
+
+
+item.appendChild(itemText);
+
+item.appendChild(remove);
+
+list.appendChild(item);
+
+
+input.value = "";
+
+
+document.getElementById(
+"registryItemName"
+).innerHTML =
+"You added: <strong>" +
+text +
+"</strong>";
+
+
+document.getElementById(
+"registryOptions"
+).style.display = "block";
+
+
+showRegistryMessage(
+"🎉 Added to your MotherNest Registry!"
+);
+
+}
+
+
+/* =========================
+REGISTRY CHOICES
+========================= */
+
+function chooseRegistry(type) {
+
+
+if (type === "used") {
+
+showPage("marketplace");
+
+return;
+
+}
+
+
+var result =
+document.getElementById("registryResult");
+
+var title =
+document.getElementById("registryResultTitle");
+
+var text =
+document.getElementById("registryResultText");
+
+
+result.style.display = "block";
+
+
+if (type === "new") {
+
+title.innerHTML =
+"🆕 New " + currentRegistryItem;
+
+text.innerHTML =
+"Here MotherNest will show new shopping choices for your registry item.";
+
+}
+
+
+if (type === "organic") {
+
+title.innerHTML =
+"🌿 Organic " + currentRegistryItem;
+
+text.innerHTML =
+"Here MotherNest will show organic-focused choices and shopping options.";
+
+}
+
+}
+
+
+function backToOptions() {
+
+document.getElementById(
+"registryResult"
+).style.display = "none";
+
+}
+
+
+function showRegistryMessage(text) {
+
+var message =
+document.getElementById("registryMessage");
+
+message.style.display = "block";
+
+message.innerHTML = text;
+
+}
+
+
+/* =========================
+MARKETPLACE
+========================= */
+
+function marketMessage(category) {
+
+var message =
+document.getElementById("marketMessage");
+
+message.style.display = "block";
+
+message.innerHTML =
+"🛍️ You selected <strong>" +
+category +
+"</strong>. MotherNest Marketplace listings will appear here as we build this section.";
+
+}
+
+
+/* =========================
+HEALTH
+========================= */
+
+function healthMessage(type) {
+
+var message =
+document.getElementById("healthMessage");
+
+message.style.display = "block";
+
+message.innerHTML =
+"🏥 <strong>" +
+type +
+"</strong> selected. We can build this section next.";
+
+}
+
+
+/* =========================
+VAULT
+========================= */
+
+function vaultMessage(type) {
+
+var message =
+document.getElementById("vaultMessage");
+
+message.style.display = "block";
+
+message.innerHTML =
+"🔐 <strong>" +
+type +
+"</strong> selected. We can build this tracker next.";
+
+}
+
+
+/* =========================
+PROFILE
+========================= */
+
+function profileMessage() {
+
+var message =
+document.getElementById("profileMessage");
+
+message.style.display = "block";
+
+message.innerHTML =
+"👤 Profile setup selected. We can build your profile here next.";
+
+}
+
+
+/* =========================
+MARKETPLACE SEARCH
+========================= */
+
+document
+.getElementById("marketSearch")
+.addEventListener(
+"input",
+function() {
+
+var search =
+this.value.toLowerCase();
+
+var cards =
+document.querySelectorAll(
+".market-card"
+);
+
+
+for (
+var i = 0;
+i < cards.length;
+i++
+) {
+
+var text =
+cards[i].innerText
+.toLowerCase();
+
+
+if (
+text.indexOf(search) !== -1
+) {
+
+cards[i].style.display = "";
+
+} else {
+
+cards[i].style.display = "none";
+
+}
+
+}
+
+});
+
+
+/* =========================
+ENTER KEY
+========================= */
+
+document
+.getElementById("aiQuestion")
+.addEventListener(
+"keydown",
+function(event) {
+
+if (event.key === "Enter") {
+
+answerAI();
+
+}
+
+});
+
+
+document
+.getElementById("registryInput")
+.addEventListener(
+"keydown",
+function(event) {
+
+if (event.key === "Enter") {
+
+addRegistryItem();
+
+}
+
+});
+
+
+</script>
+
+</body>
+
+</html>
