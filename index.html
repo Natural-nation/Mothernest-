@@ -1,213 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MotherNest</title>
 
 <style>
 
 * {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff8fb;
-  color: #563847;
+margin: 0;
+font-family: Arial, sans-serif;
+background: #fff8fb;
+color: #563847;
 }
 
 header {
-  text-align: center;
-  padding: 25px 15px;
-  background: linear-gradient(135deg,#ffd9e7,#eadcff);
+text-align: center;
+padding: 25px 15px;
+background: linear-gradient(135deg,#ffd9e7,#eadcff);
 }
 
 header h1 {
-  margin: 0;
-  color: #b83f68;
-  font-size: 32px;
+margin: 0;
+color: #b83f68;
+font-size: 32px;
 }
 
 header p {
-  margin: 8px 0 0;
+margin: 8px 0 0;
 }
 
 nav {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 12px;
-  background: white;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+display: flex;
+gap: 8px;
+overflow-x: auto;
+padding: 12px;
+background: white;
+position: sticky;
+top: 0;
+z-index: 20;
 }
 
 nav button {
-  border: 0;
-  background: #fff0f5;
-  color: #8c3c5b;
-  padding: 12px 15px;
-  border-radius: 22px;
-  font-weight: bold;
-  white-space: nowrap;
-  cursor: pointer;
+border: 0;
+background: #fff0f5;
+color: #8c3c5b;
+padding: 12px 15px;
+border-radius: 22px;
+font-weight: bold;
+white-space: nowrap;
+cursor: pointer;
 }
 
 .page {
-  display: none;
-  max-width: 950px;
-  margin: auto;
-  padding: 25px 15px;
+display: none;
+max-width: 950px;
+margin: auto;
+padding: 25px 15px;
 }
 
 .page.active {
-  display: block;
+display: block;
 }
 
 .welcome {
-  background: linear-gradient(135deg,#fff0f6,#f3edff);
-  border-radius: 25px;
-  padding: 35px 20px;
-  text-align: center;
+background: linear-gradient(135deg,#fff0f6,#f3edff);
+border-radius: 25px;
+padding: 35px 20px;
+text-align: center;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-  gap: 16px;
-  margin-top: 20px;
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+gap: 16px;
+margin-top: 20px;
 }
 
 .card {
-  background: white;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 14px rgba(0,0,0,.07);
+background: white;
+border-radius: 20px;
+padding: 20px;
+box-shadow: 0 4px 14px rgba(0,0,0,.07);
 }
 
 .card h3,
 h2 {
-  color: #b83f68;
+color: #b83f68;
 }
 
 .action {
-  border: 0;
-  padding: 13px 20px;
-  border-radius: 25px;
-  background: #c94f76;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 5px;
+border: 0;
+padding: 13px 20px;
+border-radius: 25px;
+background: #c94f76;
+color: white;
+font-weight: bold;
+cursor: pointer;
+margin: 5px;
 }
 
 .secondary {
-  background: #eadcff;
-  color: #68477d;
+background: #eadcff;
+color: #68477d;
 }
 
 input {
-  width: 100%;
-  padding: 15px;
-  border-radius: 15px;
-  border: 1px solid #dfc5d1;
-  font-size: 16px;
+width: 100%;
+padding: 15px;
+border-radius: 15px;
+border: 1px solid #dfc5d1;
+font-size: 16px;
 }
 
 .answer,
 .message {
-  background: white;
-  border-radius: 15px;
-  padding: 18px;
-  margin-top: 15px;
-  line-height: 1.6;
+background: white;
+border-radius: 15px;
+padding: 18px;
+margin-top: 15px;
+line-height: 1.6;
 }
 
 .registry-item {
-  background: white;
-  padding: 16px;
-  margin: 12px 0;
-  border-radius: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+background: white;
+padding: 16px;
+margin: 12px 0;
+border-radius: 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .remove {
-  border: 0;
-  background: #ffe1e8;
-  color: #a52e50;
-  padding: 8px 12px;
-  border-radius: 10px;
+border: 0;
+background: #ffe1e8;
+color: #a52e50;
+padding: 8px 12px;
+border-radius: 10px;
+cursor: pointer;
 }
 
 .registry-options {
-  margin-top: 20px;
-  padding: 20px;
-  background: linear-gradient(135deg,#fff0f6,#f4edff);
-  border-radius: 20px;
+margin-top: 20px;
+padding: 20px;
+background: linear-gradient(135deg,#fff0f6,#f4edff);
+border-radius: 20px;
 }
 
 .option-button {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 16px;
-  border: 0;
-  border-radius: 15px;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
+display: block;
+width: 100%;
+margin: 10px 0;
+padding: 16px;
+border: 0;
+border-radius: 15px;
+font-size: 17px;
+font-weight: bold;
+cursor: pointer;
 }
 
 .new-option {
-  background: #ffe3ec;
-  color: #a83c61;
+background: #ffe3ec;
+color: #a83c61;
 }
 
 .used-option {
-  background: #e9e0ff;
-  color: #68477d;
+background: #e9e0ff;
+color: #68477d;
 }
 
 .organic-option {
-  background: #e2f4df;
-  color: #477346;
+background: #e2f4df;
+color: #477346;
 }
 
 .registry-result {
-  margin-top: 20px;
-  padding: 20px;
-  background: white;
-  border-radius: 20px;
+margin-top: 20px;
+padding: 20px;
+background: white;
+border-radius: 20px;
 }
 
 .profile {
-  text-align: center;
-  background: white;
-  padding: 30px;
-  border-radius: 25px;
+text-align: center;
+background: white;
+padding: 30px;
+border-radius: 25px;
 }
 
 .avatar {
-  font-size: 55px;
+font-size: 55px;
 }
 
 footer {
-  text-align: center;
-  padding: 30px 15px;
+text-align: center;
+padding: 30px 15px;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -222,7 +217,6 @@ and families grow together.
 </p>
 
 </header>
-
 
 <nav>
 
@@ -291,7 +285,6 @@ onclick="showPage('registry')">
 
 </div>
 
-
 <div class="grid">
 
 <div class="card">
@@ -313,7 +306,6 @@ Open Baby AI
 
 </div>
 
-
 <div class="card">
 
 <h3>🛍️ Marketplace</h3>
@@ -332,7 +324,6 @@ Open Marketplace
 
 </div>
 
-
 <div class="card">
 
 <h3>🏥 Health</h3>
@@ -350,7 +341,6 @@ Open Health
 </button>
 
 </div>
-
 
 <div class="card">
 
@@ -407,9 +397,7 @@ Ask MotherNest
 id="aiAnswer"
 class="answer"
 style="display:none;">
-
 </div>
-
 
 <div class="grid">
 
@@ -419,16 +407,13 @@ style="display:none;">
 
 <button
 class="action"
-onclick="useAIQuestion(
-'What do I need before baby arrives?'
-)">
+onclick="useAIQuestion('What do I need before baby arrives?')">
 
 Ask This
 
 </button>
 
 </div>
-
 
 <div class="card">
 
@@ -436,9 +421,7 @@ Ask This
 
 <button
 class="action"
-onclick="useAIQuestion(
-'What should I know about baby milestones?'
-)">
+onclick="useAIQuestion('What should I know about baby milestones?')">
 
 Ask This
 
@@ -446,16 +429,13 @@ Ask This
 
 </div>
 
-
 <div class="card">
 
 <h3>💰 Baby Budget</h3>
 
 <button
 class="action"
-onclick="useAIQuestion(
-'Help me make a newborn budget'
-)">
+onclick="useAIQuestion('Help me make a newborn budget')">
 
 Ask This
 
@@ -506,7 +486,6 @@ Browse
 
 </div>
 
-
 <div class="card market-card">
 
 <h3>👕 Baby Clothes</h3>
@@ -524,7 +503,6 @@ Browse
 </button>
 
 </div>
-
 
 <div class="card market-card">
 
@@ -544,7 +522,6 @@ Browse
 
 </div>
 
-
 <div class="card market-card">
 
 <h3>🧸 Toys</h3>
@@ -563,7 +540,6 @@ Browse
 
 </div>
 
-
 <div class="card market-card">
 
 <h3>🧴 Baby Care</h3>
@@ -581,7 +557,6 @@ Browse
 </button>
 
 </div>
-
 
 <div class="card market-card">
 
@@ -603,25 +578,26 @@ Browse
 
 </div>
 
-
 <div
 id="marketMessage"
 class="message"
 style="display:none;">
-
 </div>
 
 </section>
-  <!-- HEALTH -->
+
+
+<!-- HEALTH -->
 
 <section id="health" class="page">
 
-<h2>🏥 MotherNest Health</h2>
+<h2>
+🏥 MotherNest Health
+</h2>
 
 <p>
 Organize your family's healthcare information.
 </p>
-
 
 <div class="grid">
 
@@ -629,7 +605,9 @@ Organize your family's healthcare information.
 
 <h3>👩‍⚕️ Pediatrician</h3>
 
-<p>Keep pediatrician information organized.</p>
+<p>
+Keep pediatrician information organized.
+</p>
 
 <button
 class="action"
@@ -641,12 +619,13 @@ Open
 
 </div>
 
-
 <div class="card">
 
 <h3>📅 Appointments</h3>
 
-<p>Keep appointments organized.</p>
+<p>
+Keep appointments organized.
+</p>
 
 <button
 class="action"
@@ -658,16 +637,17 @@ Open
 
 </div>
 
-
 <div class="card">
 
 <h3>🏥 Children's Hospital</h3>
 
-<p>Keep important hospital information.</p>
+<p>
+Keep important hospital information.
+</p>
 
 <button
 class="action"
-onclick="healthMessage('Children’s Hospital')">
+onclick="healthMessage('Children Hospital')">
 
 Open
 
@@ -675,12 +655,13 @@ Open
 
 </div>
 
-
 <div class="card">
 
 <h3>🚑 Urgent Care</h3>
 
-<p>Keep urgent-care information.</p>
+<p>
+Keep urgent-care information.
+</p>
 
 <button
 class="action"
@@ -692,12 +673,13 @@ Open
 
 </div>
 
-
 <div class="card">
 
 <h3>💊 Pharmacy</h3>
 
-<p>Save pharmacy information.</p>
+<p>
+Save pharmacy information.
+</p>
 
 <button
 class="action"
@@ -709,12 +691,13 @@ Open
 
 </div>
 
-
 <div class="card">
 
 <h3>🧾 Health Records</h3>
 
-<p>Keep health records organized.</p>
+<p>
+Keep health records organized.
+</p>
 
 <button
 class="action"
@@ -728,12 +711,10 @@ Open Records
 
 </div>
 
-
 <div
 id="healthMessage"
 class="message"
 style="display:none;">
-
 </div>
 
 </section>
@@ -743,12 +724,13 @@ style="display:none;">
 
 <section id="registry" class="page">
 
-<h2>🎁 MotherNest Registry</h2>
+<h2>
+🎁 MotherNest Registry
+</h2>
 
 <p>
 Tell MotherNest what your family needs.
 </p>
-
 
 <input
 id="registryInput"
@@ -756,9 +738,7 @@ type="text"
 placeholder="Example: I need a bassinet"
 >
 
-
 <br><br>
-
 
 <button
 class="action"
@@ -768,19 +748,18 @@ onclick="addRegistryItem()">
 
 </button>
 
-
 <div id="registryList"></div>
-
 
 <div
 id="registryOptions"
 class="registry-options"
 style="display:none;">
 
-<h3>🎁 Choose Your Option</h3>
+<h3>
+🎁 Choose Your Option
+</h3>
 
 <p id="registryItemName"></p>
-
 
 <button
 class="option-button new-option"
@@ -790,7 +769,6 @@ onclick="chooseRegistry('new')">
 
 </button>
 
-
 <button
 class="option-button used-option"
 onclick="chooseRegistry('used')">
@@ -798,7 +776,6 @@ onclick="chooseRegistry('used')">
 ♻️ Used
 
 </button>
-
 
 <button
 class="option-button organic-option"
@@ -810,7 +787,6 @@ onclick="chooseRegistry('organic')">
 
 </div>
 
-
 <div
 id="registryResult"
 class="registry-result"
@@ -819,7 +795,6 @@ style="display:none;">
 <h3 id="registryResultTitle"></h3>
 
 <p id="registryResultText"></p>
-
 
 <button
 class="action secondary"
@@ -831,17 +806,13 @@ onclick="backToOptions()">
 
 </div>
 
-
 <div
 id="registryMessage"
 class="message"
 style="display:none;">
-
 </div>
 
 </section>
-
-
 <!-- VAULT -->
 
 <section id="vault" class="page">
@@ -851,7 +822,6 @@ style="display:none;">
 <p>
 Your organized family information space.
 </p>
-
 
 <div class="grid">
 
@@ -958,12 +928,10 @@ Open
 
 </div>
 
-
 <div
 id="vaultMessage"
 class="message"
 style="display:none;">
-
 </div>
 
 </section>
@@ -975,16 +943,13 @@ style="display:none;">
 
 <div class="profile">
 
-<div class="avatar">
-👩‍🍼
-</div>
+<div class="avatar">👩‍🍼</div>
 
 <h2>My MotherNest Profile</h2>
 
 <p>
 Your family space is ready to customize.
 </p>
-
 
 <button
 class="action"
@@ -994,7 +959,6 @@ Create Profile
 
 </button>
 
-
 <button
 class="action secondary"
 onclick="profileMessage()">
@@ -1003,12 +967,10 @@ Settings
 
 </button>
 
-
 <div
 id="profileMessage"
 class="message"
 style="display:none;">
-
 </div>
 
 </div>
@@ -1028,29 +990,29 @@ one moment at a time. 🌸
 
 <script>
 
-
-/* =========================
-NAVIGATION
-========================= */
+/* NAVIGATION */
 
 function showPage(pageName) {
 
 var pages =
 document.querySelectorAll(".page");
 
-for (var i = 0; i < pages.length; i++) {
+for (
+var i = 0;
+i < pages.length;
+i++
+) {
 
 pages[i].classList.remove("active");
 
 }
 
-
-var page =
+var selected =
 document.getElementById(pageName);
 
-if (page) {
+if (selected) {
 
-page.classList.add("active");
+selected.classList.add("active");
 
 window.scrollTo(0,0);
 
@@ -1059,25 +1021,20 @@ window.scrollTo(0,0);
 }
 
 
-/* =========================
-BABY AI
-========================= */
+/* BABY AI */
 
 function answerAI() {
 
-var question =
-document.getElementById("aiQuestion")
-.value
-.trim()
-.toLowerCase();
-
+var input =
+document.getElementById("aiQuestion");
 
 var answer =
 document.getElementById("aiAnswer");
 
+var question =
+input.value.trim().toLowerCase();
 
 answer.style.display = "block";
-
 
 if (question === "") {
 
@@ -1088,7 +1045,6 @@ return;
 
 }
 
-
 if (
 question.indexOf("before") !== -1 ||
 question.indexOf("arrive") !== -1 ||
@@ -1096,12 +1052,11 @@ question.indexOf("need") !== -1
 ) {
 
 answer.innerHTML =
-"🍼 Families commonly prepare a safe sleeping space, feeding supplies, diapers, clothing, basic baby-care supplies, transportation needs, important contacts, and a plan for medical care.";
+"🍼 Families commonly prepare a safe sleeping space, feeding supplies, diapers, clothing, basic baby-care supplies, important contacts, and a plan for medical care.";
 
 return;
 
 }
-
 
 if (
 question.indexOf("milestone") !== -1 ||
@@ -1109,12 +1064,11 @@ question.indexOf("development") !== -1
 ) {
 
 answer.innerHTML =
-"🌱 Babies develop at different rates. Common areas include movement, communication, social interaction, and learning. A pediatrician can help you understand what is appropriate for your baby's age.";
+"🌱 Babies develop at different rates. Common areas include movement, communication, social interaction, and learning.";
 
 return;
 
 }
-
 
 if (
 question.indexOf("budget") !== -1 ||
@@ -1128,7 +1082,6 @@ return;
 
 }
 
-
 answer.innerHTML =
 "💗 That's a great question. MotherNest can help you break it into smaller steps and organize what you need.";
 
@@ -1137,17 +1090,16 @@ answer.innerHTML =
 
 function useAIQuestion(question) {
 
-document.getElementById("aiQuestion").value =
-question;
+document.getElementById(
+"aiQuestion"
+).value = question;
 
 answerAI();
 
 }
 
 
-/* =========================
-REGISTRY
-========================= */
+/* REGISTRY */
 
 var currentRegistryItem = "";
 
@@ -1155,11 +1107,12 @@ var currentRegistryItem = "";
 function addRegistryItem() {
 
 var input =
-document.getElementById("registryInput");
+document.getElementById(
+"registryInput"
+);
 
 var text =
 input.value.trim();
-
 
 if (text === "") {
 
@@ -1171,13 +1124,12 @@ return;
 
 }
 
-
 currentRegistryItem = text;
 
-
 var list =
-document.getElementById("registryList");
-
+document.getElementById(
+"registryList"
+);
 
 var item =
 document.createElement("div");
@@ -1185,13 +1137,11 @@ document.createElement("div");
 item.className =
 "registry-item";
 
-
 var itemText =
 document.createElement("span");
 
 itemText.innerHTML =
 "🎁 " + text;
-
 
 var remove =
 document.createElement("button");
@@ -1202,21 +1152,12 @@ remove.className =
 remove.innerHTML =
 "Remove";
 
-
-remove.onclick = function() {
+remove.onclick =
+function() {
 
 item.remove();
 
-document.getElementById(
-"registryOptions"
-).style.display = "none";
-
-document.getElementById(
-"registryResult"
-).style.display = "none";
-
 };
-
 
 item.appendChild(itemText);
 
@@ -1224,9 +1165,7 @@ item.appendChild(remove);
 
 list.appendChild(item);
 
-
 input.value = "";
-
 
 document.getElementById(
 "registryItemName"
@@ -1235,11 +1174,10 @@ document.getElementById(
 text +
 "</strong>";
 
-
 document.getElementById(
 "registryOptions"
-).style.display = "block";
-
+).style.display =
+"block";
 
 showRegistryMessage(
 "🎉 Added to your MotherNest Registry!"
@@ -1248,12 +1186,7 @@ showRegistryMessage(
 }
 
 
-/* =========================
-REGISTRY CHOICES
-========================= */
-
 function chooseRegistry(type) {
-
 
 if (type === "used") {
 
@@ -1263,38 +1196,43 @@ return;
 
 }
 
-
 var result =
-document.getElementById("registryResult");
+document.getElementById(
+"registryResult"
+);
 
 var title =
-document.getElementById("registryResultTitle");
+document.getElementById(
+"registryResultTitle"
+);
 
 var text =
-document.getElementById("registryResultText");
+document.getElementById(
+"registryResultText"
+);
 
-
-result.style.display = "block";
-
+result.style.display =
+"block";
 
 if (type === "new") {
 
 title.innerHTML =
-"🆕 New " + currentRegistryItem;
+"🆕 New " +
+currentRegistryItem;
 
 text.innerHTML =
-"Here MotherNest will show new shopping choices for your registry item.";
+"MotherNest will show new shopping choices for this registry item here.";
 
 }
-
 
 if (type === "organic") {
 
 title.innerHTML =
-"🌿 Organic " + currentRegistryItem;
+"🌿 Organic " +
+currentRegistryItem;
 
 text.innerHTML =
-"Here MotherNest will show organic-focused choices and shopping options.";
+"MotherNest will show organic-focused choices for this registry item here.";
 
 }
 
@@ -1305,7 +1243,8 @@ function backToOptions() {
 
 document.getElementById(
 "registryResult"
-).style.display = "none";
+).style.display =
+"none";
 
 }
 
@@ -1313,44 +1252,49 @@ document.getElementById(
 function showRegistryMessage(text) {
 
 var message =
-document.getElementById("registryMessage");
+document.getElementById(
+"registryMessage"
+);
 
-message.style.display = "block";
+message.style.display =
+"block";
 
 message.innerHTML = text;
 
 }
 
 
-/* =========================
-MARKETPLACE
-========================= */
+/* MARKETPLACE */
 
 function marketMessage(category) {
 
 var message =
-document.getElementById("marketMessage");
+document.getElementById(
+"marketMessage"
+);
 
-message.style.display = "block";
+message.style.display =
+"block";
 
 message.innerHTML =
 "🛍️ You selected <strong>" +
 category +
-"</strong>. MotherNest Marketplace listings will appear here as we build this section.";
+"</strong>. MotherNest Marketplace is ready for us to build out.";
 
 }
 
 
-/* =========================
-HEALTH
-========================= */
+/* HEALTH */
 
 function healthMessage(type) {
 
 var message =
-document.getElementById("healthMessage");
+document.getElementById(
+"healthMessage"
+);
 
-message.style.display = "block";
+message.style.display =
+"block";
 
 message.innerHTML =
 "🏥 <strong>" +
@@ -1360,16 +1304,17 @@ type +
 }
 
 
-/* =========================
-VAULT
-========================= */
+/* VAULT */
 
 function vaultMessage(type) {
 
 var message =
-document.getElementById("vaultMessage");
+document.getElementById(
+"vaultMessage"
+);
 
-message.style.display = "block";
+message.style.display =
+"block";
 
 message.innerHTML =
 "🔐 <strong>" +
@@ -1377,471 +1322,19 @@ type +
 "</strong> selected. We can build this tracker next.";
 
 }
-  <script>
 
-/* =========================
-   NAVIGATION
-========================= */
 
-function showPage(pageName) {
-
-  var pages = document.querySelectorAll(".page");
-
-  for (var i = 0; i < pages.length; i++) {
-    pages[i].classList.remove("active");
-  }
-
-  var page = document.getElementById(pageName);
-
-  if (page) {
-    page.classList.add("active");
-    window.scrollTo(0, 0);
-  }
-}
-
-
-/* =========================
-   BABY AI
-========================= */
-
-function answerAI() {
-
-  var question =
-    document.getElementById("aiQuestion").value
-    .trim()
-    .toLowerCase();
-
-  var answer =
-    document.getElementById("aiAnswer");
-
-  answer.style.display = "block";
-
-  if (question === "") {
-    answer.innerHTML =
-      "💗 Please type a question first.";
-    return;
-  }
-
-  if (
-    question.indexOf("before") !== -1 ||
-    question.indexOf("arrive") !== -1 ||
-    question.indexOf("need") !== -1
-  ) {
-
-    answer.innerHTML =
-      "🍼 Families commonly prepare a safe sleeping space, feeding supplies, diapers, clothing, basic baby-care supplies, important contacts, and a plan for medical care.";
-
-    return;
-  }
-
-  if (
-    question.indexOf("milestone") !== -1 ||
-    question.indexOf("development") !== -1
-  ) {
-
-    answer.innerHTML =
-      "🌱 Babies develop at different rates. Common areas include movement, communication, social interaction, and learning. A pediatrician can help you understand what is appropriate for your baby's age.";
-
-    return;
-  }
-
-  if (
-    question.indexOf("budget") !== -1 ||
-    question.indexOf("money") !== -1
-  ) {
-
-    answer.innerHTML =
-      "💰 A simple baby budget can include diapers, feeding, clothing, healthcare, transportation, childcare, and household expenses.";
-
-    return;
-  }
-
-  answer.innerHTML =
-    "💗 That's a great question. MotherNest can help you break it into smaller steps and organize what you need.";
-}
-
-
-function useAIQuestion(question) {
-
-  document.getElementById("aiQuestion").value =
-    question;
-
-  answerAI();
-}
-
-
-/* =========================
-   REGISTRY
-========================= */
-
-var currentRegistryItem = "";
-
-
-function addRegistryItem() {
-
-  var input =
-    document.getElementById("registryInput");
-
-  var text =
-    input.value.trim();
-
-  if (text === "") {
-
-    showRegistryMessage(
-      "💗 Type something your family needs first."
-    );
-
-    return;
-  }
-
-  currentRegistryItem = text;
-
-  var list =
-    document.getElementById("registryList");
-
-  var item =
-    document.createElement("div");
-
-  item.className =
-    "registry-item";
-
-  var itemText =
-    document.createElement("span");
-
-  itemText.innerHTML =
-    "🎁 " + text;
-
-  var remove =
-    document.createElement("button");
-
-  remove.className =
-    "remove";
-
-  remove.innerHTML =
-    "Remove";
-
-  remove.onclick = function() {
-
-    item.remove();
-
-    document.getElementById(
-      "registryOptions"
-    ).style.display = "none";
-
-    document.getElementById(
-      "registryResult"
-    ).style.display = "none";
-
-  };
-
-  item.appendChild(itemText);
-
-  item.appendChild(remove);
-
-  list.appendChild(item);
-
-  input.value = "";
-
-  document.getElementById(
-    "registryItemName"
-  ).innerHTML =
-    "You added: <strong>" +
-    text +
-    "</strong>";
-
-  document.getElementById(
-    "registryOptions"
-  ).style.display = "block";
-
-  showRegistryMessage(
-    "🎉 Added to your MotherNest Registry!"
-  );
-}
-
-
-/* REGISTRY OPTIONS */
-
-function chooseRegistry(type) {
-
-  if (type === "used") {
-
-    showPage("marketplace");
-
-    return;
-  }
-
-  var result =
-    document.getElementById("registryResult");
-
-  var title =
-    document.getElementById("registryResultTitle");
-
-  var text =
-    document.getElementById("registryResultText");
-
-  result.style.display = "block";
-
-  if (type === "new") {
-
-    title.innerHTML =
-      "🆕 New " + currentRegistryItem;
-
-    text.innerHTML =
-      "Here MotherNest will show new shopping choices for your registry item.";
-
-  }
-
-  if (type === "organic") {
-
-    title.innerHTML =
-      "🌿 Organic " + currentRegistryItem;
-
-    text.innerHTML =
-      "Here MotherNest will show organic-focused choices and shopping options.";
-
-  }
-}
-
-
-function backToOptions() {
-
-  document.getElementById(
-    "registryResult"
-  ).style.display = "none";
-
-}
-
-
-function showRegistryMessage(text) {
-
-  var message =
-    document.getElementById("registryMessage");
-
-  message.style.display = "block";
-
-  message.innerHTML = text;
-}
-
-
-/* =========================
-   MARKETPLACE
-========================= */
-
-function marketMessage(category) {
-
-  var message =
-    document.getElementById("marketMessage");
-
-  message.style.display = "block";
-
-  message.innerHTML =
-    "🛍️ You selected <strong>" +
-    category +
-    "</strong>. MotherNest Marketplace listings will appear here as we build this section.";
-}
-
-
-/* =========================
-   HEALTH
-========================= */
-
-function healthMessage(type) {
-
-  var message =
-    document.getElementById("healthMessage");
-
-  message.style.display = "block";
-
-  message.innerHTML =
-    "🏥 <strong>" +
-    type +
-    "</strong> selected. We can build this section next.";
-}
-
-
-/* =========================
-   VAULT
-========================= */
-
-function vaultMessage(type) {
-
-  var message =
-    document.getElementById("vaultMessage");
-
-  message.style.display = "block";
-
-  message.innerHTML =
-    "🔐 <strong>" +
-    type +
-    "</strong> selected. We can build this tracker next.";
-}
-
-
-/* =========================
-   PROFILE
-========================= */
-
-function profileMessage() {
-
-  var message =
-    document.getElementById("profileMessage");
-
-  message.style.display = "block";
-
-  message.innerHTML =
-    "👤 Profile setup selected. We can build your profile here next.";
-}
-  /* =========================
-   MARKETPLACE SEARCH
-========================= */
-
-var marketSearch =
-  document.getElementById("marketSearch");
-
-if (marketSearch) {
-
-  marketSearch.addEventListener(
-    "input",
-    function() {
-
-      var search =
-        this.value.toLowerCase();
-
-      var cards =
-        document.querySelectorAll(".market-card");
-
-      for (
-        var i = 0;
-        i < cards.length;
-        i++
-      ) {
-
-        var text =
-          cards[i].innerText.toLowerCase();
-
-        if (
-          text.indexOf(search) !== -1
-        ) {
-
-          cards[i].style.display = "";
-
-        } else {
-
-          cards[i].style.display = "none";
-
-        }
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================
-   ENTER KEY
-========================= */
-
-var aiQuestion =
-  document.getElementById("aiQuestion");
-
-if (aiQuestion) {
-
-  aiQuestion.addEventListener(
-    "keydown",
-    function(event) {
-
-      if (event.key === "Enter") {
-        answerAI();
-      }
-
-    }
-  );
-
-}
-
-
-var registryInput =
-  document.getElementById("registryInput");
-
-if (registryInput) {
-
-  registryInput.addEventListener(
-    "keydown",
-    function(event) {
-
-      if (event.key === "Enter") {
-        addRegistryItem();
-      }
-
-    }
-  );
-
-}
-
-</script>
-
-</body>
-</html>
-
-/* =========================
-   ENTER KEY
-========================= */
-
-var aiQuestion =
-  document.getElementById("aiQuestion");
-
-if (aiQuestion) {
-
-  aiQuestion.addEventListener(
-    "keydown",
-    function(event) {
-
-      if (event.key === "Enter") {
-        answerAI();
-      }
-
-    }
-  );
-
-}
-
-
-var registryInput =
-  document.getElementById("registryInput");
-
-if (registryInput) {
-
-  registryInput.addEventListener(
-    "keydown",
-    function(event) {
-
-      if (event.key === "Enter") {
-        addRegistryItem();
-      }
-
-    }
-  );
-
-}
-
-</script>
-
-</body>
-</html>
-
-
-/* =========================
-PROFILE
-========================= */
+/* PROFILE */
 
 function profileMessage() {
 
 var message =
-document.getElementById("profileMessage");
+document.getElementById(
+"profileMessage"
+);
 
-message.style.display = "block";
+message.style.display =
+"block";
 
 message.innerHTML =
 "👤 Profile setup selected. We can build your profile here next.";
@@ -1849,13 +1342,16 @@ message.innerHTML =
 }
 
 
-/* =========================
-MARKETPLACE SEARCH
-========================= */
+/* MARKETPLACE SEARCH */
 
-document
-.getElementById("marketSearch")
-.addEventListener(
+var marketSearch =
+document.getElementById(
+"marketSearch"
+);
+
+if (marketSearch) {
+
+marketSearch.addEventListener(
 "input",
 function() {
 
@@ -1867,7 +1363,6 @@ document.querySelectorAll(
 ".market-card"
 );
 
-
 for (
 var i = 0;
 i < cards.length;
@@ -1875,25 +1370,73 @@ i++
 ) {
 
 var text =
-cards[i].innerText
-.toLowerCase();
-
+cards[i].innerText.toLowerCase();
 
 if (
 text.indexOf(search) !== -1
 ) {
+
+cards[i].style.display = "";
+
+} else {
+
+cards[i].style.display =
+"none";
+
+}
+
+}
+
+}
+);
+
+}
+
+
+/* ENTER KEY */
+
+var aiQuestion =
+document.getElementById(
+"aiQuestion"
+);
+
+if (aiQuestion) {
+
+aiQuestion.addEventListener(
+"keydown",
+function(event) {
+
+if (event.key === "Enter") {
+
+answerAI();
+
+}
+
+}
+);
+
+}
+
+
+var registryInput =
+document.getElementById(
+"registryInput"
+);
+
 if (registryInput) {
 
-  registryInput.addEventListener(
-    "keydown",
-    function(event) {
+registryInput.addEventListener(
+"keydown",
+function(event) {
 
-      if (event.key === "Enter") {
-        addRegistryItem();
-      }
+if (event.key === "Enter") {
 
-    }
-  );
+addRegistryItem();
+
+}
+
+}
+);
 
 }
 
