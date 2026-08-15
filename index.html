@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MotherNest</title>
 
 <style>
-
 * {
   box-sizing: border-box;
 }
@@ -16,15 +14,13 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #fff8fb;
-  color: #553847;
+  color: #563847;
 }
-
-/* HEADER */
 
 header {
   background: linear-gradient(135deg, #ffd9e7, #eadcff);
   text-align: center;
-  padding: 24px 15px;
+  padding: 25px 15px;
 }
 
 header h1 {
@@ -37,8 +33,6 @@ header p {
   margin: 8px 0 0;
 }
 
-/* NAVIGATION */
-
 nav {
   display: flex;
   gap: 8px;
@@ -47,12 +41,12 @@ nav {
   background: white;
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 10;
   box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
 nav button {
-  border: none;
+  border: 0;
   background: #fff0f5;
   color: #8c3c5b;
   padding: 11px 15px;
@@ -61,12 +55,6 @@ nav button {
   white-space: nowrap;
   cursor: pointer;
 }
-
-nav button:active {
-  transform: scale(.97);
-}
-
-/* PAGES */
 
 .page {
   display: none;
@@ -79,48 +67,22 @@ nav button:active {
   display: block;
 }
 
-/* WELCOME */
-
 .welcome {
-  background: linear-gradient(135deg,#fff0f6,#f3edff);
+  background: linear-gradient(135deg, #fff0f6, #f3edff);
   border-radius: 25px;
   padding: 35px 20px;
   text-align: center;
   margin-bottom: 25px;
 }
 
-.welcome h2 {
+.welcome h2,
+.category-header h2 {
   color: #b83f68;
-  font-size: 28px;
 }
-
-/* BUTTONS */
-
-.action {
-  border: none;
-  padding: 13px 20px;
-  border-radius: 25px;
-  background: #c94f76;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.action.secondary {
-  background: #eadcff;
-  color: #68477d;
-}
-
-.action:active {
-  transform: scale(.97);
-}
-
-/* CARDS */
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
 }
 
@@ -137,28 +99,29 @@ nav button:active {
   margin-top: 0;
 }
 
-/* HEADINGS */
-
-.category-header {
-  text-align: center;
-  margin-bottom: 25px;
+.action {
+  border: 0;
+  padding: 13px 20px;
+  border-radius: 25px;
+  background: #c94f76;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
 }
 
-.category-header h2 {
-  color: #b83f68;
+.secondary {
+  background: #eadcff;
+  color: #68477d;
 }
-
-/* INPUTS */
 
 input {
   width: 100%;
   padding: 15px;
   border-radius: 15px;
-  border: 1px solid #e1c7d3;
+  border: 1px solid #dfc5d1;
   font-size: 16px;
 }
-
-/* ASSISTANT */
 
 .assistant-box {
   background: #f7efff;
@@ -166,7 +129,8 @@ input {
   padding: 22px;
 }
 
-.answer {
+.answer,
+.message {
   background: white;
   border-radius: 15px;
   padding: 18px;
@@ -174,16 +138,10 @@ input {
   line-height: 1.6;
 }
 
-/* REGISTRY */
-
-.registry-list {
-  margin-top: 20px;
-}
-
 .registry-item {
   background: white;
   padding: 16px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
@@ -193,25 +151,13 @@ input {
 }
 
 .remove {
-  border: none;
+  border: 0;
   background: #ffe1e8;
   color: #a52e50;
   padding: 8px 12px;
   border-radius: 10px;
   cursor: pointer;
 }
-
-/* MESSAGE */
-
-.message {
-  display: none;
-  background: #fff0c9;
-  padding: 15px;
-  border-radius: 15px;
-  margin-top: 15px;
-}
-
-/* PROFILE */
 
 .profile {
   text-align: center;
@@ -232,18 +178,13 @@ input {
   margin: auto;
 }
 
-/* FOOTER */
-
 footer {
   text-align: center;
   padding: 30px 15px;
   color: #896a78;
 }
 
-/* MOBILE */
-
-@media(max-width:600px) {
-
+@media (max-width: 600px) {
   header h1 {
     font-size: 27px;
   }
@@ -251,59 +192,25 @@ footer {
   .page {
     padding: 20px 12px;
   }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-
   <h1>🌸 MotherNest 🪺</h1>
-
-  <p>
-    A place where mothers, babies, and families grow together.
-  </p>
-
+  <p>A place where mothers, babies, and families grow together.</p>
 </header>
 
-
-<!-- NAVIGATION -->
-
 <nav>
-
-  <button onclick="showPage('home')">
-    🏠 Home
-  </button>
-
-  <button onclick="showPage('assistant')">
-    🤖 Baby Assistant
-  </button>
-
-  <button onclick="showPage('marketplace')">
-    🛍️ Marketplace
-  </button>
-
-  <button onclick="showPage('health')">
-    🏥 Health
-  </button>
-
-  <button onclick="showPage('registry')">
-    🎁 Registry
-  </button>
-
-  <button onclick="showPage('vault')">
-    🔐 Vault
-  </button>
-
-  <button onclick="showPage('profile')">
-    👤 Profile
-  </button>
-
+  <button data-page="home">🏠 Home</button>
+  <button data-page="assistant">🤖 Baby AI</button>
+  <button data-page="marketplace">🛍️ Marketplace</button>
+  <button data-page="health">🏥 Health</button>
+  <button data-page="registry">🎁 Registry</button>
+  <button data-page="vault">🔐 Vault</button>
+  <button data-page="profile">👤 Profile</button>
 </nav>
 
 
@@ -312,7 +219,6 @@ footer {
 <section id="home" class="page active">
 
   <div class="welcome">
-
     <h2>Welcome to MotherNest 💗</h2>
 
     <p>
@@ -320,101 +226,56 @@ footer {
       learning, shopping, and growing together.
     </p>
 
-    <button
-      class="action"
-      onclick="showPage('assistant')">
-
-      🤖 Ask Baby Assistant
-
+    <button class="action" data-go="assistant">
+      🤖 Ask Baby AI
     </button>
 
-    <button
-      class="action secondary"
-      onclick="showPage('registry')">
-
+    <button class="action secondary" data-go="registry">
       🎁 Build My Registry
-
     </button>
-
   </div>
-
 
   <div class="grid">
 
     <div class="card">
-
-      <h3>🤖 Baby Assistant</h3>
-
+      <h3>🤖 Baby AI</h3>
       <p>
-        Get helpful starting points for common
-        parenting questions.
+        Ask questions about preparing for baby,
+        milestones, routines, and more.
       </p>
-
-      <button
-        class="action"
-        onclick="showPage('assistant')">
-
-        Open Assistant
-
+      <button class="action" data-go="assistant">
+        Open Baby AI
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>🛍️ Marketplace</h3>
-
       <p>
-        Explore baby items and family products.
+        Explore baby products and family items.
       </p>
-
-      <button
-        class="action"
-        onclick="showPage('marketplace')">
-
+      <button class="action" data-go="marketplace">
         Open Marketplace
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>🏥 Health</h3>
-
       <p>
         Organize important healthcare information.
       </p>
-
-      <button
-        class="action"
-        onclick="showPage('health')">
-
+      <button class="action" data-go="health">
         Open Health
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>🔐 Memory Vault</h3>
-
       <p>
         Keep important family information organized.
       </p>
-
-      <button
-        class="action"
-        onclick="showPage('vault')">
-
+      <button class="action" data-go="vault">
         Open Vault
-
       </button>
-
     </div>
 
   </div>
@@ -422,108 +283,59 @@ footer {
 </section>
 
 
-<!-- ASSISTANT -->
+<!-- BABY AI -->
 
 <section id="assistant" class="page">
 
   <div class="category-header">
-
-    <h2>🤖 MotherNest Baby Assistant</h2>
-
-    <p>
-      Ask MotherNest a question.
-    </p>
-
+    <h2>🤖 MotherNest Baby AI</h2>
+    <p>Ask MotherNest a question.</p>
   </div>
-
 
   <div class="assistant-box">
 
     <input
-      id="assistantInput"
+      id="aiQuestion"
       type="text"
       placeholder="Example: What do I need before baby arrives?"
     >
 
     <br><br>
 
-    <button
-      class="action"
-      onclick="askAssistant()">
-
+    <button id="askAIButton" class="action">
       Ask MotherNest
-
     </button>
 
-
-    <div
-      id="assistantAnswer"
-      class="answer"
-      style="display:none;">
-    </div>
+    <div id="aiAnswer" class="answer" style="display:none;"></div>
 
   </div>
 
-
   <br>
-
 
   <div class="grid">
 
     <div class="card">
-
       <h3>🍼 Preparing For Baby</h3>
-
-      <p>
-        Start a basic preparation list.
-      </p>
-
-      <button
-        class="action secondary"
-        onclick="assistantQuestion('What do I need before baby arrives?')">
-
+      <p>Start with common things families prepare.</p>
+      <button class="action ai-example" data-question="What do I need before baby arrives?">
         Ask This
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>🌱 Milestones</h3>
-
-      <p>
-        Learn about common developmental milestones.
-      </p>
-
-      <button
-        class="action secondary"
-        onclick="assistantQuestion('What should I know about baby milestones?')">
-
+      <p>Learn about common developmental milestones.</p>
+      <button class="action ai-example" data-question="What should I know about baby milestones?">
         Ask This
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>💰 Baby Budget</h3>
-
-      <p>
-        Start organizing baby-related expenses.
-      </p>
-
-      <button
-        class="action secondary"
-        onclick="assistantQuestion('Help me make a newborn budget')">
-
+      <p>Start organizing baby-related expenses.</p>
+      <button class="action ai-example" data-question="Help me make a newborn budget">
         Ask This
-
       </button>
-
     </div>
 
   </div>
@@ -536,149 +348,71 @@ footer {
 <section id="marketplace" class="page">
 
   <div class="category-header">
-
     <h2>🛍️ MotherNest Marketplace</h2>
-
-    <p>
-      Find baby and family items.
-    </p>
-
+    <p>Find baby and family items.</p>
   </div>
-
 
   <input
     id="marketSearch"
     type="text"
     placeholder="🔎 Search marketplace..."
-    onkeyup="searchMarketplace()"
   >
-
 
   <br><br>
 
+  <div class="grid">
 
-  <div class="grid" id="marketGrid">
-
-    <div class="card market-item">
-
+    <div class="card market-card">
       <h3>🛏️ Nursery</h3>
-
-      <p>
-        Cribs, bassinets, nursery furniture and more.
-      </p>
-
-      <button
-        class="action"
-        onclick="marketMessage('Nursery')">
-
+      <p>Cribs, bassinets, and nursery items.</p>
+      <button class="action market-button" data-name="Nursery">
         Browse Nursery
-
       </button>
-
     </div>
 
-
-    <div class="card market-item">
-
+    <div class="card market-card">
       <h3>👕 Baby Clothes</h3>
-
-      <p>
-        New and pre-loved baby clothing.
-      </p>
-
-      <button
-        class="action"
-        onclick="marketMessage('Baby Clothes')">
-
+      <p>New and pre-loved baby clothing.</p>
+      <button class="action market-button" data-name="Baby Clothes">
         Browse Clothes
-
       </button>
-
     </div>
 
-
-    <div class="card market-item">
-
+    <div class="card market-card">
       <h3>🍼 Feeding</h3>
-
-      <p>
-        Feeding supplies and accessories.
-      </p>
-
-      <button
-        class="action"
-        onclick="marketMessage('Feeding')">
-
+      <p>Feeding supplies and accessories.</p>
+      <button class="action market-button" data-name="Feeding">
         Browse Feeding
-
       </button>
-
     </div>
 
-
-    <div class="card market-item">
-
+    <div class="card market-card">
       <h3>🧸 Toys</h3>
-
-      <p>
-        Baby and children's toys.
-      </p>
-
-      <button
-        class="action"
-        onclick="marketMessage('Toys')">
-
+      <p>Baby and children's toys.</p>
+      <button class="action market-button" data-name="Toys">
         Browse Toys
-
       </button>
-
     </div>
 
-
-    <div class="card market-item">
-
+    <div class="card market-card">
       <h3>🧴 Baby Care</h3>
-
-      <p>
-        Bathing, diapering and everyday care.
-      </p>
-
-      <button
-        class="action"
-        onclick="marketMessage('Baby Care')">
-
+      <p>Bathing, diapering, and everyday care.</p>
+      <button class="action market-button" data-name="Baby Care">
         Browse Baby Care
-
       </button>
-
     </div>
 
-
-    <div class="card market-item">
-
+    <div class="card market-card">
       <h3>🌿 Organic</h3>
-
-      <p>
-        Explore organic-focused products.
-      </p>
-
-      <button
-        class="action"
-        onclick="marketMessage('Organic')">
-
+      <p>Explore organic-focused products.</p>
+      <button class="action market-button" data-name="Organic">
         Browse Organic
-
       </button>
-
     </div>
 
   </div>
 
-
-  <div
-    id="marketMessage"
-    class="message">
-  </div>
+  <div id="marketMessage" class="message" style="display:none;"></div>
 
 </section>
 
@@ -688,138 +422,63 @@ footer {
 <section id="health" class="page">
 
   <div class="category-header">
-
     <h2>🏥 MotherNest Health</h2>
-
-    <p>
-      Organize your family's healthcare information.
-    </p>
-
+    <p>Organize your family's healthcare information.</p>
   </div>
-
 
   <div class="grid">
 
     <div class="card">
-
       <h3>👩‍⚕️ Pediatrician</h3>
-
-      <p>
-        Save pediatrician information.
-      </p>
-
-      <button
-        class="action"
-        onclick="healthMessage('Pediatrician')">
-
+      <p>Save pediatrician information.</p>
+      <button class="action health-button" data-name="Pediatrician">
         Add Pediatrician
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>📅 Appointments</h3>
-
-      <p>
-        Keep upcoming appointments organized.
-      </p>
-
-      <button
-        class="action"
-        onclick="healthMessage('Appointment')">
-
+      <p>Keep appointments organized.</p>
+      <button class="action health-button" data-name="Appointment">
         Add Appointment
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>🏥 Children's Hospital</h3>
-
-      <p>
-        Keep important hospital information handy.
-      </p>
-
-      <button
-        class="action"
-        onclick="healthMessage('Hospital')">
-
+      <p>Keep important hospital information handy.</p>
+      <button class="action health-button" data-name="Children's Hospital">
         Add Hospital
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>🚑 Urgent Care</h3>
-
-      <p>
-        Keep urgent-care information organized.
-      </p>
-
-      <button
-        class="action"
-        onclick="healthMessage('Urgent Care')">
-
+      <p>Keep urgent-care information organized.</p>
+      <button class="action health-button" data-name="Urgent Care">
         Add Urgent Care
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>💊 Pharmacy</h3>
-
-      <p>
-        Save pharmacy information.
-      </p>
-
-      <button
-        class="action"
-        onclick="healthMessage('Pharmacy')">
-
+      <p>Save pharmacy information.</p>
+      <button class="action health-button" data-name="Pharmacy">
         Add Pharmacy
-
       </button>
-
     </div>
-
 
     <div class="card">
-
       <h3>🧾 Health Records</h3>
-
-      <p>
-        Keep records organized inside your vault.
-      </p>
-
-      <button
-        class="action"
-        onclick="showPage('vault')">
-
+      <p>Keep records organized inside your vault.</p>
+      <button class="action" data-go="vault">
         Open Records
-
       </button>
-
     </div>
 
   </div>
 
-
-  <div
-    id="healthMessage"
-    class="message">
-  </div>
+  <div id="healthMessage" class="message" style="display:none;"></div>
 
 </section>
 
@@ -829,15 +488,9 @@ footer {
 <section id="registry" class="page">
 
   <div class="category-header">
-
     <h2>🎁 MotherNest Registry</h2>
-
-    <p>
-      Tell MotherNest what your family needs.
-    </p>
-
+    <p>Tell MotherNest what your family needs.</p>
   </div>
-
 
   <input
     id="registryInput"
@@ -845,52 +498,15 @@ footer {
     placeholder="Example: I need a bassinet"
   >
 
-
   <br><br>
 
-
-  <button
-    class="action"
-    onclick="addRegistryItem()">
-
+  <button id="addRegistryButton" class="action">
     ➕ Add To Registry
-
   </button>
 
+  <div id="registryList"></div>
 
-  <div
-    id="registryList"
-    class="registry-list">
-  </div>
-
-
-  <br>
-
-
-  <div class="card">
-
-    <h3>💡 Registry Options</h3>
-
-    <p>
-      Once you add an item, MotherNest can eventually
-      help you compare new, used, and organic options.
-    </p>
-
-    <button
-      class="action secondary"
-      onclick="registryInfo()">
-
-      Learn More
-
-    </button>
-
-  </div>
-
-
-  <div
-    id="registryMessage"
-    class="message">
-  </div>
+  <div id="registryMessage" class="message" style="display:none;"></div>
 
 </section>
 
@@ -900,138 +516,63 @@ footer {
 <section id="vault" class="page">
 
   <div class="category-header">
-
     <h2>🔐 MotherNest Memory Vault</h2>
-
-    <p>
-      Your organized family information space.
-    </p>
-
+    <p>Your organized family information space.</p>
   </div>
-
 
   <div class="grid">
 
     <div class="card">
-
       <h3>🍼 Feeding Log</h3>
-
-      <p>
-        Organize feeding information.
-      </p>
-
-      <button
-        class="action"
-        onclick="vaultMessage('Feeding Log')">
-
+      <p>Organize feeding information.</p>
+      <button class="action vault-button" data-name="Feeding Log">
         Open
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>👶 Diaper Tracker</h3>
-
-      <p>
-        Keep diaper changes organized.
-      </p>
-
-      <button
-        class="action"
-        onclick="vaultMessage('Diaper Tracker')">
-
+      <p>Keep diaper changes organized.</p>
+      <button class="action vault-button" data-name="Diaper Tracker">
         Open
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>💊 Medicine Log</h3>
-
-      <p>
-        Organize medicine information.
-      </p>
-
-      <button
-        class="action"
-        onclick="vaultMessage('Medicine Log')">
-
+      <p>Organize medicine information.</p>
+      <button class="action vault-button" data-name="Medicine Log">
         Open
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>💉 Vaccine Records</h3>
-
-      <p>
-        Organize vaccine records.
-      </p>
-
-      <button
-        class="action"
-        onclick="vaultMessage('Vaccine Records')">
-
+      <p>Organize vaccine records.</p>
+      <button class="action vault-button" data-name="Vaccine Records">
         Open
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <h3>📝 Baby Notes</h3>
-
-      <p>
-        Save notes and special memories.
-      </p>
-
-      <button
-        class="action"
-        onclick="vaultMessage('Baby Notes')">
-
+      <p>Save notes and special memories.</p>
+      <button class="action vault-button" data-name="Baby Notes">
         Open
-
       </button>
-
     </div>
-
 
     <div class="card">
-
       <h3>🚨 Emergency Card</h3>
-
-      <p>
-        Organize emergency information.
-      </p>
-
-      <button
-        class="action"
-        onclick="vaultMessage('Emergency Card')">
-
+      <p>Organize emergency information.</p>
+      <button class="action vault-button" data-name="Emergency Card">
         Open
-
       </button>
-
     </div>
 
   </div>
 
-
-  <div
-    id="vaultMessage"
-    class="message">
-  </div>
+  <div id="vaultMessage" class="message" style="display:none;"></div>
 
 </section>
 
@@ -1042,36 +583,21 @@ footer {
 
   <div class="profile">
 
-    <div class="avatar">
-      👩‍🍼
-    </div>
+    <div class="avatar">👩‍🍼</div>
 
     <h2>My MotherNest Profile</h2>
 
-    <p>
-      Your family space is waiting to be customized.
-    </p>
+    <p>Your family space is ready to customize.</p>
 
-    <button
-      class="action"
-      onclick="profileMessage()">
-
+    <button id="profileButton" class="action">
       Create Profile
-
     </button>
 
-    <button
-      class="action secondary"
-      onclick="profileMessage()">
-
+    <button id="settingsButton" class="action secondary">
       Settings
-
     </button>
 
-    <div
-      id="profileMessage"
-      class="message">
-    </div>
+    <div id="profileMessage" class="message" style="display:none;"></div>
 
   </div>
 
@@ -1079,89 +605,107 @@ footer {
 
 
 <footer>
-
-  <p>
-    🌸 MotherNest — Growing together, one moment at a time. 🌸
-  </p>
-
+  <p>🌸 MotherNest — Growing together, one moment at a time. 🌸</p>
 </footer>
 
 
 <script>
 
-/* =========================
+/* ==============================
    PAGE NAVIGATION
-========================= */
+============================== */
+
+document.querySelectorAll("[data-page]").forEach(function(button) {
+
+  button.addEventListener("click", function() {
+
+    showPage(button.getAttribute("data-page"));
+
+  });
+
+});
+
+
+document.querySelectorAll("[data-go]").forEach(function(button) {
+
+  button.addEventListener("click", function() {
+
+    showPage(button.getAttribute("data-go"));
+
+  });
+
+});
+
 
 function showPage(pageName) {
 
-  const pages = document.querySelectorAll(".page");
-
-  pages.forEach(function(page) {
+  document.querySelectorAll(".page").forEach(function(page) {
 
     page.classList.remove("active");
 
   });
 
+  const page = document.getElementById(pageName);
 
-  const selectedPage =
-    document.getElementById(pageName);
+  if (page) {
 
+    page.classList.add("active");
 
-  if (selectedPage) {
-
-    selectedPage.classList.add("active");
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo(0, 0);
 
   }
 
 }
 
 
-/* =========================
-   BABY ASSISTANT
-========================= */
+/* ==============================
+   BABY AI
+============================== */
 
-function assistantQuestion(question) {
+const askAIButton =
+  document.getElementById("askAIButton");
 
-  document.getElementById("assistantInput").value =
-    question;
+const aiQuestion =
+  document.getElementById("aiQuestion");
 
-  askAssistant();
+const aiAnswer =
+  document.getElementById("aiAnswer");
 
-}
+
+askAIButton.addEventListener("click", function() {
+
+  answerQuestion();
+
+});
 
 
-function askAssistant() {
+aiQuestion.addEventListener("keydown", function(event) {
 
-  const input =
-    document.getElementById("assistantInput");
+  if (event.key === "Enter") {
 
-  const answer =
-    document.getElementById("assistantAnswer");
+    answerQuestion();
+
+  }
+
+});
+
+
+function answerQuestion() {
 
   const question =
-    input.value.trim().toLowerCase();
+    aiQuestion.value.trim().toLowerCase();
+
+  aiAnswer.style.display = "block";
 
 
   if (question === "") {
 
-    answer.style.display = "block";
-
-    answer.innerHTML =
-      "💗 Type a question first and I'll give you a helpful starting point.";
+    aiAnswer.textContent =
+      "💗 Type a question first.";
 
     return;
 
   }
-
-
-  let response =
-    "💗 That's a great question. Start by breaking it into smaller steps and focusing on what your family needs right now.";
 
 
   if (
@@ -1170,8 +714,10 @@ function askAssistant() {
     question.includes("need")
   ) {
 
-    response =
+    aiAnswer.textContent =
       "🍼 Before baby arrives, families commonly prepare a safe sleeping space, feeding supplies, diapers, clothing, basic hygiene supplies, transportation needs, important contacts, and a plan for medical care.";
+
+    return;
 
   }
 
@@ -1181,8 +727,10 @@ function askAssistant() {
     question.includes("development")
   ) {
 
-    response =
+    aiAnswer.textContent =
       "🌱 Babies develop at different rates. Common areas to watch include movement, communication, social interaction, and learning. Your pediatrician can help you understand what is appropriate for your baby's age.";
+
+    return;
 
   }
 
@@ -1192,24 +740,59 @@ function askAssistant() {
     question.includes("money")
   ) {
 
-    response =
-      "💰 A simple baby budget can start with needs such as diapers, feeding, clothing, healthcare, transportation, childcare, and other household expenses.";
+    aiAnswer.textContent =
+      "💰 A simple baby budget can start with diapers, feeding, clothing, healthcare, transportation, childcare, and household expenses.";
+
+    return;
 
   }
 
 
-  answer.style.display = "block";
-
-  answer.innerHTML = response;
+  aiAnswer.textContent =
+    "💗 That's a great question. MotherNest can help you break it into smaller steps and organize what you need.";
 
 }
 
 
-/* =========================
-   REGISTRY
-========================= */
+/* AI EXAMPLE BUTTONS */
 
-function addRegistryItem() {
+document.querySelectorAll(".ai-example").forEach(function(button) {
+
+  button.addEventListener("click", function() {
+
+    aiQuestion.value =
+      button.getAttribute("data-question");
+
+    answerQuestion();
+
+  });
+
+});
+
+
+/* ==============================
+   REGISTRY
+============================== */
+
+document
+  .getElementById("addRegistryButton")
+  .addEventListener("click", addRegistry);
+
+
+document
+  .getElementById("registryInput")
+  .addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+      addRegistry();
+
+    }
+
+  });
+
+
+function addRegistry() {
 
   const input =
     document.getElementById("registryInput");
@@ -1220,7 +803,9 @@ function addRegistryItem() {
 
   if (text === "") {
 
-    alert("Please type something you need first.");
+    showRegistryMessage(
+      "💗 Type something your family needs first."
+    );
 
     return;
 
@@ -1234,7 +819,6 @@ function addRegistryItem() {
   const item =
     document.createElement("div");
 
-
   item.className =
     "registry-item";
 
@@ -1242,34 +826,30 @@ function addRegistryItem() {
   const itemText =
     document.createElement("span");
 
-
   itemText.textContent =
     "🎁 " + text;
 
 
-  const removeButton =
+  const remove =
     document.createElement("button");
 
-
-  removeButton.className =
+  remove.className =
     "remove";
 
-
-  removeButton.textContent =
+  remove.textContent =
     "Remove";
 
 
-  removeButton.onclick =
-    function() {
+  remove.addEventListener("click", function() {
 
-      item.remove();
+    item.remove();
 
-    };
+  });
 
 
   item.appendChild(itemText);
 
-  item.appendChild(removeButton);
+  item.appendChild(remove);
 
   list.appendChild(item);
 
@@ -1277,135 +857,164 @@ function addRegistryItem() {
   input.value = "";
 
 
-  document.getElementById("registryMessage").style.display =
-    "block";
-
-  document.getElementById("registryMessage").textContent =
-    "🎉 Added to your MotherNest Registry!";
+  showRegistryMessage(
+    "🎉 Added to your MotherNest Registry!"
+  );
 
 }
 
 
-function registryInfo() {
+function showRegistryMessage(text) {
 
   const message =
     document.getElementById("registryMessage");
 
   message.style.display = "block";
 
-  message.textContent =
-    "🎁 MotherNest Registry is designed to eventually help you compare new, used, and organic options for the things your family needs.";
+  message.textContent = text;
 
 }
 
 
-/* =========================
+/* ==============================
    MARKETPLACE
-========================= */
+============================== */
 
-function searchMarketplace() {
+document
+  .getElementById("marketSearch")
+  .addEventListener("input", function() {
 
-  const search =
-    document.getElementById("marketSearch")
-    .value
-    .toLowerCase();
+    const search =
+      this.value.toLowerCase();
 
+    document.querySelectorAll(".market-card").forEach(function(card) {
 
-  const items =
-    document.querySelectorAll(".market-item");
+      const text =
+        card.textContent.toLowerCase();
 
+      if (text.includes(search)) {
 
-  items.forEach(function(item) {
+        card.style.display = "";
 
-    const text =
-      item.innerText.toLowerCase();
+      } else {
 
+        card.style.display = "none";
 
-    if (text.includes(search)) {
+      }
 
-      item.style.display = "block";
-
-    } else {
-
-      item.style.display = "none";
-
-    }
+    });
 
   });
 
-}
+
+document.querySelectorAll(".market-button").forEach(function(button) {
+
+  button.addEventListener("click", function() {
+
+    const name =
+      button.getAttribute("data-name");
+
+    const message =
+      document.getElementById("marketMessage");
+
+    message.style.display = "block";
+
+    message.textContent =
+      "🛍️ You selected " +
+      name +
+      ". This is where MotherNest listings will appear as we build the Marketplace.";
+
+  });
+
+});
 
 
-function marketMessage(category) {
-
-  const message =
-    document.getElementById("marketMessage");
-
-  message.style.display = "block";
-
-  message.textContent =
-    "🛍️ You selected " +
-    category +
-    ". The MotherNest Marketplace will open listings here as we build this section.";
-
-}
-
-
-/* =========================
+/* ==============================
    HEALTH
-========================= */
+============================== */
 
-function healthMessage(type) {
+document.querySelectorAll(".health-button").forEach(function(button) {
 
-  const message =
-    document.getElementById("healthMessage");
+  button.addEventListener("click", function() {
 
-  message.style.display = "block";
+    const name =
+      button.getAttribute("data-name");
 
-  message.textContent =
-    "🏥 " +
-    type +
-    " section selected. This is where we can add the information form next.";
+    const message =
+      document.getElementById("healthMessage");
 
-}
+    message.style.display = "block";
 
+    message.textContent =
+      "🏥 " +
+      name +
+      " selected. We can build the information form for this section next.";
 
-/* =========================
-   VAULT
-========================= */
+  });
 
-function vaultMessage(type) {
-
-  const message =
-    document.getElementById("vaultMessage");
-
-  message.style.display = "block";
-
-  message.textContent =
-    "🔐 " +
-    type +
-    " selected. We can build the actual tracker for this section next.";
-
-}
+});
 
 
-/* =========================
+/* ==============================
+   MEMORY VAULT
+============================== */
+
+document.querySelectorAll(".vault-button").forEach(function(button) {
+
+  button.addEventListener("click", function() {
+
+    const name =
+      button.getAttribute("data-name");
+
+    const message =
+      document.getElementById("vaultMessage");
+
+    message.style.display = "block";
+
+    message.textContent =
+      "🔐 " +
+      name +
+      " selected. This is where we can build the tracker next.";
+
+  });
+
+});
+
+
+/* ==============================
    PROFILE
-========================= */
+============================== */
 
-function profileMessage() {
+document
+  .getElementById("profileButton")
+  .addEventListener("click", function() {
 
-  const message =
-    document.getElementById("profileMessage");
+    const message =
+      document.getElementById("profileMessage");
 
-  message.style.display = "block";
+    message.style.display = "block";
 
-  message.textContent =
-    "👤 Profile setup selected. We can build your profile form next.";
+    message.textContent =
+      "👤 Profile setup selected. We can build your profile form next.";
 
-}
+  });
+
+
+document
+  .getElementById("settingsButton")
+  .addEventListener("click", function() {
+
+    const message =
+      document.getElementById("profileMessage");
+
+    message.style.display = "block";
+
+    message.textContent =
+      "⚙️ Settings selected. We can build your MotherNest settings here.";
+
+  });
 
 </script>
 
 </body>
-      </html>
+  </html>
