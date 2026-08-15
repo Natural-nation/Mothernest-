@@ -1257,55 +1257,7 @@ showRegistryMessage(
 }
 
 
-function chooseRegistry(type) {
 
-if (type === "used") {
-
-showPage("marketplace");
-
-return;
-
-}
-
-var result =
-document.getElementById(
-"registryResult"
-);
-
-var title =
-document.getElementById(
-"registryResultTitle"
-);
-
-var text =
-document.getElementById(
-"registryResultText"
-);
-
-result.style.display =
-"block";
-
-if (type === "new") {
-
-title.innerHTML =
-"🆕 New " +
-currentRegistryItem;
-
-text.innerHTML =
-"MotherNest will show new shopping choices for this registry item here.";
-
-}
-
-if (type === "organic") {
-
-title.innerHTML =
-"🌿 Organic " +
-currentRegistryItem;
-
-text.innerHTML =
-"MotherNest will show organic-focused choices for this registry item here.";
-
-}
 
 function chooseRegistry(type) {
 
