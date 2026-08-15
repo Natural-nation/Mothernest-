@@ -841,19 +841,19 @@ onclick="chooseRegistry('used')">
 </button>
 
 
-<button
-class="option-button organic-option"
-onclick="chooseRegistry('organic')">
 
-🌿 Organic
-
-</button>
 
 </div>
 
 
 <div
-id="registryResult"
+id="registryResult"<button
+class="option-button used-option"
+onclick="goToMarketplace()">
+
+♻️ Used
+
+</button>
 class="registry-result"
 style="display:none;">
 
@@ -1286,7 +1286,19 @@ showRegistryMessage(
 );
 
 }
+function goToMarketplace() {
 
+  document.getElementById("registryOptions").style.display = "none";
+
+  document.getElementById("registryResult").style.display = "none";
+
+  document.getElementById("registry").classList.remove("active");
+
+  document.getElementById("marketplace").classList.add("active");
+
+  window.scrollTo(0, 0);
+
+  }
 
 /* REGISTRY OPTIONS */
 
@@ -1305,7 +1317,7 @@ return;
 
 
 var result =
-document.getElementById("registryResult");
+document.getElementById("registryResult"();
 
 var title =
 document.getElementById("registryResultTitle");
