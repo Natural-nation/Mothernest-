@@ -582,7 +582,78 @@ Browse
 id="marketMessage"
 class="message"
 style="display:none;">
-</div>
+</div> 
+  <div id="marketListings" class="grid">
+
+  <div class="card market-card">
+
+    <h3>🛏️ Cozy Bassinet</h3>
+
+    <p>
+      ♻️ Used — MotherNest Marketplace
+    </p>
+
+    <p>
+      A gently used bassinet listing.
+    </p>
+
+    <button
+      class="action"
+      onclick="listingMessage('Cozy Bassinet')">
+
+      View Listing
+
+    </button>
+
+  </div>
+
+
+  <div class="card market-card">
+
+    <h3>👕 Baby Clothing Bundle</h3>
+
+    <p>
+      ♻️ Used — MotherNest Marketplace
+    </p>
+
+    <p>
+      A bundle of gently used baby clothing.
+    </p>
+
+    <button
+      class="action"
+      onclick="listingMessage('Baby Clothing Bundle')">
+
+      View Listing
+
+    </button>
+
+  </div>
+
+
+  <div class="card market-card">
+
+    <h3>🍼 Feeding Supply Bundle</h3>
+
+    <p>
+      ♻️ Used — MotherNest Marketplace
+    </p>
+
+    <p>
+      Feeding supplies listed by a MotherNest seller.
+    </p>
+
+    <button
+      class="action"
+      onclick="listingMessage('Feeding Supply Bundle')">
+
+      View Listing
+
+    </button>
+
+  </div>
+
+  </div>
 
 </section>
 
@@ -1318,6 +1389,7 @@ message.innerHTML = text;
 
 function marketMessage(category) {
 
+
 var message =
 document.getElementById(
 "marketMessage"
@@ -1332,6 +1404,24 @@ category +
 "</strong>. MotherNest Marketplace is ready for us to build out.";
 
 }
+  function listingMessage(item) {
+
+var message =
+document.getElementById(
+"marketMessage"
+);
+
+message.style.display =
+"block";
+
+message.innerHTML =
+"🛍️ <strong>" +
+item +
+"</strong><br><br>" +
+"This is a MotherNest Marketplace listing.<br><br>" +
+"Seller details and item information will appear here.";
+
+  }
 
 
 /* HEALTH */
