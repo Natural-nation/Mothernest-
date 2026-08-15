@@ -1119,6 +1119,79 @@ function chooseRegistry(type) {
   var text =
     document.getElementById("registryResultText");
 
+  result.style.display = "block";
+
+
+  if (type === "new") {
+
+    title.innerHTML =
+      "🆕 New " + currentRegistryItem;
+
+    text.innerHTML =
+      "Browse new options for your registry item. MotherNest will organize new products and shopping choices here.";
+
+    result.innerHTML +=
+      '<br><button class="action" onclick="showNewItems()">🛒 Browse New Items</button>';
+
+  }
+
+
+  if (type === "used") {
+
+    title.innerHTML =
+      "♻️ Used " + currentRegistryItem;
+
+    text.innerHTML =
+      "Find pre-loved items from the MotherNest Marketplace. Families can discover affordable options here.";
+
+    result.innerHTML +=
+      '<br><button class="action" onclick="showPage(\'marketplace\')">🛍️ Browse Marketplace</button>';
+
+  }
+
+
+  if (type === "organic") {
+
+    title.innerHTML =
+      "🌿 Organic " + currentRegistryItem;
+
+    text.innerHTML =
+      "Explore organic-focused choices for your registry item.";
+
+    result.innerHTML +=
+      '<br><button class="action" onclick="showOrganicItems()">🌿 Browse Organic Items</button>';
+
+  }
+
+}
+
+
+function showNewItems() {
+
+  alert(
+    "🆕 New items for your registry will appear here."
+  );
+
+}
+
+
+function showOrganicItems() {
+
+  alert(
+    "🌿 Organic items for your registry will appear here."
+  );
+
+}
+
+  var result =
+    document.getElementById("registryResult");
+
+  var title =
+    document.getElementById("registryResultTitle");
+
+  var text =
+    document.getElementById("registryResultText");
+
 
   result.style.display = "block";
 
