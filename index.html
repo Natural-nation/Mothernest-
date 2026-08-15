@@ -1236,15 +1236,49 @@ text.innerHTML =
 
 }
 
-}
+function chooseRegistry(type) {
 
+  var result =
+    document.getElementById("registryResult");
 
-function backToOptions() {
+  var title =
+    document.getElementById("registryResultTitle");
 
-document.getElementById(
-"registryResult"
-).style.display =
-"none";
+  var text =
+    document.getElementById("registryResultText");
+
+  if (type === "used") {
+
+    showPage("marketplace");
+
+    return;
+  }
+
+  result.style.display = "block";
+
+  if (type === "new") {
+
+    title.innerHTML =
+      "🆕 New " + currentRegistryItem;
+
+    text.innerHTML =
+      "🛒 New options for " +
+      currentRegistryItem +
+      " will appear here. You can browse shopping choices and compare options.";
+
+  }
+
+  if (type === "organic") {
+
+    title.innerHTML =
+      "🌿 Organic " + currentRegistryItem;
+
+    text.innerHTML =
+      "🌱 Organic options for " +
+      currentRegistryItem +
+      " will appear here. MotherNest can organize organic choices for you.";
+
+  }
 
 }
 
