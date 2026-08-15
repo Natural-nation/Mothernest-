@@ -1249,9 +1249,25 @@ function chooseRegistry(type) {
 
   if (type === "used") {
 
-    showPage("marketplace");
+  showPage("marketplace");
 
-    return;
+  var usedMessage =
+    document.getElementById("marketMessage");
+
+  if (usedMessage) {
+
+    usedMessage.style.display = "block";
+
+    usedMessage.innerHTML =
+      "♻️ <strong>Used Registry Item</strong><br><br>" +
+      "You're looking for: <strong>" +
+      currentRegistryItem +
+      "</strong><br><br>" +
+      "MotherNest Marketplace will show used listings for this item here.";
+
+  }
+
+  return;
   }
 
   result.style.display = "block";
