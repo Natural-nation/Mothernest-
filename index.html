@@ -488,9 +488,15 @@ footer {
 <section id="registry" class="page">
 
   <div class="category-header">
+
     <h2>🎁 MotherNest Registry</h2>
-    <p>Tell MotherNest what your family needs.</p>
+
+    <p>
+      Tell MotherNest what your family needs.
+    </p>
+
   </div>
+
 
   <input
     id="registryInput"
@@ -500,16 +506,93 @@ footer {
 
   <br><br>
 
-  <button id="addRegistryButton" class="action">
+  <button
+    id="addRegistryButton"
+    class="action">
+
     ➕ Add To Registry
+
   </button>
+
 
   <div id="registryList"></div>
 
-  <div id="registryMessage" class="message" style="display:none;"></div>
+
+  <div
+    id="registryOptions"
+    style="display:none; margin-top:25px;">
+
+    <div class="card">
+
+      <h3>🎁 Choose Your Options</h3>
+
+      <p id="registryItemName">
+        What type of item are you looking for?
+      </p>
+
+
+      <button
+        class="action registry-choice"
+        data-type="new">
+
+        🆕 New
+
+      </button>
+
+
+      <button
+        class="action registry-choice"
+        data-type="used">
+
+        ♻️ Used
+
+      </button>
+
+
+      <button
+        class="action registry-choice"
+        data-type="organic">
+
+        🌿 Organic
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    id="registryResults"
+    style="display:none; margin-top:20px;">
+
+    <div class="card">
+
+      <h3 id="registryResultTitle"></h3>
+
+      <p id="registryResultText"></p>
+
+
+      <button
+        id="registryBackButton"
+        class="action secondary">
+
+        ← Choose Another Option
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    id="registryMessage"
+    class="message"
+    style="display:none;">
+  </div>
 
 </section>
-
 
 <!-- VAULT -->
 
