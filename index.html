@@ -868,35 +868,148 @@ function addRegistryItem() {
   var list =
     document.getElementById("registryList");
 
-
   var item =
-    input.value.trim();
-
+    input.value.trim().toLowerCase();
 
   if (item === "") {
-
     return;
-
   }
 
+  var icon = "🎁";
+  var name = item;
+
+  if (item.includes("bassinet")) {
+    icon = "🛏️";
+    name = "Bassinet";
+  }
+
+  else if (item.includes("crib")) {
+    icon = "🛏️";
+    name = "Crib";
+  }
+
+  else if (item.includes("stroller")) {
+    icon = "👶";
+    name = "Stroller";
+  }
+
+  else if (item.includes("diaper")) {
+    icon = "🧷";
+    name = "Diapers";
+  }
+
+  else if (item.includes("bottle")) {
+    icon = "🍼";
+    name = "Bottles";
+  }
+
+  else if (
+    item.includes("clothes") ||
+    item.includes("clothing") ||
+    item.includes("outfit")
+  ) {
+    icon = "👕";
+    name = "Baby Clothes";
+  }
+
+  else if (item.includes("formula")) {
+    icon = "🍼";
+    name = "Formula";
+  }
+
+  else if (item.includes("car seat")) {
+    icon = "🚗";
+    name = "Car Seat";
+  }
+
+  else if (item.includes("high chair")) {
+    icon = "🪑";
+    name = "High Chair";
+  }
+
+  else if (item.includes("blanket")) {
+    icon = "🧸";
+    name = "Blankets";
+  }
 
   var newItem =
     document.createElement("div");
 
   newItem.className = "card";
 
-  newItem.innerHTML =
-    "<strong>🎁 " +
-    item +
-    "</strong>";
+  newItem.style.cursor = "pointer";
 
+  newItem.innerHTML =
+    "<h3>" +
+    icon +
+    " " +
+    name +
+    "</h3>" +
+    "<p>Tap to explore your options.</p>";
+
+  newItem.onclick = function() {
+    openRegistryItem(name, icon);
+  };
 
   list.appendChild(newItem);
 
   input.value = "";
-
 }
+      function registryOption(type, item) {
 
+  var list =
+    document.getElementById("registryList");
+
+  var title = "";
+
+  var message = "";
+
+  if (type === "new") {
+
+    title = "🆕 New " + item;
+
+    message =
+      "Browse new " +
+      item +
+      " options from available stores and resources.";
+
+  }
+
+  else if (type === "used") {
+
+    title = "♻️ Used " + item;
+
+    message =
+      "Explore used " +
+      item +
+      " options in the MotherNest Marketplace.";
+
+  }
+
+  else if (type === "organic") {
+
+    title = "🌱 Organic " + item;
+
+    message =
+      "Explore organic options for " +
+      item +
+      ".";
+
+  }
+
+  list.innerHTML =
+    "<div class='card'>" +
+      "<h2>" + title + "</h2>" +
+      "<p>" + message + "</p>" +
+      "<button class='action' onclick=\"showPage('marketplace')\">" +
+        "Open Marketplace" +
+      "</button>" +
+      "<button class='action secondary' onclick=\"showPage('registry')\">" +
+        "Back to Registry" +
+      "</button>" +
+    "</div>";
+
+      }
 
 /* =========================
    PROFILE
