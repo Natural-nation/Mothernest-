@@ -201,8 +201,53 @@ footer {
 text-align: center;
 padding: 30px 15px;
 }
+footer {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background: white;
+  border-top: 2px solid #f3c6d6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 -3px 12px rgba(0,0,0,0.08);
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: #7a3b55;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.bottom-nav small {
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.bottom-nav button:hover {
+  color: #c94f76;
+  transform: translateY(-2px);
+}
 
 </style>
+
 </head>
 
 <body>
