@@ -1011,7 +1011,34 @@ function addRegistryItem() {
     "</div>";
 
       }
+function openRegistryItem(item, icon) {
 
+  var list =
+    document.getElementById("registryList");
+
+  list.innerHTML =
+    "<div class='card'>" +
+      "<h2>" + icon + " " + item + "</h2>" +
+      "<p>Choose the type of " + item + " you'd like to explore.</p>" +
+
+      "<button class='action' onclick=\"registryOption('new', '" + item + "')\">" +
+        "🆕 New" +
+      "</button>" +
+
+      "<button class='action' onclick=\"registryOption('used', '" + item + "')\">" +
+        "♻️ Used" +
+      "</button>" +
+
+      "<button class='action' onclick=\"registryOption('organic', '" + item + "')\">" +
+        "🌱 Organic" +
+      "</button>" +
+
+      "<button class='action secondary' onclick=\"showPage('registry')\">" +
+        "← Back" +
+      "</button>" +
+
+    "</div>";
+                  }
 /* =========================
    PROFILE
 ========================= */
