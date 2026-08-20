@@ -540,52 +540,103 @@ footer {
 <!-- =========================
      REGISTRY
 ========================= -->
+      
+function addRegistryItem() {
 
-<section id="registry" class="page">
+  var input =
+    document.getElementById("registryInput");
 
-  <div class="card">
+  var list =
+    document.getElementById("registryList");
 
-    <h2>🎁 MotherNest Registry</h2>
+  var item =
+    input.value.trim().toLowerCase();
 
-    <p>
-      Tell MotherNest what your family needs.
-    </p>
+  if (item === "") {
+    return;
+  }
 
-    <input
-      id="registryInput"
-      class="registry-input"
-      type="text"
-      placeholder="Example: bassinet">
+  var icon = "🎁";
+  var name = item;
 
-    <button
-      class="action"
-      type="button"
-      onclick="addRegistryItem()">
+  if (item.includes("bassinet")) {
+    icon = "🛏️";
+    name = "Bassinet";
+  }
 
-      ➕ Add to Registry
+  else if (item.includes("crib")) {
+    icon = "🛏️";
+    name = "Crib";
+  }
 
-    </button>
+  else if (item.includes("stroller")) {
+    icon = "👶";
+    name = "Stroller";
+  }
 
-  </div>
+  else if (item.includes("diaper")) {
+    icon = "🧷";
+    name = "Diapers";
+  }
 
+  else if (item.includes("bottle")) {
+    icon = "🍼";
+    name = "Bottles";
+  }
 
-  <div class="card">
+  else if (
+    item.includes("clothes") ||
+    item.includes("clothing") ||
+    item.includes("outfit")
+  ) {
+    icon = "👕";
+    name = "Baby Clothes";
+  }
 
-    <h3>Your Registry Needs</h3>
+  else if (item.includes("formula")) {
+    icon = "🍼";
+    name = "Formula";
+  }
 
-    <div id="registryList">
+  else if (item.includes("car seat")) {
+    icon = "🚗";
+    name = "Car Seat";
+  }
 
-      <p id="registryEmpty">
-        Your registry items will appear here.
-      </p>
+  else if (item.includes("high chair")) {
+    icon = "🪑";
+    name = "High Chair";
+  }
 
-    </div>
+  else if (item.includes("blanket")) {
+    icon = "🧸";
+    name = "Blankets";
+  }
 
-  </div>
+  var newItem =
+    document.createElement("div");
 
-</section>
+  newItem.className = "card";
 
+  newItem.style.cursor = "pointer";
 
+  newItem.innerHTML =
+    "<h3>" +
+    icon +
+    " " +
+    name +
+    "</h3>" +
+    "<p>Item added! Tap to explore your options.</p>";
+
+  newItem.onclick = function() {
+    openRegistryItem(name, icon);
+  };
+
+  list.appendChild(newItem);
+
+  input.value = "";
+}
+      
 <!-- =========================
      MEMORY VAULT
 ========================= -->
