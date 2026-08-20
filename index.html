@@ -198,7 +198,23 @@ footer {
 
 <body>
 
-<header><!-- =========================
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <h1>🌸 MotherNest 🪺</h1>
+
+  <p>
+    A place where mothers, babies,
+    and families grow together.
+  </p>
+
+</header>
+
+
+<!-- =========================
      HOME
 ========================= -->
 
@@ -365,7 +381,9 @@ footer {
   </div>
 
 </section>
-  <!-- =========================
+
+
+<!-- =========================
      MARKETPLACE
 ========================= -->
 
@@ -533,17 +551,18 @@ footer {
       Tell MotherNest what your family needs.
     </p>
 
-<input
-  id="registryInput"
-  type="text"
-  placeholder="Example: bassinet">
-      
+    <input
+      id="registryInput"
+      class="registry-input"
+      type="text"
+      placeholder="Example: bassinet">
 
     <button
       class="action"
+      type="button"
       onclick="addRegistryItem()">
 
-      Add to Registry
+      ➕ Add to Registry
 
     </button>
 
@@ -556,7 +575,7 @@ footer {
 
     <div id="registryList">
 
-      <p>
+      <p id="registryEmpty">
         Your registry items will appear here.
       </p>
 
@@ -597,7 +616,6 @@ footer {
 
       <button class="action">
         Open
-
       </button>
 
     </div>
@@ -613,7 +631,6 @@ footer {
 
       <button class="action">
         Open
-
       </button>
 
     </div>
@@ -629,7 +646,6 @@ footer {
 
       <button class="action">
         Open
-
       </button>
 
     </div>
@@ -715,54 +731,37 @@ footer {
   </div>
 
 </section>
-  <!-- =========================
+
+
+<!-- =========================
      BOTTOM NAVIGATION
 ========================= -->
 
 <nav class="bottom-nav">
 
-  <button
-    onclick="showPage('home')">
-
+  <button onclick="showPage('home')">
     <span>🏠</span>
     <small>Home</small>
-
   </button>
 
-
-  <button
-    onclick="showPage('assistant')">
-
+  <button onclick="showPage('assistant')">
     <span>🤖</span>
     <small>Baby AI</small>
-
   </button>
 
-
-  <button
-    onclick="showPage('marketplace')">
-
+  <button onclick="showPage('marketplace')">
     <span>🛍️</span>
     <small>Market</small>
-
   </button>
 
-
-  <button
-    onclick="showPage('health')">
-
+  <button onclick="showPage('health')">
     <span>🏥</span>
     <small>Health</small>
-
   </button>
 
-
-  <button
-    onclick="showPage('profile')">
-
+  <button onclick="showPage('profile')">
     <span>👤</span>
     <small>Profile</small>
-
   </button>
 
 </nav>
@@ -782,6 +781,10 @@ footer {
 ========================= -->
 
 <script>
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
 
 function showPage(pageId) {
 
@@ -803,16 +806,6 @@ function showPage(pageId) {
     selectedPage.classList.add("active");
 
   }
-
-
-  var buttons =
-    document.querySelectorAll(".bottom-nav button");
-
-  buttons.forEach(function(button) {
-
-    button.classList.remove("active-nav");
-
-  });
 
 
   window.scrollTo({
@@ -872,36 +865,51 @@ function addRegistryItem() {
   var item =
     input.value.trim().toLowerCase();
 
+
   if (item === "") {
+
     return;
+
   }
+
 
   var icon = "🎁";
   var name = item;
 
+
   if (item.includes("bassinet")) {
+
     icon = "🛏️";
     name = "Bassinet";
+
   }
 
   else if (item.includes("crib")) {
+
     icon = "🛏️";
     name = "Crib";
+
   }
 
   else if (item.includes("stroller")) {
-    icon = "👶";
+
+    icon = "🚼";
     name = "Stroller";
+
   }
 
   else if (item.includes("diaper")) {
+
     icon = "🧷";
     name = "Diapers";
+
   }
 
   else if (item.includes("bottle")) {
+
     icon = "🍼";
     name = "Bottles";
+
   }
 
   else if (
@@ -909,68 +917,251 @@ function addRegistryItem() {
     item.includes("clothing") ||
     item.includes("outfit")
   ) {
+
     icon = "👕";
     name = "Baby Clothes";
+
   }
 
   else if (item.includes("formula")) {
+
     icon = "🍼";
     name = "Formula";
+
   }
 
   else if (item.includes("car seat")) {
+
     icon = "🚗";
     name = "Car Seat";
+
   }
 
   else if (item.includes("high chair")) {
+
     icon = "🪑";
     name = "High Chair";
+
   }
 
   else if (item.includes("blanket")) {
+
     icon = "🧸";
     name = "Blankets";
+
   }
+
+
+  var empty =
+    document.getElementById("registryEmpty");
+
+  if (empty) {
+
+    empty.remove();
+
+  }
+
 
   var newItem =
     document.createElement("div");
 
-  newItem.className = "card";
 
-  newItem.style.cursor = "pointer";
+  newItem.className =
+    "card";
+
+
+  newItem.style.cursor =
+    "pointer";
+
 
   newItem.innerHTML =
-    "<h3>" +
-    icon +
-    " " +
-    name +
-    "</h3>" +
-    "<p>Tap to explore your options.</p>";
 
-  newItem.onclick = function() {
-  showPage("registry");
-};
+    "<h3>" +
+      icon +
+      " " +
+      name +
+    "</h3>" +
+
+    "<p>" +
+      "Tap to explore your options." +
+    "</p>";
+
+
+  newItem.onclick =
+    function() {
+
+      openRegistryItem(
+        name,
+        icon
+      );
+
+    };
+
 
   list.appendChild(newItem);
 
+
   input.value = "";
+
 }
-      function registryOption(type, item) {
+
+
+/* =========================
+   REGISTRY OPTIONS
+========================= */
+
+function openRegistryItem(item, icon) {
+
+  var list =
+    document.getElementById("registryList");
+
+
+  list.innerHTML =
+
+    "<div class='card'>" +
+
+      "<h2>" +
+        icon +
+        " " +
+        item +
+      "</h2>" +
+
+      "<p>" +
+        "Choose the type of " +
+        item +
+        " you'd like to explore." +
+      "</p>" +
+
+      "<button " +
+        "class='action' " +
+        "onclick=\"registryOption('new', '" +
+        item +
+        "')\">" +
+
+        "🆕 New" +
+
+      "</button>" +
+
+
+      "<button " +
+        "class='action' " +
+        "onclick=\"registryOption('used', '" +
+        item +
+        "')\">" +
+
+        "♻️ Used" +
+
+      "</button>" +
+
+
+      "<button " +
+        "class='action' " +
+        "onclick=\"registryOption('organic', '" +
+        item +
+        "')\">" +
+
+        "🌱 Organic" +
+
+      "</button>" +
+
+
+      "<button " +
+        "class='action secondary' " +
+        "onclick=\"showPage('registry')\">" +
+
+        "← Back to Registry" +
+
+      "</button>" +
+
+    "</div>";
+
+}
+
+
+/* =========================
+   REGISTRY OPTION RESULTS
+========================= */
+
+function registryOption(type, item) {
 
   var list =
     document.getElementById("registryList");
 
   var title = "";
-
   var message = "";
+
 
   if (type === "new") {
 
-    title = "🆕 New " + item;
+    title =
+      "🆕 New " + item;
 
     message =
       "Browse new " +
+      item +
+      " options from available stores and resources.";
+
+  }
+
+
+  else if (type === "used") {
+
+    title =
+      "♻️ Used " + item;
+
+    message =
+      "Explore used " +
+      item +
+      " options in the MotherNest Marketplace.";
+
+  }
+
+
+  else if (type === "organic") {
+
+    title =
+      "🌱 Organic " + item;
+
+    message =
+      "Explore organic options for " +
+      item +
+      ".";
+
+  }
+
+
+  list.innerHTML =
+
+    "<div class='card'>" +
+
+      "<h2>" +
+        title +
+      "</h2>" +
+
+      "<p>" +
+        message +
+      "</p>" +
+
+      "<button " +
+        "class='action' " +
+        "onclick=\"showPage('marketplace')\">" +
+
+        "Open Marketplace" +
+
+      "</button>" +
+
+      "<button " +
+        "class='action secondary' " +
+        "onclick=\"showPage('registry')\">" +
+
+        "Back to Registry" +
+
+      "</button>" +
+
+    "</div>";
+
+}
+
 
 /* =========================
    PROFILE
@@ -995,190 +1186,7 @@ function saveProfile() {
     ".";
 
 }
-/* =========================
-   REGISTRY
-========================= */
 
-function addRegistryItem() {
-
-  var input =
-    document.getElementById("registryInput");
-
-  var list =
-    document.getElementById("registryList");
-
-  var item =
-    input.value.trim().toLowerCase();
-
-  if (item === "") {
-    return;
-  }
-
-  var icon = "🎁";
-
-  if (item.includes("bassinet")) {
-    icon = "🛏️";
-  }
-  else if (item.includes("crib")) {
-    icon = "🛏️";
-  }
-  else if (item.includes("diaper")) {
-    icon = "🧷";
-  }
-  else if (item.includes("clothes") ||
-           item.includes("clothing")) {
-    icon = "👕";
-  }
-  else if (item.includes("bottle")) {
-    icon = "🍼";
-  }
-  else if (item.includes("stroller")) {
-    icon = "🚼";
-  }
-  else if (item.includes("formula")) {
-    icon = "🥛";
-  }
-
-  var newItem =
-    document.createElement("div");
-
-  newItem.className = "card";
-
-  newItem.innerHTML =
-    "<h3>" +
-      icon + " " + item +
-    "</h3>" +
-
-    "<p>" +
-      "Tap to explore your options." +
-    "</p>";
-
-  newItem.onclick = function() {
-    openRegistryItem(item, icon);
-  };
-
-  list.appendChild(newItem);
-
-  input.value = "";
-}
-
-
-function registryOption(type, item) {
-
-  var list =
-    document.getElementById("registryList");
-
-  var title = "";
-
-  var message = "";
-
-  if (type === "new") {
-
-    title =
-      "🆕 New " + item;
-
-    message =
-      "Browse new " +
-      item +
-      " options from available stores and resources.";
-
-  }
-
-  else if (type === "used") {
-
-    title =
-      "♻️ Used " + item;
-
-    message =
-      "Explore used " +
-      item +
-      " options in the MotherNest Marketplace.";
-
-  }
-
-  else if (type === "organic") {
-
-    title =
-      "🌱 Organic " + item;
-
-    message =
-      "Explore organic options for " +
-      item +
-      ".";
-
-  }
-
-  list.innerHTML =
-    "<div class='card'>" +
-
-      "<h2>" +
-        title +
-      "</h2>" +
-
-      "<p>" +
-        message +
-      "</p>" +
-
-      "<button class='action' " +
-        "onclick=\"showPage('marketplace')\">" +
-        "Open Marketplace" +
-      "</button>" +
-
-      "<button class='action secondary' " +
-        "onclick=\"showPage('registry')\">" +
-        "Back to Registry" +
-      "</button>" +
-
-    "</div>";
-}
-
-
-function openRegistryItem(item, icon) {
-
-  var list =
-    document.getElementById("registryList");
-
-  list.innerHTML =
-    "<div class='card'>" +
-
-      "<h2>" +
-        icon + " " + item +
-      "</h2>" +
-
-      "<p>" +
-        "Choose the type of " +
-        item +
-        " you'd like to explore." +
-      "</p>" +
-
-      "<button class='action' " +
-        "onclick=\"registryOption('new', '" +
-        item +
-        "')\">" +
-        "🆕 New" +
-      "</button>" +
-
-      "<button class='action' " +
-        "onclick=\"registryOption('used', '" +
-        item +
-        "')\">" +
-        "♻️ Used" +
-      "</button>" +
-
-      "<button class='action' " +
-        "onclick=\"registryOption('organic', '" +
-        item +
-        "')\">" +
-        "🌱 Organic" +
-      "</button>" +
-
-      "<button class='action secondary' " +
-        "onclick=\"showPage('registry')\">" +
-        "← Back" +
-      "</button>" +
-
-    "</div>";
-        }
 
 /* =========================
    THEMES
@@ -1231,13 +1239,4 @@ showPage("home");
 
 </body>
 
-</html>
-
-<h1>🌸 MotherNest 🪺</h1>
-
-<p>
-A place where mothers, babies,
-and families grow together.
-</p>
-
-</header>
+      </html>
