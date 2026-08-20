@@ -971,74 +971,7 @@ function addRegistryItem() {
 
     message =
       "Browse new " +
-      item +
-      " options from available stores and resources.";
 
-  }
-
-  else if (type === "used") {
-
-    title = "♻️ Used " + item;
-
-    message =
-      "Explore used " +
-      item +
-      " options in the MotherNest Marketplace.";
-
-  }
-
-  else if (type === "organic") {
-
-    title = "🌱 Organic " + item;
-
-    message =
-      "Explore organic options for " +
-      item +
-      ".";
-
-  }
-
-  list.innerHTML =
-    "<div class='card'>" +
-      "<h2>" + title + "</h2>" +
-      "<p>" + message + "</p>" +
-      "<button class='action' onclick=\"showPage('marketplace')\">" +
-        "Open Marketplace" +
-      "</button>" +
-      "<button class='action secondary' onclick=\"showPage('registry')\">" +
-        "Back to Registry" +
-      "</button>" +
-    "</div>";
-
-      }
-function openRegistryItem(item, icon) {
-
-  var list =
-    document.getElementById("registryList");
-
-  list.innerHTML =
-    "<div class='card'>" +
-      "<h2>" + icon + " " + item + "</h2>" +
-      "<p>Choose the type of " + item + " you'd like to explore.</p>" +
-
-      "<button class='action' onclick=\"registryOption('new', '" + item + "')\">" +
-        "🆕 New" +
-      "</button>" +
-
-      "<button class='action' onclick=\"registryOption('used', '" + item + "')\">" +
-        "♻️ Used" +
-      "</button>" +
-
-      "<button class='action' onclick=\"registryOption('organic', '" + item + "')\">" +
-        "🌱 Organic" +
-      "</button>" +
-
-      "<button class='action secondary' onclick=\"showPage('registry')\">" +
-        "← Back" +
-      "</button>" +
-
-    "</div>";
-                  }
 /* =========================
    PROFILE
 ========================= */
@@ -1062,7 +995,190 @@ function saveProfile() {
     ".";
 
 }
+/* =========================
+   REGISTRY
+========================= */
 
+function addRegistryItem() {
+
+  var input =
+    document.getElementById("registryInput");
+
+  var list =
+    document.getElementById("registryList");
+
+  var item =
+    input.value.trim().toLowerCase();
+
+  if (item === "") {
+    return;
+  }
+
+  var icon = "🎁";
+
+  if (item.includes("bassinet")) {
+    icon = "🛏️";
+  }
+  else if (item.includes("crib")) {
+    icon = "🛏️";
+  }
+  else if (item.includes("diaper")) {
+    icon = "🧷";
+  }
+  else if (item.includes("clothes") ||
+           item.includes("clothing")) {
+    icon = "👕";
+  }
+  else if (item.includes("bottle")) {
+    icon = "🍼";
+  }
+  else if (item.includes("stroller")) {
+    icon = "🚼";
+  }
+  else if (item.includes("formula")) {
+    icon = "🥛";
+  }
+
+  var newItem =
+    document.createElement("div");
+
+  newItem.className = "card";
+
+  newItem.innerHTML =
+    "<h3>" +
+      icon + " " + item +
+    "</h3>" +
+
+    "<p>" +
+      "Tap to explore your options." +
+    "</p>";
+
+  newItem.onclick = function() {
+    openRegistryItem(item, icon);
+  };
+
+  list.appendChild(newItem);
+
+  input.value = "";
+}
+
+
+function registryOption(type, item) {
+
+  var list =
+    document.getElementById("registryList");
+
+  var title = "";
+
+  var message = "";
+
+  if (type === "new") {
+
+    title =
+      "🆕 New " + item;
+
+    message =
+      "Browse new " +
+      item +
+      " options from available stores and resources.";
+
+  }
+
+  else if (type === "used") {
+
+    title =
+      "♻️ Used " + item;
+
+    message =
+      "Explore used " +
+      item +
+      " options in the MotherNest Marketplace.";
+
+  }
+
+  else if (type === "organic") {
+
+    title =
+      "🌱 Organic " + item;
+
+    message =
+      "Explore organic options for " +
+      item +
+      ".";
+
+  }
+
+  list.innerHTML =
+    "<div class='card'>" +
+
+      "<h2>" +
+        title +
+      "</h2>" +
+
+      "<p>" +
+        message +
+      "</p>" +
+
+      "<button class='action' " +
+        "onclick=\"showPage('marketplace')\">" +
+        "Open Marketplace" +
+      "</button>" +
+
+      "<button class='action secondary' " +
+        "onclick=\"showPage('registry')\">" +
+        "Back to Registry" +
+      "</button>" +
+
+    "</div>";
+}
+
+
+function openRegistryItem(item, icon) {
+
+  var list =
+    document.getElementById("registryList");
+
+  list.innerHTML =
+    "<div class='card'>" +
+
+      "<h2>" +
+        icon + " " + item +
+      "</h2>" +
+
+      "<p>" +
+        "Choose the type of " +
+        item +
+        " you'd like to explore." +
+      "</p>" +
+
+      "<button class='action' " +
+        "onclick=\"registryOption('new', '" +
+        item +
+        "')\">" +
+        "🆕 New" +
+      "</button>" +
+
+      "<button class='action' " +
+        "onclick=\"registryOption('used', '" +
+        item +
+        "')\">" +
+        "♻️ Used" +
+      "</button>" +
+
+      "<button class='action' " +
+        "onclick=\"registryOption('organic', '" +
+        item +
+        "')\">" +
+        "🌱 Organic" +
+      "</button>" +
+
+      "<button class='action secondary' " +
+        "onclick=\"showPage('registry')\">" +
+        "← Back" +
+      "</button>" +
+
+    "</div>";
+        }
 
 /* =========================
    THEMES
